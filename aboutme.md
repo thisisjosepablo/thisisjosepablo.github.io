@@ -30,4 +30,4 @@ I’m always looking to combine my technical skills with my drive for continuous
 ### 🛠️ Skills & Interests
 
 * **Technical:** Software Development, Data Science, Research & Analysis.
-* **Hobbies:** Long-distance running/Sports, Literature, and Continuous Learning.
+* **Hobbies:** All sports possibles, reading and always grateful with God.
