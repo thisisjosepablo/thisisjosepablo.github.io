@@ -4,14 +4,13 @@ title: About me
 subtitle: A brief personal description
 ---
 
-My name is Ferran Aran, I am from Lleida and I love learning new skills. Have a look at my background below!
+My name is Jose Pablo Soriano, I am from Santisteban del Puerto a small village in the northeast of Jaen. I love coding, doing different sports and reading books. Have a look at my background below!
 
 ### Education
 
-- Computer science degree at UdL (2019 - 2022)
-- Master in computer science at UdL (2022 - 2024)
-- PhD in RL applied to energy (2024 - present)
+- Computer science degree at University of Jaen (2021 - 2025)
+- Master in health data science at URV (2025 - present)
+
 
 ### Experience
-- Research assistant on MILP at UdL (2022 - 2023)
-- R&D as Data Scientist at GFT Technologies (2023 - present)
+- Research assistant on SIMIDAT research group at UJA (2025 - present)
