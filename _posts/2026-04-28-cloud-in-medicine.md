@@ -1,3 +1,15 @@
+---
+layout: post
+title: Google Cloud Healthcare API
+subtitle: Cloud computing in the health field
+gh-repo: daattali/beautiful-jekyll
+gh-badge: [star, fork, follow]
+tags: [test]
+comments: true
+mathjax: true
+author: Jose Pablo
+---
+
 # Cloud application in the field of biomedicine
 
 In the work of biomedicine, we are no longer drowning in a lack of data; we are drowning in the complexity of it. We have high-resolution MRIs that take up terabytes, continuous stream of vitals from wearable IoT sensors, etc.

@@ -4,13 +4,30 @@ title: About me
 subtitle: A brief personal description
 ---
 
-My name is Jose Pablo Soriano, I am from Santisteban del Puerto a small village in the northeast of Jaen. I love coding, doing different sports and reading books. Have a look at my background below!
+I am originally from Santisteban del Puerto, a small village in the northeast of Jaén. I have a deep passion for coding, stay active through sports, and find constant inspiration in reading.
 
-### Education
+I’m always looking to combine my technical skills with my drive for continuous growth. Feel free to explore my background below!
 
-- Computer science degree at University of Jaen (2021 - 2025)
-- Master in health data science at URV (2025 - present)
+---
 
+### 🎓 Education
 
-### Experience
-- Research assistant on SIMIDAT research group at UJA (2025 - present)
+* **Master in Health Data Science** | Public Research University (2025 – Present)
+    * *Focusing on the intersection of data analytics, healthcare, and predictive modeling.*
+* **B.S. in Computer Science** | State University in Southern Spain (2021 – 2025)
+    * *Specialized in software engineering, algorithms, and data structures.*
+
+---
+
+### 💼 Experience
+
+* **Research Assistant** | Intelligent Data Analysis Research Group (2025 – Present)
+    * Collaborating on advanced data mining and intelligent systems research.
+    * Applying computational techniques to solve complex data challenges within an academic environment.
+
+---
+
+### 🛠️ Skills & Interests
+
+* **Technical:** Software Development, Data Science, Research & Analysis.
+* **Hobbies:** Long-distance running/Sports, Literature, and Continuous Learning.
