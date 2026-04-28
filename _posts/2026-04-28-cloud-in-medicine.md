@@ -2,9 +2,9 @@
 layout: post
 title: Google Cloud Healthcare API
 subtitle: Cloud computing in the health field
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
-tags: [test]
+#gh-repo: daattali/beautiful-jekyll
+#gh-badge: [star, fork, follow]
+tags: [bioinformatics]
 comments: true
 mathjax: true
 author: Jose Pablo
