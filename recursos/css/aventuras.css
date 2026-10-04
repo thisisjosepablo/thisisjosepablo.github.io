@@ -98,6 +98,110 @@ main.content .lightbox img {
   border-radius: 0.6rem;
 }
 
+/* ---------- Aventuras secretas ----------
+   Tarjeta con candado en la lista y caja del acertijo en la crónica (recursos/js/acertijo.js) */
+.aventura-candado {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.3rem;
+  color: var(--sendero-bg);
+  background: repeating-linear-gradient(135deg,
+    var(--sendero-primary) 0 14px,
+    color-mix(in srgb, var(--sendero-primary) 82%, black) 14px 28px);
+}
+
+.aventura-candado .bi {
+  font-size: 2.6rem;
+}
+
+.aventura-candado span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.acertijo {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.4rem;
+  background: var(--sendero-card);
+  border: 1px dashed var(--sendero-primary);
+  border-radius: 0.75rem;
+}
+
+.acertijo.resuelta {
+  border-style: solid;
+}
+
+.acertijo-titulo {
+  margin: 0 0 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sendero-primary);
+}
+
+.acertijo-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.acertijo-form input {
+  flex: 1 1 12rem;
+}
+
+.acertijo-aviso {
+  flex-basis: 100%;
+  min-height: 1.4em;
+  margin: 0;
+  font-size: 0.88rem;
+  opacity: 0.8;
+}
+
+.pista {
+  margin-top: 0.75rem;
+  padding-left: 0.8rem;
+  border-left: 3px solid var(--sendero-primary);
+  font-size: 0.92rem;
+}
+
+.pista::before {
+  content: "Pista";
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Línea invisible: [texto]{.oculto} solo se ve al seleccionarla con el ratón */
+.oculto {
+  color: transparent;
+}
+
+.oculto::selection {
+  color: var(--sendero-bg);
+  background: var(--sendero-primary);
+}
+
+.acertijo-fallo {
+  animation: acertijo-temblor 0.35s;
+}
+
+@keyframes acertijo-temblor {
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .acertijo-fallo { animation: none; }
+}
+
 /* Mensaje cuando aún no hay aventuras publicadas (desaparece solo con la primera) */
 .aventuras-vacio {
   text-align: center;
