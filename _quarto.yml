@@ -42,6 +42,9 @@ website:
       - icon: twitter-x
         aria-label: X (Twitter)
         href: https://x.com/thisisjosepablo
+      - icon: youtube
+        aria-label: YouTube
+        href: https://www.youtube.com/@thisisjosepablo
       - icon: envelope
         aria-label: Email
         href: "#email"   # se completa con _sistema/includes/email.html
