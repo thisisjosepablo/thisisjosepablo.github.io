@@ -182,11 +182,25 @@
     "text": "Reconocimientos y premios\n\n\n\n\n  \n    \n      \n    \n    \n      Premio Extraordinario de Grado\n      \n      Universidad de Jaén\n      \n        2025\n      \n      \n      \n      \n      \n      \n      \n        \n          \n          \n          Asociado con Grado en Ingeniería Informática\n        \n      \n      \n      \n      \n    \n  \n\n  \n    \n      \n    \n    \n      Reconocimiento al mejor expediente del curso 2024/2025\n      \n      Universidad de Jaén\n      \n        2025\n      \n      \n      \n      \n      \n      \n      \n        \n          \n          \n          Asociado con Grado en Ingeniería Informática\n        \n      \n      Nota media de 9,4 y 20 matrículas de honor.\n      \n      \n    \n  \n\n  \n    \n      \n    \n    \n      Beca de Excelencia 360\n      \n      Banco Santander\n      \n        2025\n      \n      \n      \n      \n      \n      \n      \n      Beca muy competitiva, concedida a estudiantes con trayectoria académica destacada.\n      \n      \n    \n  \n\n\nNo hay resultados"
   },
   {
-    "objectID": "notas/2026/09-bienvenida/index.html",
-    "href": "notas/2026/09-bienvenida/index.html",
-    "title": "Bienvenida",
+    "objectID": "notas/2026/10-articulo_video_yt/index.html",
+    "href": "notas/2026/10-articulo_video_yt/index.html",
+    "title": "Usando Manim para estudiar",
     "section": "",
-    "text": "Hola. Esta es mi primera nota de la web, así que, quería saludarte antes de todo :)\nNo me gustan demasiado las redes sociales, por ello no tengo ni Instagram, TikTok o incluso Linkedin. Aunque sí es cierto que tengo X/Twitter, pero el algoritmo entrenado por mí mismo de tal manera que es solo meterte en la aplicación y te empiece a aburrir XD.\nNo obstante, Linkedin me gustaba bastante, pero desde mi punto de vista, se ha convertido en algo que no me gusta (me reservo la opinión :P). Por tanto, durante mucho tiempo pensé de crear mi página web personal que sirviera para poder reemplazar este tipo de redes sociales, con la diferencia de que no existen algoritmos adictivos que te hacen scrollear mucho tiempo, y bueno, la restricción de tener que ajustarme a la manera de que cada red social te obliga a publicar contenido.\nAsí, nace este proyecto con mucha ilusión y, además, con un diseño que evoca al lugar donde nací. Así como, algunos easter eggs :)\nEn él, además de servir como portfolio, le daré las siguientes utilidades:\n\nPublicación de notas tanto profesionales como personales.\nMantendré actualizada mi biblioteca digital que no es más que un enlace simbólico a mi biblioteca física. No obstante, está sin acabar y la iré construyendo poco a poco con el paso del tiempo.\nSección de aventuras. Como una alacena donde iré guardando recuerdos y experiencias para que perduren en el tiempo.\n\nY bueno, hasta aquí la nota. Si habeís llegado hasta aquí leyendo, me apiado de vosotros, ya que aguantarme seguro que no ha tenido que ser muy fácil jeje.\nPost data (Detrás de los datos ?): esta sección es un poco más informal y personal, así que, el estilo de escritura, palabras usadas, entre otras cosas, se adaptarán a ello. Ademaś de que en esta sección ESTÁ PROHIBIDO EL USO DE IA."
+    "text": "Portada del artículo\n\n\nEn una asignatura del máster nos comentaron que teníamos que leer un artículo. Esta asignatura se llama PROTEOMICS FOR HEALTH RESEARCH . El artículo era parte del primer tema que nos presentaban, una introducción a la proteómica, un concepto que hasta ahora desconocía totalmente.\nComencé a leerlo y me costaba entenderlo. Se tocaban conceptos muy relacionados con el ámbito bioquímico, y claro, yo más perdido que el barco del arroz.\nPensé: ¿y por qué no decirle a la IA o SI que cree un vídeo explicativo tal y cual, pero usando python? Todo por el siguiente tweet que leí de Karpathy:\n\nExplainer videos. The output format I am most bullish on is fully custom / bespoke explainer videos generated on any arbitrary topic. Experiment with things like “Create a 3b1b style video explainer on X. Use my ElevenLabs API key for audio narration”. (you’d need an API key for the latter or you can ask your LLM to find you decent free alternatives that use your local compute). This is actually starting to work!\n— Andrej Karpathy, X\n\nY como era de esperar, tenía razón XD.\nAsí, con la ayuda de Claude, generé un vídeo con Manim usando python. De la misma forma, generé el guión y comencé a grabar. El resultado es el siguiente:\n\nGracias a esto no solo me ha permitido crear un contenido bastante chulo sino que me ha permitido entender el artículo que en un inicio no tenía ni idea."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "José Pablo Soriano Torres",
+    "section": "",
+    "text": "José Pablo Soriano Torres\nInvestigador en la Universidad de Jaén · Máster en Health Data Science (URV)\n\n GitHub  Sobre mí\n\n\n\n 59°15′N 14°56′E\n\n\nSoy investigador en la Universidad de Jaén, donde trabajo en modelos de IA confiable para un uso responsable de la inteligencia artificial en salud; antes apliqué deep learning al análisis de imágenes de pacientes ostomizados en el proyecto EPPIA. Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible. Aquí comparto lo que voy aprendiendo por el camino: proyectos, notas, lecturas y alguna que otra aventura.\n\n\n\n\n«[…] ellos exigen del individuo la más absoluta impersonalidad, ¡y en eso cifran la sal de la vida! ¡No ser uno mismo, parecerse lo menos posible a sí mismo!»\nFiódor Dostoievski, Crimen y castigo"
+  },
+  {
+    "objectID": "aventuras/index.html",
+    "href": "aventuras/index.html",
+    "title": "Aventuras",
+    "section": "",
+    "text": "Todavía no hay aventuras publicadas.Las primeras rutas están en camino.\n  \n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "biblioteca/index.html",
@@ -217,25 +231,18 @@
     "text": "✅ Leídos\n\n\n\n  \n    \n      \n    \n    \n      Reina Roja\n      Juan Gómez Jurado\n      \n        ★★★★★\n      \n      \n        Engancha la historia y sobretodo el persona principal\n      \n      \n        28 sept 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      La asistenta\n      Freida McFadden\n      \n        ★★★★★\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      El secreto de la asistenta\n      Freida McFadden\n      \n        ★★★★☆\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      La asistenta te vigila\n      Freida McFadden\n      \n        ★★★☆☆\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      Hábitos atómicos\n      James Clear\n      \n        ★★★☆☆\n      \n      \n      \n        2 jun 2025\n      \n    \n  \n\n\nNo hay resultados"
   },
   {
-    "objectID": "aventuras/index.html",
-    "href": "aventuras/index.html",
-    "title": "Aventuras",
+    "objectID": "notas/2026/09-bienvenida/index.html",
+    "href": "notas/2026/09-bienvenida/index.html",
+    "title": "Bienvenida",
     "section": "",
-    "text": "Todavía no hay aventuras publicadas.Las primeras rutas están en camino.\n  \n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "José Pablo Soriano Torres",
-    "section": "",
-    "text": "José Pablo Soriano Torres\nInvestigador en la Universidad de Jaén · Máster en Health Data Science (URV)\n\n GitHub  Sobre mí\n\n\n\n 59°15′N 14°56′E\n\n\nSoy investigador en la Universidad de Jaén, donde trabajo en modelos de IA confiable para un uso responsable de la inteligencia artificial en salud; antes apliqué deep learning al análisis de imágenes de pacientes ostomizados en el proyecto EPPIA. Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible. Aquí comparto lo que voy aprendiendo por el camino: proyectos, notas, lecturas y alguna que otra aventura.\n\n\n\n\n«[…] ellos exigen del individuo la más absoluta impersonalidad, ¡y en eso cifran la sal de la vida! ¡No ser uno mismo, parecerse lo menos posible a sí mismo!»\nFiódor Dostoievski, Crimen y castigo"
+    "text": "Hola. Esta es mi primera nota de la web, así que, quería saludarte antes de todo :)\nNo me gustan demasiado las redes sociales, por ello no tengo ni Instagram, TikTok o incluso Linkedin. Aunque sí es cierto que tengo X/Twitter, pero el algoritmo entrenado por mí mismo de tal manera que es solo meterte en la aplicación y te empiece a aburrir XD.\nNo obstante, Linkedin me gustaba bastante, pero desde mi punto de vista, se ha convertido en algo que no me gusta (me reservo la opinión :P). Por tanto, durante mucho tiempo pensé de crear mi página web personal que sirviera para poder reemplazar este tipo de redes sociales, con la diferencia de que no existen algoritmos adictivos que te hacen scrollear mucho tiempo, y bueno, la restricción de tener que ajustarme a la manera de que cada red social te obliga a publicar contenido.\nAsí, nace este proyecto con mucha ilusión y, además, con un diseño que evoca al lugar donde nací. Así como, algunos easter eggs :)\nEn él, además de servir como portfolio, le daré las siguientes utilidades:\n\nPublicación de notas tanto profesionales como personales.\nMantendré actualizada mi biblioteca digital que no es más que un enlace simbólico a mi biblioteca física. No obstante, está sin acabar y la iré construyendo poco a poco con el paso del tiempo.\nSección de aventuras. Como una alacena donde iré guardando recuerdos y experiencias para que perduren en el tiempo.\n\nY bueno, hasta aquí la nota. Si habeís llegado hasta aquí leyendo, me apiado de vosotros, ya que aguantarme seguro que no ha tenido que ser muy fácil jeje.\nPost data (Detrás de los datos ?): esta sección es un poco más informal y personal, así que, el estilo de escritura, palabras usadas, entre otras cosas, se adaptarán a ello. Ademaś de que en esta sección ESTÁ PROHIBIDO EL USO DE IA."
   },
   {
     "objectID": "notas/index.html",
     "href": "notas/index.html",
     "title": "Notas",
     "section": "",
-    "text": "24 sept 2026\n    \n      Bienvenida\n      \n        Primera nota: por qué he creado esta web.\n      \n      \n        \n          \n            personal\n          \n        \n      \n    \n  \n\n\nNo hay resultados"
+    "text": "4 oct 2026\n    \n      Usando Manim para estudiar\n      \n        Estudiando un artículo del máster a través de la creación de un vídeo explicativo\n      \n      \n        \n          \n            master\n          \n        \n      \n    \n  \n\n  \n    24 sept 2026\n    \n      Bienvenida\n      \n        Primera nota: por qué he creado esta web.\n      \n      \n        \n          \n            personal\n          \n        \n      \n    \n  \n\n\nNo hay resultados"
   },
   {
     "objectID": "sobre-mi/proyectos/ahp-solver/index.html",

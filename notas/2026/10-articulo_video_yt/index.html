@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Aplicación web que estima el riesgo de enfermedad renal crónica a partir de datos clínicos, con visualizaciones para el profesional sanitario.">
+<meta name="author" content="José Pablo Soriano Torres">
+<meta name="description" content="Estudiando un artículo del máster a través de la creación de un vídeo explicativo">
 
-<title>PhysiCKD – José Pablo Soriano Torres</title>
+<title>Usando Manim para estudiar – José Pablo Soriano Torres</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -87,10 +88,12 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../../recursos/css/notas.css">
 <link rel="stylesheet" href="../../../recursos/css/biblioteca.css">
 <link rel="stylesheet" href="../../../recursos/css/aventuras.css">
-<meta property="og:title" content="PhysiCKD – José Pablo Soriano Torres">
-<meta property="og:description" content="Aplicación web que estima el riesgo de enfermedad renal crónica a partir de datos clínicos, con visualizaciones para el profesional sanitario.">
-<meta property="og:image" content="https://thisisjosepablo.github.io/sobre-mi/proyectos/physickd/recursos/img/logo/og-exlibris.png">
+<meta property="og:title" content="Usando Manim para estudiar – José Pablo Soriano Torres">
+<meta property="og:description" content="Estudiando un artículo del máster a través de la creación de un vídeo explicativo">
+<meta property="og:image" content="https://thisisjosepablo.github.io/notas/2026/10-articulo_video_yt/imgs/portada_articulo.png">
 <meta property="og:site_name" content="José Pablo Soriano Torres">
+<meta property="og:image:height" content="327">
+<meta property="og:image:width" content="1687">
 </head>
 
 <body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -317,16 +320,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
-   
-  <ul>
-  <li><a href="#qué-es" id="toc-qué-es" class="nav-link active" data-scroll-target="#qué-es">Qué es</a></li>
-  <li><a href="#funcionalidades" id="toc-funcionalidades" class="nav-link" data-scroll-target="#funcionalidades">Funcionalidades</a></li>
-  <li><a href="#stack" id="toc-stack" class="nav-link" data-scroll-target="#stack">Stack</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -339,42 +334,39 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <nav class="migas" aria-label="Migas de pan">
   <ol>
-        <li><a href="../../../sobre-mi/index.html">Sobre mí</a></li>
-        <li><a href="../../../sobre-mi/proyectos/index.html">Proyectos</a></li>
-        <li aria-current="page">PhysiCKD</li>
+        <li><a href="../../../notas/index.html">Notas</a></li>
+        <li aria-current="page">Usando Manim para estudiar</li>
   </ol>
 </nav>
 <div class="quarto-title">
-<p class="proyecto-tipo">Machine learning · Salud</p>
-<h1 class="title">PhysiCKD</h1>
+<h1 class="title">Usando Manim para estudiar</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">React</div>
-    <div class="quarto-category">Flask</div>
-    <div class="quarto-category">scikit-learn</div>
-    <div class="quarto-category">Chart.js</div>
-    <div class="quarto-category">pandas</div>
+    <div class="quarto-category">master</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Aplicación web que estima el riesgo de enfermedad renal crónica a partir de datos clínicos, con visualizaciones para el profesional sanitario.
+    Estudiando un artículo del máster a través de la creación de un vídeo explicativo
   </div>
 </div>
 
 
-<div class="proyecto-acciones">
-  <a class="btn perfil-boton" href="https://github.com/thisisjosepablo/PhysiCKD" target="_blank" rel="noopener"><i class="bi bi-github"></i> Ver código</a>
-</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>José Pablo Soriano Torres </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">21 de enero de 2026</p>
+      <p class="date">4 de octubre de 2026</p>
     </div>
   </div>
   
@@ -386,38 +378,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="qué-es" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es">Qué es</h2>
-<p>Una aplicación web pensada para profesionales sanitarios: introducen los datos del paciente (presión arterial, edad, valores de laboratorio…) y obtienen una <strong>estimación del riesgo de enfermedad renal crónica (ERC)</strong> acompañada de analíticas visuales.</p>
-</section>
-<section id="funcionalidades" class="level2">
-<h2 class="anchored" data-anchor-id="funcionalidades">Funcionalidades</h2>
-<ul>
-<li><strong>Predicción con <em>machine learning</em></strong> mediante un modelo de <em>Gradient Boosting</em>.</li>
-<li><strong>Formulario interactivo</strong> con validación en tiempo real y diseño adaptable.</li>
-<li><strong>Visualizaciones</strong>: distribución del riesgo, comparación de parámetros y estadísticas de población.</li>
-<li><strong>Análisis estadístico</strong> que sitúa los valores del paciente frente a referencias poblacionales.</li>
-</ul>
-</section>
-<section id="stack" class="level2">
-<h2 class="anchored" data-anchor-id="stack">Stack</h2>
-<ul>
-<li><strong>Frontend:</strong> React 19, Vite, Chart.js y React Chart.js 2.</li>
-<li><strong>Backend:</strong> Flask, scikit-learn, pandas, joblib y Flask-CORS.</li>
-</ul>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgs/portada_articulo.png" class="img-fluid figure-img"></p>
+<figcaption>Portada del artículo</figcaption>
+</figure>
 </div>
-<div class="callout-body-container">
-<p>Proyecto con fines educativos y de investigación. No sustituye el consejo, diagnóstico ni tratamiento médico profesional.</p>
-</div>
-</div>
-</div>
+<p>En una asignatura del máster nos comentaron que teníamos que leer un artículo. Esta asignatura se llama <em>PROTEOMICS FOR HEALTH RESEARCH</em> . El artículo era parte del primer tema que nos presentaban, una introducción a la <strong>proteómica</strong>, un concepto que hasta ahora desconocía totalmente.</p>
+<p>Comencé a leerlo y me costaba entenderlo. Se tocaban conceptos muy relacionados con el ámbito bioquímico, y claro, yo más perdido que el barco del arroz.</p>
+<p>Pensé: ¿y por qué no decirle a la IA o SI que cree un vídeo explicativo tal y cual, pero usando python? Todo por el siguiente tweet que leí de Karpathy:</p>
+<blockquote class="blockquote">
+<p>Explainer videos. The output format I am most bullish on is fully custom / bespoke explainer videos generated on any arbitrary topic. Experiment with things like “Create a 3b1b style video explainer on X. Use my ElevenLabs API key for audio narration”. (you’d need an API key for the latter or you can ask your LLM to find you decent free alternatives that use your local compute). This is actually starting to work!</p>
+<p>— Andrej Karpathy, <a href="https://x.com/karpathy/status/2105819303471976479">X</a></p>
+</blockquote>
+<p>Y como era de esperar, tenía razón XD.</p>
+<p>Así, con la ayuda de Claude, generé un vídeo con Manim usando python. De la misma forma, generé el guión y comencé a grabar. El resultado es el siguiente:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube-nocookie.com/embed/I_Qvvw-Gv0Q" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Gracias a esto no solo me ha permitido crear un contenido bastante chulo sino que me ha permitido entender el artículo que en un inicio no tenía ni idea.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script>

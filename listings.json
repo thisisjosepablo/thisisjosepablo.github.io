@@ -28,16 +28,17 @@
     ]
   },
   {
-    "listing": "/biblioteca/index.html",
+    "listing": "/aventuras/index.html",
     "items": []
   },
   {
-    "listing": "/aventuras/index.html",
+    "listing": "/biblioteca/index.html",
     "items": []
   },
   {
     "listing": "/notas/index.html",
     "items": [
+      "/notas/2026/10-articulo_video_yt/index.html",
       "/notas/2026/09-bienvenida/index.html"
     ]
   }
