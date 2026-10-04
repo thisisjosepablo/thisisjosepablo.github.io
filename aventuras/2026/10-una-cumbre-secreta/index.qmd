@@ -1,0 +1,23 @@
+---
+title: "Una cumbre secreta"             # ojo: ni el título ni la carpeta deben delatar la respuesta
+description: "Resuelve el acertijo para ver esta aventura."
+date: 2026-10-04
+secreto: true                     # la tarjeta de la lista sale con candado y sin foto
+search: false                     # fuera del buscador: si no, sus resultados enseñarían la línea oculta
+# lugar: …                        # mejor sin lugar: suele delatar la respuesta
+---
+
+::: {.acertijo}
+
+Un rey perdió su trono, pero ganó una montaña ¿Cómo se llama?
+
+[Mulay]{.oculto}
+:::
+
+<!-- La parte secreta la cifra "./web acertijo aventuras/2026/10-una-cumbre-secreta" entre estas dos marcas -->
+<!-- acertijo:inicio -->
+```{=html}
+<script type="application/json" id="acertijo-datos">{"version": 1, "iteraciones": 600000, "sal": "KkQj5CneTl/IsVVT/w3BHQ==", "cajas": [{"cifra": "DY0i5E5AxgvmoBuU0XadRPvsWfc/hSGS1tpWzwXCzYwPm0PHXNa2yCAG3kJ0DI73pVrMGfQH/pVkTJMadWdtyh5xkb6iWz4vgMGBCScEcKH4+AI3oU8TaJoACSbJ60VnVA8yYfyErd8NoVfPGy5xh43M2CaMvYjlSVY4cR1N1RYBdYJgsQfbHilxYh8NgdRlM2V58gpKCtUEtaLSxc3Sdk1xAcEjjiwuE1lLMXthADOSRoWTmEx5sSG+HWK4ZQplduhPZg81MnoF40nRTZtmnzeDUkjlAgUeGexaeeIJgLv8O0TEbwOW6m0GroYWs49hvaHFkU6+KO5WwBjseBRlF9kzN1LyV3vOlJ1Yg/WBB4Z4qyiAYZea4Yky2ZEiq7q93LukjGylOWando1dl5yoGzdL+IPqCmDScGJ7ZR4IPRwd7ZtLDmjy9ILvSizVXAExjgI8Pzb8MhlYeRngZDRB8iG/ybGqVxxJ2O3r7B5/LvtwxAuk58Ryj/Ryct+WvkypI9PtOMva1eINlzxgLgvcfMQVl9Kivy0Za9AOc6+p4biBDpMud6nAZxjveNAlx6t88Y7MlGuv/vbrRhuS1f4MYxBz6ChJTyPqxNmM6RQcgMbQpEZClhszWvwgCBL+LqaSNlHajBo/38KFwQn9rPlL8iklOWU1X+Km44s4g6fiUR1NnCmnI37CDK5Y2GixdotVVDLo7xatF5Lgzn6E4wFmZyItQWCxv6PmIkGwQM4QbsOkBKYG5M41Cu4jHIYGdyovcWGLZhix7XqWtX8EA4q+nLISLa6kUYaV6kLY6PGnxT2YQM84Q3y8bPHbiKgCcm5yGuPyeLr7n0ZZcOngqO+e0b/ArVTHFNhSBLOQt3SWPwsJMV3Vlh3Bmdz99myhK9BO4UjvXwRfbMjDA2HUH14k2J19TtJo/x8KICzYa0ytF0Zit9vdVS5PKUhqnnfyjHBUhAzzljr/vQ7SoYfPW71huNqzifOADlc9WIfNDa52Krr3WIj+l+PuKqoJ0/aUMw3GJgAdDVPju9lHMo7lSNOo2vsGs7naJNe2mdgtde5h+a6R9zSzSwVrvgLCdV3O0aiFhCxHa6FGALdtJY+tI7B6mlhgGkrXX1X3fdQ2m4u69h/RszwEJQXKDA==", "sello": "YiD5uwdrdSF1pNPqDbJ2ppLPdKvOCNOEkgWBhgAWKh8="}]}</script>
+<script type="module" src="/recursos/js/acertijo.js"></script>
+```
+<!-- acertijo:fin -->

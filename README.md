@@ -13,6 +13,7 @@ Todo se hace desde la terminal, en la carpeta de la web:
 | Escribir una nota | `./web nota "Título" --etiquetas "datos, salud"` |
 | Contar una aventura | `./web aventura "Título" --lugar "Segura de la Sierra"` |
 | Añadir las fotos de una aventura | meterlas en `_originales/` y `./web fotos aventuras/2026/09-nombre` |
+| Esconder una aventura tras un acertijo | `./web aventura "Título" --secreta` y luego `./web acertijo <carpeta> --video <enlace>` |
 | Añadir un proyecto | `./web proyecto "Nombre"` |
 | Añadir un libro | `./web libro` (pregunta los datos) |
 | Actualizar trayectoria, formación… | `./web editar trayectoria` (o `formacion`, `publicaciones`, `idiomas`, `reconocimientos`, `libros`) |
@@ -86,6 +87,11 @@ Los ✏️ son los únicos sitios que se editan en el día a día.
 - **Fotos**: nunca se suben los originales. `./web fotos` quita el GPS, las gira, corrige el color y las
   comprime a WebP (máx. 1600 px); además añade la galería a la aventura y activa su portada.
 - **Vídeos**: `{{< video https://youtu.be/ID >}}` en cualquier página.
+- **Aventuras secretas**: el acertijo y sus pistas (`::: {.pista}`) van a la vista en `index.qmd`; la crónica
+  (`_secreto.md`, que no se sube a git) y el vídeo se publican **cifrados con la respuesta** por `./web acertijo`.
+  Cada vez que cambies `_secreto.md`, el vídeo o la respuesta, vuelve a ejecutarlo. La respuesta no se guarda en
+  ningún sitio; quien visita solo ve el contenido si la acierta (da igual tildes, mayúsculas y espacios).
+  Ni el título ni el nombre de la carpeta deben delatar la respuesta.
 
 ## Puesta en marcha (una sola vez)
 

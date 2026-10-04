@@ -10,6 +10,7 @@ project:
     - "**/*.qmd"            # solo se publican las páginas .qmd (README.md queda fuera)
   resources:
     - recursos/img/          # imágenes comunes que se usan desde el CSS
+    - recursos/js/           # scripts que se cargan desde las páginas (acertijos)
     - robots.txt             # indica a los buscadores dónde está el sitemap
 
 website:

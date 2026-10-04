@@ -4,7 +4,9 @@
   ./web ver                         abre la vista previa en el navegador
   ./web nota "Título"               crea una nota nueva
   ./web aventura "Título"           crea una aventura nueva (con su carpeta de fotos)
+                                    con --secreta, una aventura que se abre resolviendo un acertijo
   ./web fotos <carpeta>             prepara las fotos de una aventura (quita GPS, optimiza)
+  ./web acertijo <carpeta>          cifra la parte secreta de una aventura con la respuesta
   ./web proyecto "Nombre"           crea un proyecto en "Sobre mí"
   ./web libro                       añade un libro a la Biblioteca (pregunta los datos)
   ./web editar <qué>                abre un archivo de datos: trayectoria, formacion,
@@ -15,8 +17,13 @@
 Ejecuta ./web <orden> --help para ver las opciones de cada orden.
 """
 import argparse
+import base64
 import datetime as dt
+import hashlib
+import hmac
 import os
+import re
+import secrets
 import shutil
 import subprocess
 import sys
@@ -100,6 +107,8 @@ Escribe aquí la nota.
 
 
 def aventura(a):
+    if a.secreta:
+        return aventura_secreta(a)
     carpeta = carpeta_fechada("aventuras", a.titulo)
     (carpeta / "_originales").mkdir(parents=True)
     rel = carpeta.relative_to(RAIZ)
@@ -125,6 +134,130 @@ Cuenta aquí la aventura.
 """)
     creado(carpeta / "index.qmd",
            f"mete las fotos en {rel}/_originales/ y ejecuta ./web fotos {rel} (las añade solas)")
+
+
+def aventura_secreta(a):
+    """Aventura que se abre con un acertijo. Lo visible (título, acertijo, pistas) va en index.qmd;
+    lo secreto (crónica en _secreto.md y vídeo) se cifra con ./web acertijo y nunca se sube en claro."""
+    carpeta = carpeta_fechada("aventuras", a.titulo)
+    carpeta.mkdir(parents=True)
+    rel = carpeta.relative_to(RAIZ)
+    (carpeta / "index.qmd").write_text(f"""---
+title: {comillas(a.titulo)}             # ojo: ni el título ni la carpeta deben delatar la respuesta
+description: "Resuelve el acertijo para ver esta aventura."
+date: {HOY:%Y-%m-%d}
+secreto: true                     # la tarjeta de la lista sale con candado y sin foto
+search: false                     # fuera del buscador: si no, sus resultados enseñarían la línea oculta
+# lugar: …                        # mejor sin lugar: suele delatar la respuesta
+---
+
+::: {{.acertijo}}
+TODO: escribe aquí el acertijo.
+
+[TODO: línea oculta (opcional): solo se ve al seleccionarla con el ratón.]{{.oculto}}
+
+::: {{.pista}}
+TODO: primera pista (aparece tras 3 intentos fallidos).
+:::
+
+::: {{.pista}}
+TODO: segunda pista (aparece tras 6).
+:::
+:::
+
+<!-- La parte secreta la cifra "./web acertijo {rel}" entre estas dos marcas -->
+<!-- acertijo:inicio -->
+<!-- acertijo:fin -->
+""")
+    (carpeta / "_secreto.md").write_text(
+        "Esta es la crónica que solo verá quien resuelva el acertijo (Markdown normal).\n\n"
+        "Este archivo NO se sube a GitHub: se publica cifrado al ejecutar ./web acertijo.\n")
+    creado(carpeta / "index.qmd",
+           f"escribe el acertijo y {rel}/_secreto.md; luego ./web acertijo {rel} --video <enlace>")
+
+
+# ---------------------------------------------------------------- acertijos
+
+ITERACIONES = 600_000      # PBKDF2: cuanto más alto, más lento probar respuestas a ciegas
+
+
+def normalizar(texto):
+    """"Mulhacén " → "mulhacen" (igual que normalizar() en recursos/js/acertijo.js)."""
+    t = unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode().lower()
+    return "".join(c for c in t if c.isalnum())
+
+
+def b64(datos):
+    return base64.b64encode(datos).decode()
+
+
+def cifrar(secreto, respuestas):
+    """Cifra el secreto una vez por cada respuesta válida (todas comparten la sal).
+    Mismo esquema que descifrar() en recursos/js/acertijo.js."""
+    sal = secrets.token_bytes(16)
+    claro = json.dumps(secreto, ensure_ascii=False).encode()
+    cajas = []
+    for r in respuestas:
+        k = hashlib.pbkdf2_hmac("sha256", r.encode(), sal, ITERACIONES, dklen=64)
+        flujo = b"".join(hmac.new(k[:32], i.to_bytes(4, "big"), "sha256").digest()
+                         for i in range((len(claro) + 31) // 32))
+        cifra = bytes(x ^ y for x, y in zip(claro, flujo))
+        cajas.append({"cifra": b64(cifra), "sello": b64(hmac.new(k[32:], cifra, "sha256").digest())})
+    secrets.SystemRandom().shuffle(cajas)
+    return {"version": 1, "iteraciones": ITERACIONES, "sal": b64(sal), "cajas": cajas}
+
+
+def id_youtube(enlace):
+    m = (re.search(r"(?:youtu\.be/|[?&]v=|/embed/|/shorts/|/live/)([\w-]{11})", enlace)
+         or re.fullmatch(r"([\w-]{11})", enlace))
+    if not m:
+        sys.exit(f"No reconozco el enlace de YouTube: {enlace}")
+    return m.group(1)
+
+
+def acertijo(a):
+    carpeta = Path(a.carpeta).resolve()
+    qmd = carpeta / "index.qmd"
+    if not qmd.exists():
+        sys.exit(f"No encuentro {qmd}")
+    texto = qmd.read_text()
+    ini, fin = "<!-- acertijo:inicio -->", "<!-- acertijo:fin -->"
+    if ini not in texto or fin not in texto:
+        sys.exit(f"Faltan las marcas {ini} / {fin} en el index.qmd (créala con ./web aventura --secreta).")
+
+    secreto = {}
+    enlace = a.video if a.video is not None else input("Enlace del vídeo de YouTube (Enter si no hay): ")
+    if enlace.strip():
+        secreto["video"] = id_youtube(enlace.strip())
+    cronica = carpeta / "_secreto.md"
+    if cronica.exists():
+        secreto["html"] = subprocess.run(["quarto", "pandoc", str(cronica), "-t", "html", "--wrap=none"],
+                                         capture_output=True, text=True, check=True).stdout
+    if not secreto:
+        sys.exit("No hay nada que esconder: pasa --video o escribe _secreto.md.")
+
+    respuestas = a.respuesta or []
+    if not respuestas:
+        print("Respuestas válidas del acertijo (da igual tildes, mayúsculas y espacios).")
+        while r := input("Respuesta" + (" (Enter para terminar)" if respuestas else "") + ": "):
+            respuestas.append(r)
+    respuestas = list(dict.fromkeys(filter(None, map(normalizar, respuestas))))
+    if not respuestas:
+        sys.exit("Hace falta al menos una respuesta.")
+    for r in respuestas:
+        if len(r) < 6:
+            print(f"  Aviso: «{r}» es corta; cuanto más corta, más fácil de adivinar probando.")
+
+    datos = cifrar(secreto, respuestas)
+    bloque = ("```{=html}\n"
+              f'<script type="application/json" id="acertijo-datos">{json.dumps(datos)}</script>\n'
+              '<script type="module" src="/recursos/js/acertijo.js"></script>\n'
+              "```")
+    antes, resto = texto.split(ini, 1)
+    qmd.write_text(antes + ini + "\n" + bloque + "\n" + fin + resto.split(fin, 1)[1])
+    partes = (["vídeo"] if "video" in secreto else []) + (["crónica de _secreto.md"] if "html" in secreto else [])
+    print(f"✔ Cifrado ({' y '.join(partes)}) con {len(respuestas)} respuesta(s) válida(s): {', '.join(respuestas)}")
+    print("  La respuesta no se guarda en ningún sitio: apúntala si no quieres olvidarla.")
 
 
 def proyecto(a):
@@ -309,7 +442,14 @@ def main():
     p = sub.add_parser("aventura", help="nueva aventura")
     p.add_argument("titulo")
     p.add_argument("--lugar", default="")
+    p.add_argument("--secreta", action="store_true", help="se abre resolviendo un acertijo")
     p.set_defaults(fn=aventura)
+    p = sub.add_parser("acertijo", help="cifrar la parte secreta de una aventura")
+    p.add_argument("carpeta")
+    p.add_argument("--video", help="enlace de YouTube (si no, lo pregunta)")
+    p.add_argument("--respuesta", action="append",
+                   help="respuesta válida; se puede repetir (si no, las pregunta sin dejarlas en el historial)")
+    p.set_defaults(fn=acertijo)
     p = sub.add_parser("fotos", help="preparar las fotos de una aventura")
     p.add_argument("carpeta")
     p.add_argument("--portada", type=int, default=1, help="número de la foto de portada")

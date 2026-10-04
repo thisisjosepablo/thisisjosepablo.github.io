@@ -9,7 +9,9 @@
 <% for (const item of items) { %>
   <article class="aventura" <%= metadataAttrs(item) %>>
     <a class="aventura-enlace" href="<%- item.path %>">
-      <% if (item.image) { %>
+      <% if (item.secreto) { %>
+        <div class="aventura-portada aventura-candado"><i class="bi bi-lock-fill"></i><span>Acertijo</span></div>
+      <% } else if (item.image) { %>
         <img class="aventura-portada" src="<%- item.image %>" alt="" loading="lazy">
       <% } %>
       <div class="aventura-cuerpo">
