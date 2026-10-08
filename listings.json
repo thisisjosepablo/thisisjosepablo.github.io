@@ -28,18 +28,19 @@
     ]
   },
   {
+    "listing": "/biblioteca/index.html",
+    "items": []
+  },
+  {
     "listing": "/aventuras/index.html",
     "items": [
       "/aventuras/2026/10-una-cumbre-secreta/index.html"
     ]
   },
   {
-    "listing": "/biblioteca/index.html",
-    "items": []
-  },
-  {
     "listing": "/notas/index.html",
     "items": [
+      "/notas/2026/10-david_gonzales_rivas1/index.html",
       "/notas/2026/10-articulo_video_yt/index.html",
       "/notas/2026/09-bienvenida/index.html"
     ]

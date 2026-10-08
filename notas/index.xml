@@ -16,8 +16,50 @@
 <height>76</height>
 <width>144</width>
 </image>
-<generator>quarto-1.10.18</generator>
-<lastBuildDate>Sun, 04 Oct 2026 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.10.19</generator>
+<lastBuildDate>Wed, 07 Oct 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Conocí a Diego González Rivas</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/10-david_gonzales_rivas1/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<p>Diego González Rivas es un cirujano torácico de prestigio mundial, conocido por desarrollar una técnica mínimamente invasiva a través de una sola incisión.</p>
+<p><img src="https://thisisjosepablo.github.io/notas/2026/10-david_gonzales_rivas1/imgs/vats_uniportal.png" class="img-fluid"></p>
+<p>Esta técnica permite operar al paciente realizando una única y milimétrica incisión, en lugar de abrirle las costillas con un separador costal, algo muchísimo más doloroso e invasivo.</p>
+<p>A pesar de este gran avance, Diego decidió innovar aún más. Por ello, empresas de Silicon Valley contactaron con él. Estas empresas le ofrecían patentes que permitieran operar al paciente usando dicha técnica pero de manera más robótica.</p>
+<p>Así, con el paso del tiempo y con algún que otro incoveniente con dichas empresas, logró hacer la primera cirugía puramente robótica uniportal en el mundo (URATS).</p>
+<p><img src="https://thisisjosepablo.github.io/notas/2026/10-david_gonzales_rivas1/imgs/runiportal.png" class="img-fluid"></p>
+<p>También, un hito que me gustaría mostrar es que realizó la primera telecirugía torácida del mundo transcontinental (8000 km).</p>
+<p>Al finalizar la conferencia, tuve la oportunidad de preguntarle:</p>
+<blockquote class="blockquote">
+<p><strong>Yo:</strong> ¿Qué limites observastéis relacionado con la conexión, puesto que un desfase de milisegundos podía provocar una situación indebida?</p>
+<p><strong>Diego:</strong> Ninguna, la conexión basada en starlink funcionaba sin ningún tipo de problema, era super rápida. ¿El problema? Que este tipo de conexión es carísima y, por ejemplo, hospitales públicos no se lo pueden permitir.</p>
+</blockquote>
+<p>Y después, le pedí una firma. ¿Dónde? En mi portatil. Diego se sorprendío, porque era la primera vez que firmaba uno (no sé cómo lo hace, pero siempre consigue ser el primero en conseguir algo :P). ¡Hasta se hizo un vídeo para subirlo a sus redes sociales!</p>
+<div class="galeria">
+<p><a href="imgs/galeria-01.webp" class="lightbox" data-gallery="galeria"><img src="https://thisisjosepablo.github.io/notas/2026/10-david_gonzales_rivas1/imgs/galeria-01.webp" class="img-fluid" alt="Diego González Rivas firmando mi portátil al terminar la charla"></a></p>
+<p><a href="imgs/galeria-02.webp" class="lightbox" data-gallery="galeria"><img src="https://thisisjosepablo.github.io/notas/2026/10-david_gonzales_rivas1/imgs/galeria-02.webp" class="img-fluid" alt="El portátil lleno de pegatinas con la dedicatoria y la firma de Diego"></a></p>
+<video src="imgs/firma-portatil.mp4" controls="" playsinline="" preload="metadata" aria-label="Historia de Instagram de Diego: «Primera vez en mi vida que firmo un portátil»"></video>
+</div>
+
+
+
+ ]]></description>
+  <category>sorpresas</category>
+  <category>medicina</category>
+  <category>cirujía</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/10-david_gonzales_rivas1/</guid>
+  <pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Usando Manim para estudiar</title>
   <dc:creator>José Pablo Soriano Torres</dc:creator>

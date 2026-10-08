@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,9 +45,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-d5f085cf6dd052ff2e75e80f8992d383.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -415,10 +415,8 @@ window.Quarto = {
 
 <div class="list aventuras-lista">
 
-  <article class="aventura" data-index="0" data-listing-date-sort="1791072000000" data-listing-file-modified-sort="1791137477652" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="44">
+  <article class="aventura aventura-secreta" data-index="0" data-listing-date-sort="1791072000000" data-listing-file-modified-sort="1791472535560" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="44">
     <a class="aventura-enlace" href="../aventuras/2026/10-una-cumbre-secreta/index.html">
-      
-        <div class="aventura-portada aventura-candado"><i class="bi bi-lock-fill"></i><span>Acertijo</span></div>
       
       <div class="aventura-cuerpo">
         <div class="aventura-meta">
@@ -428,10 +426,28 @@ window.Quarto = {
         <h3 class="aventura-titulo listing-title anchored">Una cumbre secreta</h3>
         <p class="aventura-resumen listing-description">Resuelve el acertijo para ver esta aventura.</p>
       </div>
+      
+        <i class="aventura-candado bi bi-lock-fill" role="img" aria-label="Acertijo sin resolver"></i>
+      
     </a>
   </article>
 
 </div>
+
+<script>
+  // Aventuras secretas: candado abierto si este navegador ya resolvió el acertijo
+  // (recursos/js/acertijo.js guarda la respuesta con la clave "acertijo:<ruta de la aventura>")
+  document.querySelectorAll(".aventura-secreta").forEach(function (tarjeta) {
+    var ruta = new URL(tarjeta.querySelector("a").href).pathname.replace(/index\.html$/, "");
+    var resuelta = false;
+    try { resuelta = !!localStorage.getItem("acertijo:" + ruta); } catch (e) {}
+    if (!resuelta) return;
+    var candado = tarjeta.querySelector(".aventura-candado");
+    candado.classList.replace("bi-lock-fill", "bi-unlock-fill");
+    candado.setAttribute("aria-label", "Acertijo resuelto");
+    tarjeta.classList.add("resuelta");
+  });
+</script>
 <div class="listing-no-matching d-none">No hay resultados</div>
 </div></main> <!-- /main -->
 <script>
