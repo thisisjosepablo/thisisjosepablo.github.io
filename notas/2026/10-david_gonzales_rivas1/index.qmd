@@ -2,7 +2,7 @@
 title: "Conocí a Diego González Rivas"
 description: "Charla divulgativa en la UJA con sorpresa al final"
 date: 2026-10-07
-categories: [sorpresas, medicina, cirujía]
+categories: [sorpresas, medicina, cirugía]
 resources: [imgs/firma-portatil.mp4]   # el vídeo de la galería (Quarto no lo copia solo)
 ---
 
