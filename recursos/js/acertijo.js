@@ -69,7 +69,8 @@ function montar() {
   if (!caja) return;
   const fuente = document.getElementById("acertijo-datos");
   const datos = fuente ? JSON.parse(fuente.textContent) : null;
-  const memoria = `acertijo:${location.pathname}`;
+  // Sin "index.html": misma clave entre por donde entre; la lista de aventuras la lee para abrir el candado
+  const memoria = `acertijo:${location.pathname.replace(/index\.html$/, "")}`;
   const pistas = [...caja.querySelectorAll(".pista")];
   pistas.forEach((p) => (p.hidden = true));
 
@@ -127,9 +128,13 @@ function montar() {
     entrada.select();
   });
 
-  // Si esta persona ya lo resolvió antes, se abre solo
+  // Si esta persona ya lo resolvió antes, se abre solo; si la respuesta cambió, se olvida la vieja
+  // (así la lista de aventuras vuelve a mostrar el candado cerrado)
   const anterior = guardado(memoria);
-  if (anterior) descifrar(datos, anterior).then((s) => s && resuelto(s, anterior));
+  if (anterior) descifrar(datos, anterior).then((s) => {
+    if (s) return resuelto(s, anterior);
+    try { localStorage.removeItem(memoria); } catch {}
+  });
 }
 
 if (typeof document !== "undefined") montar();

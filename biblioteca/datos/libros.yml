@@ -1,13 +1,14 @@
 # Cada libro es un elemento de la lista.
 #   estado:  leyendo | leido | pendiente
 #   rating:  1-5 (solo para leídos)
-#   image:   portada; con ISBN puedes usar https://covers.openlibrary.org/b/isbn/<ISBN>-M.jpg
-#            (si esa URL sale vacía, busca el libro en openlibrary.org y usa .../b/id/<número de portada>-M.jpg)
+#   image:   portada, guardada en biblioteca/datos/imgs/ (./web libro la descarga sola).
+#            Para cambiarla, pega aquí su URL (p. ej. https://covers.openlibrary.org/b/isbn/<ISBN>-M.jpg
+#            o .../b/id/<número de portada>-M.jpg) y ejecuta ./web portadas: la descarga y pone la ruta local.
 #   date:    fecha en que lo terminaste (o empezaste, si lo estás leyendo)
 
 - title: "Patria"
   autor: "Fernando Aramburu"
-  image: https://covers.openlibrary.org/b/id/12334964-M.jpg   # su ISBN no tiene portada en Open Library
+  image: datos/imgs/patria.webp   # su ISBN no tiene portada en Open Library
   categories: [leyendo]
   date: 2026-07-28
   description: ""
@@ -15,7 +16,7 @@
 # Trilogía "La asistenta" (Freida McFadden), en orden de lectura
 - title: "La asistenta"
   autor: "Freida McFadden"
-  image: https://covers.openlibrary.org/b/isbn/9788491294283-M.jpg
+  image: datos/imgs/la-asistenta.webp
   categories: [leido]
   date: 2026-01     # TODO: cuándo lo terminaste (ordena la lista de leídos)
   rating: 5          # TODO: tu valoración
@@ -23,7 +24,7 @@
 
 - title: "El secreto de la asistenta"
   autor: "Freida McFadden"
-  image: https://covers.openlibrary.org/b/isbn/9788419835734-M.jpg
+  image: datos/imgs/el-secreto-de-la-asistenta.webp
   categories: [leido]
   date: 2026-01
   rating: 4
@@ -31,7 +32,7 @@
 
 - title: "La asistenta te vigila"
   autor: "Freida McFadden"
-  image: https://covers.openlibrary.org/b/isbn/9788410257184-M.jpg
+  image: datos/imgs/la-asistenta-te-vigila.webp
   categories: [leido]
   date: 2026-01
   rating: 3
@@ -39,7 +40,7 @@
 
 - title: "Hábitos atómicos"
   autor: "James Clear"
-  image: https://covers.openlibrary.org/b/isbn/9780735211292-M.jpg
+  image: datos/imgs/habitos-atomicos.webp
   categories: [leido]
   date: 2025-06-02
   rating: 3
@@ -47,7 +48,7 @@
 
 - title: "Reina Roja"
   autor: "Juan Gómez Jurado"
-  image: https://covers.openlibrary.org/b/id/9256100-M.jpg
+  image: datos/imgs/reina-roja.webp
   categories: [leido]
   date: 2026-09-28
   rating: 5

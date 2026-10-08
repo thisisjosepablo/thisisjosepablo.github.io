@@ -9,6 +9,7 @@
   ./web acertijo <carpeta>          cifra la parte secreta de una aventura con la respuesta
   ./web proyecto "Nombre"           crea un proyecto en "Sobre mí"
   ./web libro                       añade un libro a la Biblioteca (pregunta los datos)
+  ./web portadas                    descarga las portadas de libros que aún son enlaces
   ./web editar <qué>                abre un archivo de datos: trayectoria, formacion,
                                     publicaciones, idiomas, reconocimientos, libros
   ./web comprobar                   compila la web entera para ver que no hay errores
@@ -44,6 +45,9 @@ DATOS = {
     "reconocimientos": "sobre-mi/datos/reconocimientos.yml",
     "libros": "biblioteca/datos/libros.yml",
 }
+
+PORTADAS = "biblioteca/datos/imgs"     # portadas de los libros, descargadas (./web libro, ./web portadas)
+PORTADA_YML = "datos/imgs"             # la misma carpeta, tal como se escribe en 'image:' de libros.yml
 
 
 # ---------------------------------------------------------------- utilidades
@@ -313,6 +317,27 @@ def portada(isbn, titulo, autor):
     return None
 
 
+def imagemagick():
+    im = next((c for c in ("magick", "convert") if shutil.which(c)), None)
+    if not im:
+        sys.exit("No encuentro ImageMagick (magick o convert).")
+    return im
+
+
+def descargar_portada(url, titulo):
+    """Guarda la portada en biblioteca/datos/imgs/<título>.webp, a 240×360 (el triple de lo que se
+    muestra, nítida en pantallas retina) y sin metadatos. Devuelve la ruta para libros.yml."""
+    url = re.sub(r"-[SM]\.jpg$", "-L.jpg", url)      # Open Library: la grande, para reducirla con calidad
+    destino = RAIZ / PORTADAS / f"{slug(titulo)}.webp"
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    peticion = urllib.request.Request(url, headers={"User-Agent": "web-josepablo"})
+    with urllib.request.urlopen(peticion, timeout=30) as r:
+        imagen = r.read()
+    subprocess.run([imagemagick(), "-", "-strip", "-resize", "240x360^", "-quality", "80", str(destino)],
+                   input=imagen, check=True)
+    return f"{PORTADA_YML}/{destino.name}"
+
+
 def libro(_):
     print("Nuevo libro para la Biblioteca (Enter para dejar un campo vacío)\n")
     titulo = input("Título: ").strip()
@@ -332,8 +357,13 @@ def libro(_):
     print("\nBuscando la portada en Open Library…")
     url = portada(isbn, titulo, autor)
     if url:
-        bloque.append(f"  image: {url}")
-        print(f"  Portada: {url}  (ábrela para comprobar que es la edición correcta)")
+        try:
+            local = descargar_portada(url, titulo)
+            bloque.append(f"  image: {local}")
+            print(f"  Portada guardada en biblioteca/{local}  (ábrela para comprobar que es la edición correcta)")
+        except Exception as e:
+            bloque.append(f"  image: {url}")
+            print(f"  No he podido descargar la portada ({e}); dejo el enlace: descárgala luego con ./web portadas")
     else:
         print("  No he encontrado portada: el libro se mostrará sin ella (puedes añadir 'image:' a mano).")
     bloque += [f"  categories: [{estado}]", f"  date: {HOY:%Y-%m-%d}"]
@@ -347,6 +377,28 @@ def libro(_):
         f.write("\n".join(bloque) + "\n")
     print(f"\n✔ Añadido a {DATOS['libros']}")
     print("  Cuando lo termines, cambia su estado a [leido] y ponle valoración (./web editar libros)")
+
+
+def portadas(_):
+    """Descarga las portadas de libros.yml que aún son enlaces y pone en su lugar la ruta local.
+    Sirve también para cambiar una portada: pega su URL en 'image:' y ejecuta ./web portadas."""
+    ruta = RAIZ / DATOS["libros"]
+    lineas = ruta.read_text().splitlines(keepends=True)
+    titulo, hechas = None, 0
+    for i, linea in enumerate(lineas):
+        if m := re.match(r'\s*-\s*title:\s*"?(.*?)"?\s*$', linea):
+            titulo = m.group(1)
+        elif (m := re.match(r"(\s*image:\s*)(https?://\S+)(.*)", linea, re.S)) and titulo:
+            try:
+                lineas[i] = m.group(1) + descargar_portada(m.group(2), titulo) + m.group(3)
+                hechas += 1
+                print(f"  ✔ {titulo}")
+            except Exception as e:
+                print(f"  ✘ {titulo}: {e} (se queda el enlace)")
+    if not hechas:
+        sys.exit("No hay portadas por descargar: todas están ya en biblioteca/datos/imgs/.")
+    ruta.write_text("".join(lineas))
+    print(f"\n✔ {hechas} portada(s) guardada(s) en {PORTADAS}/ y {DATOS['libros']} actualizado")
 
 
 def editar(a):
@@ -365,9 +417,7 @@ PERFILES_SRGB = ["/usr/share/color/icc/colord/sRGB.icc",
 def fotos(a):
     """Convierte _originales/* en fotos/01.webp… y fotos/portada.webp.
     Borra GPS y metadatos, gira según la cámara, pasa el color a sRGB y comprime."""
-    im = next((c for c in ("magick", "convert") if shutil.which(c)), None)
-    if not im:
-        sys.exit("No encuentro ImageMagick (magick o convert).")
+    im = imagemagick()
     carpeta = Path(a.carpeta).resolve()
     originales = sorted(p for p in (carpeta / "_originales").glob("*") if p.suffix.lower() in EXTENSIONES)
     if not originales:
@@ -459,6 +509,7 @@ def main():
     p.add_argument("nombre")
     p.set_defaults(fn=proyecto)
     sub.add_parser("libro", help="añadir un libro").set_defaults(fn=libro)
+    sub.add_parser("portadas", help="descargar las portadas que aún son enlaces").set_defaults(fn=portadas)
     p = sub.add_parser("editar", help="abrir un archivo de datos")
     p.add_argument("que", choices=DATOS)
     p.set_defaults(fn=editar)

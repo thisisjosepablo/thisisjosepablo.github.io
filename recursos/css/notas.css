@@ -69,3 +69,26 @@ h3.nota-titulo {
     gap: 0.2rem;
   }
 }
+
+/* Galería dentro de una nota: ::: {.galeria} con fotos ![](…){.lightbox group="galeria"} y vídeos.
+   Miniaturas del mismo tamaño (recortadas); al pulsar una foto se ve entera en el visor */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9rem), 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.galeria > p {
+  margin: 0;
+}
+
+.galeria img,
+.galeria video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;           /* vertical, como las fotos y vídeos del móvil */
+  object-fit: cover;
+  border-radius: 0.6rem;
+  background: var(--sendero-card);
+}

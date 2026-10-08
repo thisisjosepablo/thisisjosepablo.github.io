@@ -15,7 +15,8 @@ Todo se hace desde la terminal, en la carpeta de la web:
 | Añadir las fotos de una aventura | meterlas en `_originales/` y `./web fotos aventuras/2026/09-nombre` |
 | Esconder una aventura tras un acertijo | `./web aventura "Título" --secreta` y luego `./web acertijo <carpeta> --video <enlace>` |
 | Añadir un proyecto | `./web proyecto "Nombre"` |
-| Añadir un libro | `./web libro` (pregunta los datos) |
+| Añadir un libro | `./web libro` (pregunta los datos y descarga la portada) |
+| Cambiar la portada de un libro | pegar su URL en `image:` de `libros.yml` y `./web portadas` |
 | Actualizar trayectoria, formación… | `./web editar trayectoria` (o `formacion`, `publicaciones`, `idiomas`, `reconocimientos`, `libros`) |
 | Comprobar que todo compila | `./web comprobar` (con la vista previa cerrada) |
 | **Publicar** | `./web publicar "Mensaje opcional"` |
@@ -51,7 +52,9 @@ personal_website/
 │
 ├── biblioteca/
 │   ├── index.qmd           ← la página
-│   └── datos/libros.yml    ← ✏️ los libros
+│   └── datos/
+│       ├── libros.yml      ← ✏️ los libros
+│       └── imgs/           ← portadas descargadas (las guarda ./web libro / ./web portadas)
 │
 ├── aventuras/
 │   ├── index.qmd           ← la lista de aventuras

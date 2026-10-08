@@ -100,26 +100,28 @@ main.content .lightbox img {
 
 /* ---------- Aventuras secretas ----------
    Tarjeta con candado en la lista y caja del acertijo en la crónica (recursos/js/acertijo.js) */
+/* Tarjeta de una aventura secreta: solo texto, con el candado al lado (se abre al resolverla) */
+.aventura-secreta .aventura-enlace {
+  display: flex;
+  align-items: center;
+  border-style: dashed;
+  border-color: var(--sendero-primary);
+}
+
+.aventura-secreta.resuelta .aventura-enlace {
+  border-style: solid;
+}
+
+.aventura-secreta .aventura-cuerpo {
+  flex: 1;
+}
+
 .aventura-candado {
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: 0.3rem;
-  color: var(--sendero-bg);
-  background: repeating-linear-gradient(135deg,
-    var(--sendero-primary) 0 14px,
-    color-mix(in srgb, var(--sendero-primary) 82%, black) 14px 28px);
-}
-
-.aventura-candado .bi {
-  font-size: 2.6rem;
-}
-
-.aventura-candado span {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  flex-shrink: 0;
+  padding-right: 1.2rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--sendero-primary);
 }
 
 .acertijo {
