@@ -9,7 +9,7 @@
 - title: "Patria"
   autor: "Fernando Aramburu"
   image: datos/imgs/patria.webp   # su ISBN no tiene portada en Open Library
-  categories: [leyendo]
+  categories: [leido]
   date: 2026-07-28
   description: ""
 
@@ -53,3 +53,10 @@
   date: 2026-09-28
   rating: 5
   description: "Engancha la historia y sobretodo el persona principal"
+
+- title: "Anna Karénina"
+  autor: "Lev Tolstói"
+  image: datos/imgs/anna-karenina.webp
+  categories: [leyendo]
+  date: 2026-10-09
+  description: "Primer libro comprado en la librería Orwell"
