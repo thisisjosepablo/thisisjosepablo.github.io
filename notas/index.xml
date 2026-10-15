@@ -17,7 +17,52 @@
 <width>144</width>
 </image>
 <generator>quarto-1.10.19</generator>
-<lastBuildDate>Wed, 07 Oct 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 15 Oct 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Teorema del mono infinito</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/10-infinite-monkey-theorem/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<p>Imagina que tienes en tu casa el siguiente mono, lo vamos a llamar Paquito.</p>
+<p><img src="https://thisisjosepablo.github.io/notas/2026/10-infinite-monkey-theorem/imgs/mono1.png" class="img-fluid"></p>
+<p>A Paquito le encanta tocar los platillos, esta todo el día liado con ellos. Sin embargo, el dueño del mono piensa: ¿por qué no darle un ordenador y domesticarlo para que escriba los correos, conteste los mensajes no leídos, etc?</p>
+<p>Así, le compra el nuevo macbook pro y se lo da.</p>
+<p><img src="https://thisisjosepablo.github.io/notas/2026/10-infinite-monkey-theorem/imgs/mono2.png" class="img-fluid"></p>
+<p>Paquito está flipando, pero hay un GRAN PROBLEMA.</p>
+<p>Es cierto que sabe tocar los platillos, pero habla un idioma que el ser humano no entiende y, por tanto, el dueño no le puede enseñar a utilizar el ordenador.</p>
+<p>No obstante, el dueño de Paquito (pobre Paquito), gran fanático de Miguel Cervantes y de las matemáticas, piensa lo siguiente:</p>
+<p>¿Qué pasaría si Paquito estuviera pulsando las teclas del macbook de manera infinita, solo parando para comer, hacer sus necesidades y dormir?</p>
+<p>Él empieza a divigar y a pensar …</p>
+<p>Si el macbook pro tiene 78 teclas, ¿cuál es la probabilidad de que Paquito escribiera la palabra “quijote” pulsando teclas aleatoriamente?</p>
+<p>La probabilidad de que la primera tecla pulsada sea “q” es <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B1%7D%7B78%7D">, y la probabilidad de que la segunda tecla pulsada sea “u” es también <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B1%7D%7B78%7D">, y así, sucesivamente. Por tanto, la probabilidad de 7 letras formando la palabra “quijote” es:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7B1%7D%7B78%7D%20%5Ctimes%20%5Cfrac%7B1%7D%7B78%7D%20%5Ctimes%20%5Cfrac%7B1%7D%7B78%7D%20%5Ctimes%20%5Cfrac%7B1%7D%7B78%7D%20%5Ctimes%20%5Cfrac%7B1%7D%7B78%7D%20%5Ctimes%20%5Cfrac%7B1%7D%7B78%7D%20%5Ctimes%20%5Cfrac%7B1%7D%7B78%7D%20=%20%5Cleft(%5Cfrac%7B1%7D%7B78%7D%5Cright)%5E7%20=%20%5Cfrac%7B1%7D%7B1.7568%20%5Ctimes%2010%5E%7B13%7D%7D%0A"></p>
+<p>Podemos ver, que aún así, el resultado no es cero, por tanto, es posible que pueda ocurrir.</p>
+<p>Por otro lado, la probabilidad de no escribir la palabra “quijote” en 7 intentos es <img src="https://latex.codecogs.com/png.latex?1%20-%20%5Cleft(%5Cfrac%7B1%7D%7B78%7D%5Cright)%5E7">. Como los intentos son independientes, la probabilidad <img src="https://latex.codecogs.com/png.latex?X_n"> de no escribir “quijote” en ningún <img src="https://latex.codecogs.com/png.latex?n"> conjunto de 7 intentos es:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0AX_n%20=%20%5Cleft(1%20-%20%5Cleft(%5Cfrac%7B1%7D%7B78%7D%5Cright)%5E7%5Cright)%5En%0A"></p>
+<p>Conforme <img src="https://latex.codecogs.com/png.latex?n"> crece, la probabilidad de NO escribir en <img src="https://latex.codecogs.com/png.latex?n"> bloques de 7 intentos la palabra “quijote”, disminuye. Para <img src="https://latex.codecogs.com/png.latex?n=1"> millón, <img src="https://latex.codecogs.com/png.latex?X_n%20=%200,999999943">, pero para <img src="https://latex.codecogs.com/png.latex?n%20=%20100"> billones, la probabilidad cae a <img src="https://latex.codecogs.com/png.latex?0,565923969">.</p>
+<p>Por tanto, el dueño se dio cuenta que conforme el número de intentos que Paquito tenía pulsando teclas en el macbook, aumentaban, era problable que pudiera escribir cada una de las palabras que componen “Don Quijote de la Mancha”.</p>
+<p>Y así, el pobre Paquito</p>
+<p>Dejó de ser Paquito</p>
+<p>Para convertirse en Cervantes</p>
+<p><img src="https://thisisjosepablo.github.io/notas/2026/10-infinite-monkey-theorem/imgs/mono3.png" class="img-fluid"></p>
+
+
+
+ ]]></description>
+  <category>stuff</category>
+  <category>mono</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/10-infinite-monkey-theorem/</guid>
+  <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Conocí a Diego González Rivas</title>
   <dc:creator>José Pablo Soriano Torres</dc:creator>
