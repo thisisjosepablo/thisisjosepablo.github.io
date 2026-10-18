@@ -1,0 +1,21 @@
+---
+title: "aventuras/2026/10-tree-climbing-con-los-hemanos"             # ojo: ni el título ni la carpeta deben delatar la respuesta
+description: "Resuelve el acertijo para ver esta aventura."
+date: 2026-10-18
+secreto: true                     # la tarjeta de la lista sale con candado y sin foto
+search: false                     # fuera del buscador: si no, sus resultados enseñarían la línea oculta
+# lugar: …                        # mejor sin lugar: suele delatar la respuesta
+---
+
+::: {.acertijo}
+Los árboles ...
+
+:::
+
+<!-- La parte secreta la cifra "./web acertijo aventuras/2026/10-tree-climbing-con-los-hemanos" entre estas dos marcas -->
+<!-- acertijo:inicio -->
+```{=html}
+<script type="application/json" id="acertijo-datos">{"version": 1, "iteraciones": 600000, "sal": "vVUhpJdHmmNHDnZsuQiq7w==", "cajas": [{"cifra": "ykxVBHbrb3rKw0HVrZnfwsf0yKR4nSRJvLiP5E1uFvDEKOlXvXQFzhuBQESGMMiYWUNUeMszAJEQsdqWTKt8FbCiqQ6xPpMcgeUFRGGfAqitBoMwSyrBanFlCDFx8a/pvTnzosD1oJ2qhjArHcCmj2tj2cxnSAjrhuJHwvgsCL2KRpSmAEzMW6+dWg9disUeQ9DEGhwa7KlA3CfhnQD3qAGA/18DTR1dDGiZOrTvQ01ntCmBibd3+YKFXLdiYk190LaE3RpQErSx2BNoD85gzAMkrJ1Tr/wvMwelCperqENUgEzNbIff8jXAc3t26GCRkA6dc9RlCDYuwnTaw4QLTyWQA4wRu90Fk89C7KsGP9U7uU8NXycmfc9hE1hKnOB3ZGY3QU97U2CRKpoplof8wFwMq+140XgOkyvW32l2GtitYEHgMgo/FGGj32OcCg0wD6f//R+974og1Sq05f7c+YCkuMzkAE1O26rVGsJuR04Loqgv+BegEgkQjFUr", "sello": "i6Ff1iubELbbTtttz6fZBJ1Hvjf+UrH6VTiqzvSc3R4="}]}</script>
+<script type="module" src="/recursos/js/acertijo.js"></script>
+```
+<!-- acertijo:fin -->
