@@ -1,5 +1,5 @@
 ---
-title: "aventuras/2026/10-tree-climbing-con-los-hemanos"             # ojo: ni el título ni la carpeta deben delatar la respuesta
+title: "Tree climbing con los hermanos"             # ojo: ni el título ni la carpeta deben delatar la respuesta
 description: "Resuelve el acertijo para ver esta aventura."
 date: 2026-10-18
 secreto: true                     # la tarjeta de la lista sale con candado y sin foto
