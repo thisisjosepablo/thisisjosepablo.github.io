@@ -1,0 +1,76 @@
+---
+title: "Participación en CAEPIA 26"
+description: "Comunicación del trabajo sobre calidad y particionamiento de fotografías clínicas."
+date: 2026-11-24
+categories: [conferencia, IA, salud, datos]
+---
+
+# ¿Qué es CAEPIA 26?
+
+Es la XXI Conferencia de la Asociación Española para la Inteligencia Artificial, que se celebró los días del 11 al 13 de Noviembre de 2026 en Jaén.
+
+Un foro bienal abierto a investigadores de todo el mundo para presentar y debatir sus últimos avances científicos y tecnológicos en IA.
+
+
+# ¿De qué trata nuestro trabajo?
+
+El trabajo se titula _"Calidad y particionamiento de fotografía clínica no estandarizada en aprendizaje supervisado"_.
+
+En él tocamos dos temas iguales de importantes, **calidad de imágenes médicas** y **particionamiento de las mismas** para el entrenamiento de modelos de IA. Y estos temas son reflejados en un caso de uso real que llevamos a cabo en SIMIDAT, UJA.
+
+## Calidad de imágenes médicas
+
+Por un lado, el uso de fotografía clínica no estandariza posee de por sí una gran variabilidad:
+
+- Variabilidad del propio dispositivos usado: lente, procesado, nivel de conocimiento a la hora de echar la foto.
+- Variabilidad de cara a la institución: iluminación de cada consulta, protocolos de captura, aparación de objetos no representativos de la región de interés.
+- Variabilidad del paciente: morfología individual como vello, cicatrices, rasgos específicos como lunares.
+
+Por tanto, el modelo puede aprender estos rasgos de variabilidad en lugar de los ragos inherentes a la patología que estamos estudiando, provocando lo que se conoce como _shorcut learning_.
+
+Así, es primordial el papel del personal médico a la hora de tomar dichas imágenes. Y es muy necesario que se entrenen dichas personas para poder obtener un conjunto de datos de calidad y que sea útil para desarrollar una solución adecuada.
+
+
+
+## Particionamiento de imágenes médicas
+
+Por otro lado, el científico de datos, que se encarga de crear modelos predictivos basados en IA, debe realizar un particionamiento adecuados de los mismos.
+
+Hay diferentes niveles, del menos exigente hasta el más cercano a la realidad clínica:
+
+- Hold-out estratificado: misma prevalencia patológica en entrenamiento, validación y prueba.
+- Aislamiento de pacientes: el ID del paciente es el ancla, todas sus imágenes van al mismo conjunto.
+- Validación multicéntrica: entrenar con $N-1$ centros y evaluar en un centro nunca visto.
+
+Para ver la importancia de estas decisiones realizamos pruebas sobre imágenes de pacientes ostomizados reales.
+
+En el primer caso, se comparó el rendimiento de usar un hold-out estratificado vs aislamiento por pacientes. ¿Qué vimos?
+El rendimiento se desploma; el F1 macro cayó del 88.8% hasta el 44.7%.
+
+En el segundo caso, se comparó el rendimiento de usar un hold-out estratificado  vs una validación multicéntrica.
+En este caso, también se desploma el rendimiento. Cayendo 43 puntos porcentuales tanto el Accuracy como la F1.
+
+
+## Mensaje principal
+
+Un modelo con métricas excelentes puede ser **clínicamente inviable** si su particionamiento es deficiente.
+
+En definitiva:
+
+- Los resultados no lo son todo. Métricas altas con particionaes aleatorias pueden esconder _shorcut learning_.
+- El diseño de la validación tiene gran importancia.
+- Hay que auditar dónde mira o dónde toma atención el modelo.
+
+
+## Para más información
+
+Para una explicación más detallada se puede ver en el propio trabajo a continuación.
+
+<iframe src="./data/trabajo.pdf" width="100%" height="800px"></iframe>
+
+
+# Certificado de participación
+
+
+
+<iframe src="./data/participacion_certificado.pdf" width="100%" height="800px"></iframe>
