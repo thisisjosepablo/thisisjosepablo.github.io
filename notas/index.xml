@@ -16,8 +16,88 @@
 <height>76</height>
 <width>144</width>
 </image>
-<generator>quarto-1.10.19</generator>
-<lastBuildDate>Thu, 15 Oct 2026 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.11.9</generator>
+<lastBuildDate>Tue, 24 Nov 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Participación en CAEPIA 26</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/11-participacion-en-caepia-26/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<section id="qué-es-caepia-26" class="level1">
+<h1>¿Qué es CAEPIA 26?</h1>
+<p>Es la XXI Conferencia de la Asociación Española para la Inteligencia Artificial, que se celebró los días del 11 al 13 de Noviembre de 2026 en Jaén.</p>
+<p>Un foro bienal abierto a investigadores de todo el mundo para presentar y debatir sus últimos avances científicos y tecnológicos en IA.</p>
+</section>
+<section id="de-qué-trata-nuestro-trabajo" class="level1">
+<h1>¿De qué trata nuestro trabajo?</h1>
+<p>El trabajo se titula <em>“Calidad y particionamiento de fotografía clínica no estandarizada en aprendizaje supervisado”</em>.</p>
+<p>En él tocamos dos temas iguales de importantes, <strong>calidad de imágenes médicas</strong> y <strong>particionamiento de las mismas</strong> para el entrenamiento de modelos de IA. Y estos temas son reflejados en un caso de uso real que llevamos a cabo en SIMIDAT, UJA.</p>
+<section id="calidad-de-imágenes-médicas" class="level2">
+<h2 class="anchored" data-anchor-id="calidad-de-imágenes-médicas">Calidad de imágenes médicas</h2>
+<p>Por un lado, el uso de fotografía clínica no estandariza posee de por sí una gran variabilidad:</p>
+<ul>
+<li>Variabilidad del propio dispositivos usado: lente, procesado, nivel de conocimiento a la hora de echar la foto.</li>
+<li>Variabilidad de cara a la institución: iluminación de cada consulta, protocolos de captura, aparación de objetos no representativos de la región de interés.</li>
+<li>Variabilidad del paciente: morfología individual como vello, cicatrices, rasgos específicos como lunares.</li>
+</ul>
+<p>Por tanto, el modelo puede aprender estos rasgos de variabilidad en lugar de los ragos inherentes a la patología que estamos estudiando, provocando lo que se conoce como <em>shorcut learning</em>.</p>
+<p>Así, es primordial el papel del personal médico a la hora de tomar dichas imágenes. Y es muy necesario que se entrenen dichas personas para poder obtener un conjunto de datos de calidad y que sea útil para desarrollar una solución adecuada.</p>
+</section>
+<section id="particionamiento-de-imágenes-médicas" class="level2">
+<h2 class="anchored" data-anchor-id="particionamiento-de-imágenes-médicas">Particionamiento de imágenes médicas</h2>
+<p>Por otro lado, el científico de datos, que se encarga de crear modelos predictivos basados en IA, debe realizar un particionamiento adecuados de los mismos.</p>
+<p>Hay diferentes niveles, del menos exigente hasta el más cercano a la realidad clínica:</p>
+<ul>
+<li>Hold-out estratificado: misma prevalencia patológica en entrenamiento, validación y prueba.</li>
+<li>Aislamiento de pacientes: el ID del paciente es el ancla, todas sus imágenes van al mismo conjunto.</li>
+<li>Validación multicéntrica: entrenar con <img src="https://latex.codecogs.com/png.latex?N-1"> centros y evaluar en un centro nunca visto.</li>
+</ul>
+<p>Para ver la importancia de estas decisiones realizamos pruebas sobre imágenes de pacientes ostomizados reales.</p>
+<p>En el primer caso, se comparó el rendimiento de usar un hold-out estratificado vs aislamiento por pacientes. ¿Qué vimos? El rendimiento se desploma; el F1 macro cayó del 88.8% hasta el 44.7%.</p>
+<p>En el segundo caso, se comparó el rendimiento de usar un hold-out estratificado vs una validación multicéntrica. En este caso, también se desploma el rendimiento. Cayendo 43 puntos porcentuales tanto el Accuracy como la F1.</p>
+</section>
+<section id="mensaje-principal" class="level2">
+<h2 class="anchored" data-anchor-id="mensaje-principal">Mensaje principal</h2>
+<p>Un modelo con métricas excelentes puede ser <strong>clínicamente inviable</strong> si su particionamiento es deficiente.</p>
+<p>En definitiva:</p>
+<ul>
+<li>Los resultados no lo son todo. Métricas altas con particionaes aleatorias pueden esconder <em>shorcut learning</em>.</li>
+<li>El diseño de la validación tiene gran importancia.</li>
+<li>Hay que auditar dónde mira o dónde toma atención el modelo.</li>
+</ul>
+</section>
+<section id="para-más-información" class="level2">
+<h2 class="anchored" data-anchor-id="para-más-información">Para más información</h2>
+<p>Para una explicación más detallada se puede ver en el propio trabajo a continuación.</p>
+<iframe src="./data/trabajo.pdf" width="100%" height="800px">
+</iframe>
+</section>
+</section>
+<section id="certificado-de-participación" class="level1">
+<h1>Certificado de participación</h1>
+<iframe src="./data/participacion_certificado.pdf" width="100%" height="800px">
+</iframe>
+
+
+</section>
+
+ ]]></description>
+  <category>conferencia</category>
+  <category>IA</category>
+  <category>salud</category>
+  <category>datos</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/11-participacion-en-caepia-26/</guid>
+  <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Teorema del mono infinito</title>
   <dc:creator>José Pablo Soriano Torres</dc:creator>

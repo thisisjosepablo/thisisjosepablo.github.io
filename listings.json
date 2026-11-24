@@ -28,6 +28,10 @@
     ]
   },
   {
+    "listing": "/biblioteca/index.html",
+    "items": []
+  },
+  {
     "listing": "/aventuras/index.html",
     "items": [
       "/aventuras/2026/10-tree-climbing-con-los-hemanos/index.html",
@@ -35,12 +39,9 @@
     ]
   },
   {
-    "listing": "/biblioteca/index.html",
-    "items": []
-  },
-  {
     "listing": "/notas/index.html",
     "items": [
+      "/notas/2026/11-participacion-en-caepia-26/index.html",
       "/notas/2026/10-infinite-monkey-theorem/index.html",
       "/notas/2026/10-david_gonzales_rivas1/index.html",
       "/notas/2026/10-articulo_video_yt/index.html",
