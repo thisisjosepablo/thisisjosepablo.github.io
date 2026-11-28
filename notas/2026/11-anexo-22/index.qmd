@@ -1,0 +1,69 @@
+---
+title: "Anexo 22: la primera norma GMP europea sobre inteligencia artificial"
+description: "Qué modelos de IA podrían usarse en la fabricación de medicamentos según el borrador del Anexo 22, y por qué deja fuera a los LLM."
+date: 2026-11-28
+categories: [IA, regulación, salud]
+---
+
+::: {.callout-warning}
+## Estado a noviembre de 2026
+El Anexo 22 es todavía un **borrador** (julio de 2025). No es vinculante y el texto final puede cambiar, sobre todo en lo relativo a la IA generativa.
+:::
+
+## ¿Qué es?
+
+Es un anexo nuevo de las GMP europeas (EudraLex vol. 4), el primero escrito específicamente para la **inteligencia artificial**. Lo redactó el grupo de inspectores GMP de la EMA junto con PIC/S y se publicó para consulta junto con el borrador del [Anexo 11](../11-anexo-11/index.qmd).
+
+Se aplica a modelos de IA integrados en sistemas informatizados que se usan en **aplicaciones críticas** de la fabricación de medicamentos y principios activos, es decir, aquellas que afectan directamente a la seguridad del paciente, a la calidad del producto o a la integridad de los datos.
+
+## La gran decisión: qué modelos sí y cuáles no
+
+Esta es la parte que más debate ha generado. El borrador solo contempla para usos críticos los modelos:
+
+- **Estáticos:** sus parámetros quedan congelados una vez desplegados; no siguen aprendiendo en producción.
+- **Deterministas:** con la misma entrada, dan siempre la misma salida.
+
+Y excluye de las aplicaciones críticas:
+
+- Los modelos **dinámicos**, que aprenden de forma continua.
+- Los modelos **probabilísticos**, cuya salida puede variar con la misma entrada.
+- La **IA generativa** y los **LLM**.
+
+Estos últimos podrían usarse en tareas no críticas, siempre con una persona cualificada que revise el resultado.
+
+## Qué exige a los modelos permitidos
+
+A grandes rasgos, el borrador pide:
+
+1. **Uso previsto definido:** qué hace el modelo, con qué datos, en qué parte del proceso y con qué limitaciones.
+2. **Criterios de aceptación:** métricas de rendimiento fijadas antes de probar el modelo, al menos tan buenas como las del proceso al que sustituye.
+3. **Datos de test independientes y representativos:** los datos de prueba no pueden haberse usado para entrenar el modelo.
+4. **Explicabilidad:** poder entender en qué se basa una decisión.
+5. **Confianza:** registrar cuán seguro está el modelo de cada predicción y actuar cuando la confianza es baja.
+6. **Supervisión en operación:** control de cambios, monitorización del rendimiento y revisión humana cuando sea necesario.
+
+## Un ejemplo
+
+Una planta usa una red neuronal convolucional para detectar defectos en viales mediante visión artificial:
+
+- **Uso previsto:** clasificar viales en «aceptable» o «rechazo» a partir de imágenes de una cámara concreta.
+- **Criterio de aceptación:** la tasa de defectos no detectados debe ser igual o inferior a la de la inspección manual.
+- **Test independiente:** un conjunto de imágenes que el modelo nunca ha visto, con defectos reales de todos los tipos.
+- **Operación:** si se cambia la cámara o la iluminación, se trata como un cambio controlado y se vuelve a evaluar el modelo.
+
+Este planteamiento me resulta familiar: separar *train* y *test*, fijar métricas antes de mirar resultados y vigilar el *data drift* son buenas prácticas de *machine learning* de toda la vida. La diferencia es que aquí pasan a ser una exigencia regulatoria.
+
+## Cómo encaja con el resto
+
+- **Anexo 11:** el modelo vive dentro de un sistema informatizado, así que el Anexo 11 sigue aplicándose. El Anexo 22 añade los requisitos específicos de IA.
+- **Ley de IA de la UE (Reglamento 2024/1689):** es una ley horizontal para cualquier sector; el Anexo 22 es una guía específica de fabricación farmacéutica. Son complementarias.
+
+## Lo que me llevo
+
+El Anexo 22 está pensado para la fabricación, no para la investigación clínica, pero su forma de pensar sirve para cualquier modelo que se use en salud: definir para qué sirve, probarlo con datos que no ha visto y no dejarlo solo una vez desplegado. Habrá que ver si el texto final abre más la puerta a la IA generativa; la EMA reunió a expertos en verano de 2026 precisamente para debatirlo.
+
+## Referencias
+
+- Comisión Europea (2025). *EudraLex Volume 4, Annex 22: Artificial Intelligence* (borrador para consulta, julio de 2025). [Página de la consulta](https://health.ec.europa.eu/consultations/stakeholders-consultation-eudralex-volume-4-good-manufacturing-practice-guidelines-chapter-4-annex_en)
+- EMA (2026). *Good manufacturing practice: Multistakeholder workshop on expert contributions to artificial intelligence guidance development (Annex 22)*, 30 de junio – 1 de julio de 2026. [Enlace](https://www.ema.europa.eu/en/events/good-manufacturing-practice-multistakeholder-workshop-expert-contributions-artificial-intelligence-guidance-development-annex-22)
+- Reglamento (UE) 2024/1689, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Ley de IA). [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)

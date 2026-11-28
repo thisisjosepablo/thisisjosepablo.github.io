@@ -1,0 +1,64 @@
+---
+title: "GxP: la familia de las «buenas prácticas»"
+description: "Qué significa la x de GxP y por qué todo en la industria farmacéutica gira alrededor de documentar."
+date: 2026-11-28
+categories: [regulación, salud, datos]
+---
+
+Cuando empiezas a leer sobre regulación farmacéutica aparece una palabra que parece una errata: **GxP**. No lo es. Es una plantilla: **G**ood **x** **P**ractice, donde la *x* se sustituye por la actividad concreta.
+
+## La x es comodín
+
+| Sigla | Nombre | ¿Qué cubre? | Referencia principal en la UE |
+|-------|--------|-------------|-------------------------------|
+| **GMP** | *Good Manufacturing Practice* | Fabricación de medicamentos | Directiva (UE) 2017/1572 y EudraLex vol. 4 |
+| **GCP** | *Good Clinical Practice* | Ensayos clínicos con personas | Reglamento (UE) 536/2014 e ICH E6(R3) |
+| **GLP** | *Good Laboratory Practice* | Estudios no clínicos de seguridad (toxicología…) | Directiva 2004/10/CE y Principios BPL de la OCDE |
+| **GDP** | *Good Distribution Practice* | Almacenamiento y transporte | Directrices 2013/C 343/01 |
+| **GVP** | *Good Pharmacovigilance Practice* | Vigilancia de la seguridad tras la comercialización | Reglamento de Ejecución (UE) 520/2012 y módulos GVP de la EMA |
+
+(Ojo: **GDP** en farma no tiene nada que ver con el PIB ni con el RGPD, que en inglés es GDPR.)
+
+## Lo que tienen en común
+
+Cada GxP regula una fase distinta de la vida de un medicamento, pero todas comparten la misma idea de fondo:
+
+> Si no está documentado, no ha ocurrido.
+
+De ahí salen unos cuantos pilares que se repiten en todas ellas:
+
+- **Trazabilidad:** poder reconstruir quién hizo qué, cuándo y por qué.
+- **Integridad de datos:** los datos deben cumplir [ALCOA++](../11-alcoa-plus-plus/index.qmd).
+- **Procedimientos escritos (SOP):** las tareas críticas se hacen siempre igual y siguiendo un documento aprobado.
+- **Formación documentada:** cada persona está formada para lo que hace, y se puede demostrar.
+- **Gestión de riesgos:** el esfuerzo se concentra donde más puede afectar al paciente o al producto.
+- **Inspecciones:** las autoridades comprueban que todo lo anterior se cumple de verdad.
+
+## Un ejemplo: la vida de un comprimido
+
+1. En el laboratorio se estudia su toxicidad en modelos no clínicos → **GLP**.
+2. Se prueba en pacientes dentro de un ensayo clínico → **GCP**.
+3. Se fabrica a escala industrial → **GMP**.
+4. Viaja en camión refrigerado hasta la farmacia → **GDP**.
+5. Una vez en el mercado, se recogen y analizan las sospechas de reacciones adversas → **GVP**.
+
+Cada paso tiene su propio reglamento, pero el hilo conductor es el mismo: demostrar que se ha hecho bien.
+
+## ¿Y los sistemas informáticos?
+
+Aquí aparece el término **GxP computerised systems**: cualquier software que genera, procesa o almacena datos relevantes para alguna de estas prácticas. Una hoja de Excel que calcula resultados de un ensayo de laboratorio puede ser un sistema GxP. De eso tratan el [Anexo 11](../11-anexo-11/index.qmd) para fabricación y la guía de la EMA sobre sistemas informatizados en ensayos clínicos.
+
+## Lo que me llevo
+
+GxP no es una norma, sino una forma de trabajar. Para alguien que viene de la informática, la traducción es casi directa: control de versiones, *logs*, tests reproducibles y documentación. La diferencia es que aquí, si falta algo, no se rompe un *build*: se pone en duda la seguridad de un paciente.
+
+## Referencias
+
+- Directiva (UE) 2017/1572 de la Comisión, de 15 de septiembre de 2017, sobre principios y directrices de prácticas correctas de fabricación de medicamentos de uso humano. [EUR-Lex](https://eur-lex.europa.eu/eli/dir/2017/1572/oj)
+- Comisión Europea. *EudraLex Volume 4 – Good Manufacturing Practice (GMP) guidelines*. [Enlace](https://health.ec.europa.eu/medicinal-products/eudralex/eudralex-volume-4_en)
+- Reglamento (UE) n.º 536/2014, de 16 de abril de 2014, sobre los ensayos clínicos de medicamentos de uso humano. [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2014/536/oj)
+- ICH E6(R3) *Good Clinical Practice*. Principios y Anexo 1 en vigor desde el 23 de julio de 2025; Anexo 2 aplicable desde el 15 de enero de 2027. [EMA](https://www.ema.europa.eu/en/ich-e6-good-clinical-practice-scientific-guideline)
+- Directiva 2004/10/CE, de 11 de febrero de 2004, sobre buenas prácticas de laboratorio.
+- OCDE (1998). *OECD Principles on Good Laboratory Practice*. ENV/MC/CHEM(98)17.
+- Directrices de 5 de noviembre de 2013 sobre prácticas correctas de distribución de medicamentos para uso humano (2013/C 343/01).
+- Reglamento de Ejecución (UE) n.º 520/2012 de la Comisión, sobre actividades de farmacovigilancia.

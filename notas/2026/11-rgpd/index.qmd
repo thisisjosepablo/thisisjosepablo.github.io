@@ -1,0 +1,71 @@
+---
+title: "RGPD: proteger los datos personales (sobre todo los de salud)"
+description: "Los principios del Reglamento General de Protección de Datos explicados con un ejemplo de investigación en salud."
+date: 2026-11-28
+categories: [privacidad, datos, salud, regulación]
+---
+
+Del **RGPD** (Reglamento General de Protección de Datos, *GDPR* en inglés) casi todo el mundo conoce los avisos de *cookies*. Pero es mucho más: es la norma que regula cualquier tratamiento de datos personales en la UE desde el **25 de mayo de 2018**. Y si trabajas con datos de salud, es la que más te afecta.
+
+## Conceptos básicos
+
+- **Dato personal:** cualquier información sobre una persona identificada o **identificable**, aunque sea de forma indirecta.
+- **Tratamiento:** casi cualquier cosa que se haga con los datos, como recogerlos, guardarlos, analizarlos, compartirlos o borrarlos.
+- **Responsable del tratamiento:** quien decide para qué y cómo se tratan los datos.
+- **Encargado del tratamiento:** quien trata los datos por cuenta del responsable, por ejemplo un proveedor de la nube.
+
+## Los siete principios (artículo 5)
+
+| Principio | En una frase |
+|-----------|--------------|
+| Licitud, lealtad y transparencia | Hay una base legal y la persona sabe qué se hace con sus datos |
+| Limitación de la finalidad | Se recogen para un fin concreto y no se usan para otro incompatible |
+| Minimización | Solo los datos necesarios, ni uno más |
+| Exactitud | Correctos y actualizados |
+| Limitación del plazo de conservación | No se guardan más tiempo del necesario |
+| Integridad y confidencialidad | Protegidos frente a accesos, pérdidas o daños |
+| Responsabilidad proactiva | El responsable debe poder **demostrar** que cumple todo lo anterior |
+
+¿Te suena? El último principio es el mismo espíritu de [GxP](../11-gxp/index.qmd) y de las normas ISO: no basta con cumplir, hay que poder demostrarlo.
+
+## Los datos de salud son especiales
+
+El artículo 9 considera los datos de salud, genéticos y biométricos **categorías especiales**: en principio, está prohibido tratarlos, salvo excepciones como el consentimiento explícito, la asistencia sanitaria o la **investigación científica** con garantías adecuadas (artículo 89).
+
+En España, la **LOPDGDD** (Ley Orgánica 3/2018) desarrolla el RGPD y su disposición adicional decimoséptima regula específicamente el uso de datos de salud en investigación.
+
+## Seudonimizar no es anonimizar
+
+Es una de las confusiones más habituales:
+
+- **Datos seudonimizados:** se sustituyen los identificadores por un código, pero con información adicional (la «llave») se puede volver a identificar a la persona. **Siguen siendo datos personales** y el RGPD se aplica.
+- **Datos anónimos:** ya no se puede identificar a la persona por ningún medio razonable. **El RGPD deja de aplicarse.**
+
+Con imágenes médicas, la anonimización es más difícil de lo que parece: una fotografía puede contener una cara, un tatuaje o metadatos con fecha, hora y dispositivo.
+
+## Un ejemplo
+
+Un proyecto de investigación recoge fotografías clínicas de pacientes para entrenar un modelo de IA:
+
+- **Base legal y transparencia:** el paciente recibe información clara sobre el proyecto y, según el caso, da su consentimiento.
+- **Minimización:** se recorta la imagen a la zona de interés y se eliminan los metadatos innecesarios.
+- **Seudonimización:** cada paciente tiene un código; la tabla que relaciona códigos y nombres se guarda aparte y con acceso restringido.
+- **Evaluación de impacto (artículo 35):** por tratar datos de salud a gran escala con tecnologías nuevas, probablemente sea obligatoria.
+- **Brechas de seguridad (artículo 33):** si se pierden o filtran datos, hay **72 horas** para notificarlo a la autoridad de control (en España, la AEPD).
+
+## ¿Va a cambiar el RGPD?
+
+En noviembre de 2025 la Comisión Europea propuso el **Omnibus digital**, que modificaría partes del RGPD y de las normas sobre *cookies*. A finales de noviembre de 2026 **sigue siendo una propuesta**: el Consejo ya tiene su posición, pero el Parlamento todavía no. Mientras tanto, el RGPD se aplica sin cambios.
+
+En el ámbito de la salud también conviene seguir el **Espacio Europeo de Datos Sanitarios** (Reglamento (UE) 2025/327), que regulará el uso secundario de datos de salud para investigación.
+
+## Lo que me llevo
+
+El RGPD no prohíbe investigar con datos de salud; exige hacerlo con cabeza: con una finalidad clara, solo con los datos necesarios, protegidos y pudiendo demostrarlo. Muchas de sus exigencias son, al final, buenas prácticas de ingeniería de datos con nombre jurídico.
+
+## Referencias
+
+- Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD). [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
+- Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD). [BOE](https://www.boe.es/eli/es/lo/2018/12/05/3)
+- Comisión Europea (2025). Propuesta de Reglamento sobre el Omnibus digital, COM(2025) 837, procedimiento 2025/0360(COD).
+- Reglamento (UE) 2025/327, de 11 de febrero de 2025, relativo al Espacio Europeo de Datos Sanitarios. [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2025/327/oj)

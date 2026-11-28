@@ -1,0 +1,56 @@
+---
+title: "ISO/IEC 42001: un sistema de gestión para la inteligencia artificial"
+description: "La primera norma certificable para gestionar la IA de forma responsable dentro de una organización."
+date: 2026-11-28
+categories: [IA, calidad, regulación]
+---
+
+Si ISO 9001 es la norma de la calidad e ISO/IEC 27001 la de la seguridad de la información, **ISO/IEC 42001** es la de la **inteligencia artificial**. Se publicó en diciembre de 2023 y es la primera norma internacional que permite **certificar** cómo una organización gestiona la IA.
+
+## ¿Qué es un AIMS?
+
+La norma define los requisitos de un **sistema de gestión de la IA** (*AI Management System*, AIMS). No evalúa si un modelo concreto es bueno, sino si la organización que lo desarrolla, lo usa o lo vende tiene un marco para hacerlo de forma responsable a lo largo de todo su ciclo de vida.
+
+Se aplica tanto a quien **desarrolla** IA como a quien solo la **usa** o la **integra** en sus productos.
+
+## La misma estructura de siempre
+
+Sigue la estructura armonizada de ISO (cláusulas 4 a 10), igual que [ISO 9001 e ISO/IEC 27001](../11-iso-9001-27001/index.qmd). Por eso es fácil integrarla en un sistema de gestión que ya exista. Lo específico de la IA aparece en:
+
+- **Evaluación de riesgos de IA:** sesgos, falta de transparencia, errores con consecuencias para las personas, uso indebido…
+- **Evaluación de impacto de los sistemas de IA:** cómo puede afectar el sistema a personas, grupos y a la sociedad.
+- **Anexo A:** controles de referencia, por ejemplo sobre políticas de IA, datos usados por los sistemas, ciclo de vida, información a las partes interesadas, uso responsable y relaciones con terceros.
+- **Anexo B:** guía para implementar esos controles.
+
+## Un ejemplo
+
+Un grupo de investigación desarrolla un modelo de *deep learning* para analizar fotografías clínicas. Siguiendo ISO/IEC 42001, se preguntaría:
+
+- **Datos:** ¿de dónde vienen las imágenes? ¿Son representativas de todos los tipos de piel, edades y condiciones de captura?
+- **Impacto:** ¿qué pasa si el modelo se equivoca? ¿Quién revisa sus resultados antes de tomar una decisión clínica?
+- **Ciclo de vida:** ¿cómo se documentan las versiones del modelo? ¿Cuándo se reentrena y quién lo aprueba?
+- **Transparencia:** ¿saben los profesionales y pacientes que están usando una herramienta de IA y cuáles son sus limitaciones?
+
+## ¿Y la Ley de IA europea?
+
+La **Ley de IA** (Reglamento (UE) 2024/1689) es **obligatoria**; ISO/IEC 42001 es **voluntaria**. Implantar la norma ayuda a cumplir parte de la ley (gestión de riesgos, documentación, supervisión humana), pero no garantiza su cumplimiento automáticamente.
+
+La Ley de IA ya ha sido modificada por el Reglamento (UE) 2026/1744 (el «Omnibus digital» sobre IA), que cambió el calendario de algunas obligaciones. Conviene comprobar siempre las fechas vigentes en el texto consolidado.
+
+## Normas relacionadas
+
+- **ISO/IEC 22989:** conceptos y terminología de IA.
+- **ISO/IEC 23894:** guía de gestión de riesgos de la IA.
+- **ISO/IEC 27001:** seguridad de la información; muchos controles se complementan.
+
+## Lo que me llevo
+
+ISO/IEC 42001 lleva a la IA lo que otras normas llevan haciendo décadas con la calidad o la seguridad: no basta con que algo funcione, hay que poder demostrar que se gestiona de forma responsable. Para quien investiga con IA en salud, es una buena lista de preguntas incómodas que conviene hacerse antes de que nos las haga otra persona.
+
+## Referencias
+
+- ISO/IEC 42001:2023. *Information technology — Artificial intelligence — Management system*. ISO/IEC, 2023.
+- ISO/IEC 22989:2022. *Information technology — Artificial intelligence — Artificial intelligence concepts and terminology*. ISO/IEC, 2022.
+- ISO/IEC 23894:2023. *Information technology — Artificial intelligence — Guidance on risk management*. ISO/IEC, 2023.
+- Reglamento (UE) 2024/1689, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Ley de IA). [EUR-Lex](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
+- Reglamento (UE) 2026/1744, que modifica el Reglamento (UE) 2024/1689 (Omnibus digital sobre IA).

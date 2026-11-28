@@ -1,0 +1,79 @@
+---
+title: "ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información"
+description: "Dos normas certificables con la misma estructura: una para hacer bien las cosas y otra para proteger la información."
+date: 2026-11-28
+categories: [calidad, seguridad, regulación]
+---
+
+Las GxP son obligatorias por ley. Las normas ISO, en cambio, son **voluntarias**: una organización decide adoptarlas y, si quiere, certificarse con una entidad externa. Aun así, en el sector salud son casi imprescindibles, porque clientes, hospitales y socios suelen pedirlas.
+
+## Una estructura común
+
+Las dos siguen la misma **estructura armonizada** de ISO para sistemas de gestión. Si entiendes una, ya tienes media otra:
+
+| Cláusula | Contenido |
+|----------|-----------|
+| 4 | Contexto de la organización |
+| 5 | Liderazgo |
+| 6 | Planificación (riesgos y oportunidades, objetivos) |
+| 7 | Apoyo (recursos, competencia, documentación) |
+| 8 | Operación |
+| 9 | Evaluación del desempeño (auditorías internas, revisión por la dirección) |
+| 10 | Mejora |
+
+Detrás está el ciclo **PDCA**: planificar, hacer, verificar y actuar, y vuelta a empezar.
+
+## ISO 9001: gestión de la calidad
+
+Es la norma de sistemas de gestión más extendida del mundo. No dice cómo fabricar un producto concreto; dice cómo organizarse para hacerlo bien de forma sistemática y satisfacer al cliente. Se apoya en siete principios de gestión de la calidad (definidos en ISO 9000):
+
+1. Enfoque al cliente
+2. Liderazgo
+3. Compromiso de las personas
+4. Enfoque a procesos
+5. Mejora
+6. Toma de decisiones basada en la evidencia
+7. Gestión de las relaciones
+
+**Novedad:** el 16 de septiembre de 2026 se publicó **ISO 9001:2026**, que sustituye a la versión de 2015. Es una evolución, no una revolución. Entre los cambios:
+
+- Se añade la promoción de la **cultura de la calidad y el comportamiento ético** como responsabilidad de la dirección (5.1.1).
+- La cláusula 6.1 separa más claramente los **riesgos** de las **oportunidades**.
+- Se refuerza la gestión de los **cambios** en el sistema (6.3).
+
+Las organizaciones certificadas con la versión de 2015 tienen hasta el **30 de septiembre de 2029** para pasar a la nueva.
+
+## ISO/IEC 27001: seguridad de la información
+
+Define cómo montar un **SGSI** (sistema de gestión de la seguridad de la información). Su objetivo es proteger tres propiedades de la información, la llamada **tríada CIA**:
+
+- **Confidencialidad:** solo accede quien debe.
+- **Integridad:** la información no se altera sin control.
+- **Disponibilidad:** está accesible cuando se necesita.
+
+El núcleo es la **evaluación de riesgos**: identificar amenazas y vulnerabilidades y decidir cómo tratarlas. Para ello, el Anexo A ofrece un catálogo de **93 controles** agrupados en cuatro temas: organizativos, de personas, físicos y tecnológicos. No todos son obligatorios: la organización elige los que necesita y justifica sus decisiones en la **Declaración de Aplicabilidad**. La guía de cómo implementar cada control está en la norma hermana, ISO/IEC 27002.
+
+La versión vigente es la de **2022**, con una enmienda de 2024 que añade la consideración del cambio climático en el análisis del contexto. No existe una edición de 2026.
+
+## Un ejemplo
+
+Un hospital que desarrolla una herramienta de IA con imágenes clínicas:
+
+- Con **ISO 9001** demostraría que tiene procesos definidos para diseñar, probar y mejorar la herramienta, y que recoge y atiende las quejas de los usuarios.
+- Con **ISO/IEC 27001** demostraría que ha analizado los riesgos de las imágenes (acceso no autorizado, pérdida, manipulación) y que aplica controles como cifrado, gestión de accesos o copias de seguridad.
+
+## ¿Cómo se relacionan con GxP?
+
+Se solapan mucho. El [Anexo 11](../11-anexo-11/index.qmd) revisado incluye una sección de seguridad que recuerda a ISO 27001, y los sistemas de calidad farmacéuticos comparten la lógica de ISO 9001. Pero hay una diferencia clave: un certificado ISO **no** sustituye el cumplimiento GxP, que es obligatorio e inspeccionado por las autoridades sanitarias.
+
+## Lo que me llevo
+
+ISO 9001 responde a «¿hacemos bien las cosas y lo podemos demostrar?». ISO/IEC 27001 responde a «¿protegemos bien la información y lo podemos demostrar?». La segunda parte de las dos preguntas es la que importa: en todas estas normas, la evidencia lo es todo.
+
+## Referencias
+
+- ISO 9001:2026. *Quality management systems — Requirements*. Ed. 6. International Organization for Standardization, 2026.
+- ISO 9000:2015. *Quality management systems — Fundamentals and vocabulary*. International Organization for Standardization, 2015.
+- ISO/IEC 27001:2022. *Information security, cybersecurity and privacy protection — Information security management systems — Requirements*. ISO/IEC, 2022.
+- ISO/IEC 27001:2022/Amd 1:2024. *Amendment 1: Climate action changes*. ISO/IEC, 2024.
+- ISO/IEC 27002:2022. *Information security, cybersecurity and privacy protection — Information security controls*. ISO/IEC, 2022.

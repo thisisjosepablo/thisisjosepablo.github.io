@@ -1,0 +1,85 @@
+---
+title: "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)"
+description: "Qué dice el Anexo 11 de las GMP europeas, por qué se está reescribiendo y qué cambia en el borrador de 2025."
+date: 2026-11-28
+categories: [regulación, datos, calidad]
+---
+
+::: {.callout-warning}
+## Estado a noviembre de 2026
+La versión en vigor sigue siendo la de **2011**. La revisión que comento aquí es un **borrador** (julio de 2025) y todavía puede cambiar. Actualizaré esta nota cuando se publique el texto final.
+:::
+
+## ¿Qué es el Anexo 11?
+
+Las normas de fabricación de medicamentos de la UE (las GMP) se recogen en el **volumen 4 de EudraLex**. Ese volumen tiene una parte principal y una serie de anexos temáticos. El **Anexo 11** trata de los **sistemas informatizados**: cualquier software o equipo informático que participe en una actividad GMP, desde el sistema que controla un reactor hasta el que guarda los registros de lotes.
+
+Su idea central cabe en una frase: **informatizar un proceso no puede hacerlo menos fiable que el mismo proceso en papel**.
+
+## El problema: un texto de 2011
+
+La versión vigente tiene unas cinco páginas, se escribió antes de que la nube, el SaaS o la IA fueran habituales en la industria y se apoya en principios generales. Funcionó bien durante años, pero dejaba demasiado margen de interpretación.
+
+## La revisión, paso a paso
+
+| Fecha | Hito |
+|-------|------|
+| Junio de 2011 | Entra en vigor el Anexo 11 actual |
+| Noviembre de 2022 | La EMA y PIC/S publican el *concept paper* que anuncia la revisión |
+| 7 de julio de 2025 | Se publica el borrador junto con un Capítulo 4 revisado (Documentación) y un nuevo **Anexo 22** (IA) |
+| 7 de octubre de 2025 | Se cierra la consulta pública |
+| 4.º trimestre de 2026 | Objetivo para entregar el texto final a la Comisión |
+
+## ¿Qué cambia en el borrador?
+
+Lo primero que llama la atención es el tamaño: pasa de unas **5 a 19 páginas**, organizadas en 17 secciones:
+
+1. Ámbito
+2. Principios
+3. Sistema de calidad farmacéutico
+4. Gestión de riesgos
+5. Personal y formación
+6. Requisitos del sistema
+7. Gestión de proveedores y servicios
+8. Alarmas
+9. Cualificación y validación
+10. Manejo de datos
+11. Gestión de identidades y accesos
+12. *Audit trails*
+13. Firma electrónica
+14. Revisión periódica
+15. Seguridad
+16. Copias de seguridad
+17. Archivo
+
+De esta lista me quedo con cinco ideas:
+
+- **Gestión de riesgos durante todo el ciclo de vida:** no basta con validar el sistema una vez; el riesgo se evalúa desde los requisitos hasta la retirada.
+- **Requisitos de usuario (URS) para todo:** si no sabes qué tiene que hacer el sistema, no puedes demostrar que lo hace.
+- **El *audit trail* no se guarda para nada:** hay que revisarlo.
+- **La ciberseguridad pasa a ser un requisito GMP:** accesos, contraseñas, parches y redes entran en la inspección.
+- **Proveedores y nube:** que el sistema esté en manos de un tercero (SaaS) no exime a la empresa de su responsabilidad.
+
+## Un ejemplo
+
+Un laboratorio de control de calidad usa un software en la nube para registrar los resultados analíticos. Con el borrador en la mano, la empresa debería poder enseñar:
+
+- Qué requisitos definió antes de contratarlo y cómo comprobó que se cumplían.
+- Un contrato con el proveedor que deje claro quién hace las copias de seguridad, quién gestiona los incidentes y dónde están los datos.
+- Quién tiene acceso, con qué permisos y cuándo se revisaron por última vez.
+- Pruebas de que alguien revisa periódicamente el *audit trail* de los resultados.
+
+## ¿Y en ensayos clínicos?
+
+El Anexo 11 es de **fabricación** (GMP). En ensayos clínicos (GCP) la referencia equivalente es la *Guideline on computerised systems and electronic data in clinical trials* de la EMA, de la que hablé en la [nota sobre ALCOA++](../11-alcoa-plus-plus/index.qmd). Las dos apuntan en la misma dirección.
+
+## Lo que me llevo
+
+El Anexo 11 revisado se parece mucho a lo que en ingeniería del software llamaríamos buenas prácticas: requisitos, tests, control de accesos, *logs*, *backups* y revisiones. La diferencia es que aquí no es opcional ni depende del equipo: es lo que mirará un inspector.
+
+## Referencias
+
+- Comisión Europea (2011). *EudraLex Volume 4, Annex 11: Computerised Systems* (versión vigente). [PDF](https://health.ec.europa.eu/system/files/2016-11/annex11_01-2011_en_0.pdf)
+- Comisión Europea (2025). *Stakeholders' Consultation on EudraLex Volume 4 – Good Manufacturing Practice Guidelines: Chapter 4, Annex 11 and New Annex 22* (borradores, julio de 2025). [Enlace](https://health.ec.europa.eu/consultations/stakeholders-consultation-eudralex-volume-4-good-manufacturing-practice-guidelines-chapter-4-annex_en)
+- Comisión Europea. *EudraLex Volume 4 – Good Manufacturing Practice (GMP) guidelines*. [Enlace](https://health.ec.europa.eu/medicinal-products/eudralex/eudralex-volume-4_en)
+- EMA / PIC/S (2022). *Concept paper on the revision of Annex 11 of the guidelines on Good Manufacturing Practice for medicinal products – Computerised Systems*.
