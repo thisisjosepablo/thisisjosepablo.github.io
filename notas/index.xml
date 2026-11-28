@@ -17,7 +17,833 @@
 <width>144</width>
 </image>
 <generator>quarto-1.11.9</generator>
-<lastBuildDate>Tue, 24 Nov 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 28 Nov 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>ALCOA++: los diez principios para que un dato sea fiable</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/11-alcoa-plus-plus/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<p>Leyendo la <em>Guideline on computerised systems and electronic data in clinical trials</em> de la EMA me encontré con un acrónimo que aparece una y otra vez: <strong>ALCOA++</strong>. Parece una sopa de letras, pero en realidad responde a una pregunta muy sencilla:</p>
+<blockquote class="blockquote">
+<p>¿Cómo sé que puedo fiarme de un dato?</p>
+</blockquote>
+<p>En un ensayo clínico, la respuesta importa mucho. De esos datos depende que un medicamento se apruebe o no y, sobre todo, la seguridad de los pacientes que participan. Por eso los inspectores no solo miran <em>qué</em> dice un dato, sino <em>cómo</em> se generó, quién lo tocó y si se puede reconstruir su historia.</p>
+<section id="de-dónde-viene" class="level2">
+<h2 class="anchored" data-anchor-id="de-dónde-viene">De dónde viene</h2>
+<p>El acrónimo original, <strong>ALCOA</strong>, se atribuye a Stan W. Woollen, de la FDA, en los años 90. Tenía cinco letras. Con el tiempo se le añadieron cuatro más (<strong>ALCOA+</strong>) y, finalmente, una décima: la trazabilidad (<strong>ALCOA++</strong>). Esta última versión es la que recoge la guía de la EMA, vigente desde septiembre de 2023.</p>
+</section>
+<section id="las-diez-letras" class="level2">
+<h2 class="anchored" data-anchor-id="las-diez-letras">Las diez letras</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 34%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Letra</th>
+<th>Principio</th>
+<th>En una frase</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A</strong></td>
+<td><em>Attributable</em> (atribuible)</td>
+<td>Se sabe quién generó o modificó el dato y cuándo.</td>
+</tr>
+<tr class="even">
+<td><strong>L</strong></td>
+<td><em>Legible</em> (legible)</td>
+<td>Se puede leer y entender, hoy y dentro de años.</td>
+</tr>
+<tr class="odd">
+<td><strong>C</strong></td>
+<td><em>Contemporaneous</em> (contemporáneo)</td>
+<td>Se registró en el momento en que ocurrió, no días después de memoria.</td>
+</tr>
+<tr class="even">
+<td><strong>O</strong></td>
+<td><em>Original</em> (original)</td>
+<td>Es el primer registro (o una copia certificada), no una transcripción cualquiera.</td>
+</tr>
+<tr class="odd">
+<td><strong>A</strong></td>
+<td><em>Accurate</em> (exacto)</td>
+<td>Refleja fielmente lo que pasó, sin errores.</td>
+</tr>
+<tr class="even">
+<td><strong>C</strong></td>
+<td><em>Complete</em> (completo)</td>
+<td>No falta nada, incluidos los metadatos y el historial de cambios.</td>
+</tr>
+<tr class="odd">
+<td><strong>C</strong></td>
+<td><em>Consistent</em> (consistente)</td>
+<td>Se registra de la misma forma siempre, con fechas y secuencias coherentes.</td>
+</tr>
+<tr class="even">
+<td><strong>E</strong></td>
+<td><em>Enduring</em> (perdurable)</td>
+<td>Se conserva durante todo el tiempo exigido, sin degradarse.</td>
+</tr>
+<tr class="odd">
+<td><strong>A</strong></td>
+<td><em>Available</em> (disponible)</td>
+<td>Se puede consultar cuando hace falta, por ejemplo, en una inspección.</td>
+</tr>
+<tr class="even">
+<td><strong>T</strong></td>
+<td><em>Traceable</em> (trazable)</td>
+<td>Se puede reconstruir toda su vida: de dónde viene y qué cambios ha sufrido.</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://thisisjosepablo.github.io/notas/2026/11-alcoa-plus-plus/imgs/alcoa.svg" class="img-fluid figure-img" alt="Diez tarjetas con las letras de ALCOA++, el principio de cada una y un dibujo"></p>
+<figcaption>Los diez principios de ALCOA++</figcaption>
+</figure>
+</div>
+</section>
+<section id="un-ejemplo-para-aterrizarlo" class="level2">
+<h2 class="anchored" data-anchor-id="un-ejemplo-para-aterrizarlo">Un ejemplo para aterrizarlo</h2>
+<p>Imaginemos que en un estudio se toma una fotografía clínica de un paciente para evaluar una lesión:</p>
+<ul>
+<li><strong>Atribuible:</strong> el sistema registra qué usuario hizo la foto (no vale una cuenta compartida por todo el equipo).</li>
+<li><strong>Contemporáneo:</strong> la foto lleva la fecha y hora reales de captura, no la de cuando se subió al servidor una semana después.</li>
+<li><strong>Original:</strong> se guarda el archivo tal como salió de la cámara. Si se recorta o se comprime, eso es una copia derivada y debe quedar indicado.</li>
+<li><strong>Completo:</strong> junto a la imagen se conservan sus metadatos (dispositivo, resolución, paciente codificado…).</li>
+<li><strong>Trazable:</strong> si alguien corrige la etiqueta de la imagen, queda un <em>audit trail</em> con el valor anterior, el nuevo, quién lo cambió, cuándo y por qué.</li>
+<li><strong>Perdurable y disponible:</strong> la imagen sigue siendo accesible y legible años después, aunque cambie el software.</li>
+</ul>
+<p>Si falla cualquiera de estos puntos, la foto puede ser perfecta desde el punto de vista técnico y aun así no servir como evidencia.</p>
+</section>
+<section id="por-qué-es-importante" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-es-importante">Por qué es importante</h2>
+<p>ALCOA++ no es un requisito informático, sino una forma de pensar los datos. Un modelo de IA entrenado con datos que no cumplen estos principios hereda sus problemas: si no sé de dónde viene una imagen ni si la han modificado, tampoco puedo confiar del todo en lo que el modelo aprenda de ella. <em>Garbage in, garbage out</em>, pero con normativa europea detrás.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li>European Medicines Agency (2023). <em>Guideline on computerised systems and electronic data in clinical trials</em> (EMA/INS/GCP/112288/2023). <a href="https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-computerised-systems-electronic-data-clinical-trials_en.pdf">Enlace al PDF</a></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>datos</category>
+  <category>salud</category>
+  <category>regulación</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/11-alcoa-plus-plus/</guid>
+  <pubDate>Sat, 28 Nov 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/11-anexo-11/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Estado a noviembre de 2026
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La versión en vigor sigue siendo la de <strong>2011</strong>. La revisión que comento aquí es un <strong>borrador</strong> (julio de 2025) y todavía puede cambiar. Actualizaré esta nota cuando se publique el texto final.</p>
+</div>
+</div>
+<section id="qué-es-el-anexo-11" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-el-anexo-11">¿Qué es el Anexo 11?</h2>
+<p>Las normas de fabricación de medicamentos de la UE (las GMP) se recogen en el <strong>volumen 4 de EudraLex</strong>. Ese volumen tiene una parte principal y una serie de anexos temáticos. El <strong>Anexo 11</strong> trata de los <strong>sistemas informatizados</strong>: cualquier software o equipo informático que participe en una actividad GMP, desde el sistema que controla un reactor hasta el que guarda los registros de lotes.</p>
+<p>Su idea central cabe en una frase: <strong>informatizar un proceso no puede hacerlo menos fiable que el mismo proceso en papel</strong>.</p>
+</section>
+<section id="el-problema-un-texto-de-2011" class="level2">
+<h2 class="anchored" data-anchor-id="el-problema-un-texto-de-2011">El problema: un texto de 2011</h2>
+<p>La versión vigente tiene unas cinco páginas, se escribió antes de que la nube, el SaaS o la IA fueran habituales en la industria y se apoya en principios generales. Funcionó bien durante años, pero dejaba demasiado margen de interpretación.</p>
+</section>
+<section id="la-revisión-paso-a-paso" class="level2">
+<h2 class="anchored" data-anchor-id="la-revisión-paso-a-paso">La revisión, paso a paso</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 53%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fecha</th>
+<th>Hito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Junio de 2011</td>
+<td>Entra en vigor el Anexo 11 actual</td>
+</tr>
+<tr class="even">
+<td>Noviembre de 2022</td>
+<td>La EMA y PIC/S publican el <em>concept paper</em> que anuncia la revisión</td>
+</tr>
+<tr class="odd">
+<td>7 de julio de 2025</td>
+<td>Se publica el borrador junto con un Capítulo 4 revisado (Documentación) y un nuevo <strong>Anexo 22</strong> (IA)</td>
+</tr>
+<tr class="even">
+<td>7 de octubre de 2025</td>
+<td>Se cierra la consulta pública</td>
+</tr>
+<tr class="odd">
+<td>4.º trimestre de 2026</td>
+<td>Objetivo para entregar el texto final a la Comisión</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="qué-cambia-en-el-borrador" class="level2">
+<h2 class="anchored" data-anchor-id="qué-cambia-en-el-borrador">¿Qué cambia en el borrador?</h2>
+<p>Lo primero que llama la atención es el tamaño: pasa de unas <strong>5 a 19 páginas</strong>, organizadas en 17 secciones:</p>
+<ol type="1">
+<li>Ámbito</li>
+<li>Principios</li>
+<li>Sistema de calidad farmacéutico</li>
+<li>Gestión de riesgos</li>
+<li>Personal y formación</li>
+<li>Requisitos del sistema</li>
+<li>Gestión de proveedores y servicios</li>
+<li>Alarmas</li>
+<li>Cualificación y validación</li>
+<li>Manejo de datos</li>
+<li>Gestión de identidades y accesos</li>
+<li><em>Audit trails</em></li>
+<li>Firma electrónica</li>
+<li>Revisión periódica</li>
+<li>Seguridad</li>
+<li>Copias de seguridad</li>
+<li>Archivo</li>
+</ol>
+<p>De esta lista me quedo con cinco ideas:</p>
+<ul>
+<li><strong>Gestión de riesgos durante todo el ciclo de vida:</strong> no basta con validar el sistema una vez; el riesgo se evalúa desde los requisitos hasta la retirada.</li>
+<li><strong>Requisitos de usuario (URS) para todo:</strong> si no sabes qué tiene que hacer el sistema, no puedes demostrar que lo hace.</li>
+<li><strong>El <em>audit trail</em> no se guarda para nada:</strong> hay que revisarlo.</li>
+<li><strong>La ciberseguridad pasa a ser un requisito GMP:</strong> accesos, contraseñas, parches y redes entran en la inspección.</li>
+<li><strong>Proveedores y nube:</strong> que el sistema esté en manos de un tercero (SaaS) no exime a la empresa de su responsabilidad.</li>
+</ul>
+</section>
+<section id="un-ejemplo" class="level2">
+<h2 class="anchored" data-anchor-id="un-ejemplo">Un ejemplo</h2>
+<p>Un laboratorio de control de calidad usa un software en la nube para registrar los resultados analíticos. Con el borrador en la mano, la empresa debería poder enseñar:</p>
+<ul>
+<li>Qué requisitos definió antes de contratarlo y cómo comprobó que se cumplían.</li>
+<li>Un contrato con el proveedor que deje claro quién hace las copias de seguridad, quién gestiona los incidentes y dónde están los datos.</li>
+<li>Quién tiene acceso, con qué permisos y cuándo se revisaron por última vez.</li>
+<li>Pruebas de que alguien revisa periódicamente el <em>audit trail</em> de los resultados.</li>
+</ul>
+</section>
+<section id="y-en-ensayos-clínicos" class="level2">
+<h2 class="anchored" data-anchor-id="y-en-ensayos-clínicos">¿Y en ensayos clínicos?</h2>
+<p>El Anexo 11 es de <strong>fabricación</strong> (GMP). En ensayos clínicos (GCP) la referencia equivalente es la <em>Guideline on computerised systems and electronic data in clinical trials</em> de la EMA, de la que hablé en la <a href="../../../notas/2026/11-alcoa-plus-plus/index.html">nota sobre ALCOA++</a>. Las dos apuntan en la misma dirección.</p>
+</section>
+<section id="lo-que-me-llevo" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-me-llevo">Lo que me llevo</h2>
+<p>El Anexo 11 revisado se parece mucho a lo que en ingeniería del software llamaríamos buenas prácticas: requisitos, tests, control de accesos, <em>logs</em>, <em>backups</em> y revisiones. La diferencia es que aquí no es opcional ni depende del equipo: es lo que mirará un inspector.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li>Comisión Europea (2011). <em>EudraLex Volume 4, Annex 11: Computerised Systems</em> (versión vigente). <a href="https://health.ec.europa.eu/system/files/2016-11/annex11_01-2011_en_0.pdf">PDF</a></li>
+<li>Comisión Europea (2025). <em>Stakeholders’ Consultation on EudraLex Volume 4 – Good Manufacturing Practice Guidelines: Chapter 4, Annex 11 and New Annex 22</em> (borradores, julio de 2025). <a href="https://health.ec.europa.eu/consultations/stakeholders-consultation-eudralex-volume-4-good-manufacturing-practice-guidelines-chapter-4-annex_en">Enlace</a></li>
+<li>Comisión Europea. <em>EudraLex Volume 4 – Good Manufacturing Practice (GMP) guidelines</em>. <a href="https://health.ec.europa.eu/medicinal-products/eudralex/eudralex-volume-4_en">Enlace</a></li>
+<li>EMA / PIC/S (2022). <em>Concept paper on the revision of Annex 11 of the guidelines on Good Manufacturing Practice for medicinal products – Computerised Systems</em>.</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>regulación</category>
+  <category>datos</category>
+  <category>calidad</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/11-anexo-11/</guid>
+  <pubDate>Sat, 28 Nov 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Anexo 22: la primera norma GMP europea sobre inteligencia artificial</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/11-anexo-22/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Estado a noviembre de 2026
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El Anexo 22 es todavía un <strong>borrador</strong> (julio de 2025). No es vinculante y el texto final puede cambiar, sobre todo en lo relativo a la IA generativa.</p>
+</div>
+</div>
+<section id="qué-es" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es">¿Qué es?</h2>
+<p>Es un anexo nuevo de las GMP europeas (EudraLex vol.&nbsp;4), el primero escrito específicamente para la <strong>inteligencia artificial</strong>. Lo redactó el grupo de inspectores GMP de la EMA junto con PIC/S y se publicó para consulta junto con el borrador del <a href="../../../notas/2026/11-anexo-11/index.html">Anexo 11</a>.</p>
+<p>Se aplica a modelos de IA integrados en sistemas informatizados que se usan en <strong>aplicaciones críticas</strong> de la fabricación de medicamentos y principios activos, es decir, aquellas que afectan directamente a la seguridad del paciente, a la calidad del producto o a la integridad de los datos.</p>
+</section>
+<section id="la-gran-decisión-qué-modelos-sí-y-cuáles-no" class="level2">
+<h2 class="anchored" data-anchor-id="la-gran-decisión-qué-modelos-sí-y-cuáles-no">La gran decisión: qué modelos sí y cuáles no</h2>
+<p>Esta es la parte que más debate ha generado. El borrador solo contempla para usos críticos los modelos:</p>
+<ul>
+<li><strong>Estáticos:</strong> sus parámetros quedan congelados una vez desplegados; no siguen aprendiendo en producción.</li>
+<li><strong>Deterministas:</strong> con la misma entrada, dan siempre la misma salida.</li>
+</ul>
+<p>Y excluye de las aplicaciones críticas:</p>
+<ul>
+<li>Los modelos <strong>dinámicos</strong>, que aprenden de forma continua.</li>
+<li>Los modelos <strong>probabilísticos</strong>, cuya salida puede variar con la misma entrada.</li>
+<li>La <strong>IA generativa</strong> y los <strong>LLM</strong>.</li>
+</ul>
+<p>Estos últimos podrían usarse en tareas no críticas, siempre con una persona cualificada que revise el resultado.</p>
+</section>
+<section id="qué-exige-a-los-modelos-permitidos" class="level2">
+<h2 class="anchored" data-anchor-id="qué-exige-a-los-modelos-permitidos">Qué exige a los modelos permitidos</h2>
+<p>A grandes rasgos, el borrador pide:</p>
+<ol type="1">
+<li><strong>Uso previsto definido:</strong> qué hace el modelo, con qué datos, en qué parte del proceso y con qué limitaciones.</li>
+<li><strong>Criterios de aceptación:</strong> métricas de rendimiento fijadas antes de probar el modelo, al menos tan buenas como las del proceso al que sustituye.</li>
+<li><strong>Datos de test independientes y representativos:</strong> los datos de prueba no pueden haberse usado para entrenar el modelo.</li>
+<li><strong>Explicabilidad:</strong> poder entender en qué se basa una decisión.</li>
+<li><strong>Confianza:</strong> registrar cuán seguro está el modelo de cada predicción y actuar cuando la confianza es baja.</li>
+<li><strong>Supervisión en operación:</strong> control de cambios, monitorización del rendimiento y revisión humana cuando sea necesario.</li>
+</ol>
+</section>
+<section id="un-ejemplo" class="level2">
+<h2 class="anchored" data-anchor-id="un-ejemplo">Un ejemplo</h2>
+<p>Una planta usa una red neuronal convolucional para detectar defectos en viales mediante visión artificial:</p>
+<ul>
+<li><strong>Uso previsto:</strong> clasificar viales en «aceptable» o «rechazo» a partir de imágenes de una cámara concreta.</li>
+<li><strong>Criterio de aceptación:</strong> la tasa de defectos no detectados debe ser igual o inferior a la de la inspección manual.</li>
+<li><strong>Test independiente:</strong> un conjunto de imágenes que el modelo nunca ha visto, con defectos reales de todos los tipos.</li>
+<li><strong>Operación:</strong> si se cambia la cámara o la iluminación, se trata como un cambio controlado y se vuelve a evaluar el modelo.</li>
+</ul>
+<p>Este planteamiento me resulta familiar: separar <em>train</em> y <em>test</em>, fijar métricas antes de mirar resultados y vigilar el <em>data drift</em> son buenas prácticas de <em>machine learning</em> de toda la vida. La diferencia es que aquí pasan a ser una exigencia regulatoria.</p>
+</section>
+<section id="cómo-encaja-con-el-resto" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-encaja-con-el-resto">Cómo encaja con el resto</h2>
+<ul>
+<li><strong>Anexo 11:</strong> el modelo vive dentro de un sistema informatizado, así que el Anexo 11 sigue aplicándose. El Anexo 22 añade los requisitos específicos de IA.</li>
+<li><strong>Ley de IA de la UE (Reglamento 2024/1689):</strong> es una ley horizontal para cualquier sector; el Anexo 22 es una guía específica de fabricación farmacéutica. Son complementarias.</li>
+</ul>
+</section>
+<section id="lo-que-me-llevo" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-me-llevo">Lo que me llevo</h2>
+<p>El Anexo 22 está pensado para la fabricación, no para la investigación clínica, pero su forma de pensar sirve para cualquier modelo que se use en salud: definir para qué sirve, probarlo con datos que no ha visto y no dejarlo solo una vez desplegado. Habrá que ver si el texto final abre más la puerta a la IA generativa; la EMA reunió a expertos en verano de 2026 precisamente para debatirlo.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li>Comisión Europea (2025). <em>EudraLex Volume 4, Annex 22: Artificial Intelligence</em> (borrador para consulta, julio de 2025). <a href="https://health.ec.europa.eu/consultations/stakeholders-consultation-eudralex-volume-4-good-manufacturing-practice-guidelines-chapter-4-annex_en">Página de la consulta</a></li>
+<li>EMA (2026). <em>Good manufacturing practice: Multistakeholder workshop on expert contributions to artificial intelligence guidance development (Annex 22)</em>, 30 de junio – 1 de julio de 2026. <a href="https://www.ema.europa.eu/en/events/good-manufacturing-practice-multistakeholder-workshop-expert-contributions-artificial-intelligence-guidance-development-annex-22">Enlace</a></li>
+<li>Reglamento (UE) 2024/1689, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Ley de IA). <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">EUR-Lex</a></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>IA</category>
+  <category>regulación</category>
+  <category>salud</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/11-anexo-22/</guid>
+  <pubDate>Sat, 28 Nov 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>GxP: la familia de las «buenas prácticas»</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/11-gxp/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<p>Cuando empiezas a leer sobre regulación farmacéutica aparece una palabra que parece una errata: <strong>GxP</strong>. No lo es. Es una plantilla: <strong>G</strong>ood <strong>x</strong> <strong>P</strong>ractice, donde la <em>x</em> se sustituye por la actividad concreta.</p>
+<section id="la-x-es-comodín" class="level2">
+<h2 class="anchored" data-anchor-id="la-x-es-comodín">La x es comodín</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 22%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sigla</th>
+<th>Nombre</th>
+<th>¿Qué cubre?</th>
+<th>Referencia principal en la UE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GMP</strong></td>
+<td><em>Good Manufacturing Practice</em></td>
+<td>Fabricación de medicamentos</td>
+<td>Directiva (UE) 2017/1572 y EudraLex vol.&nbsp;4</td>
+</tr>
+<tr class="even">
+<td><strong>GCP</strong></td>
+<td><em>Good Clinical Practice</em></td>
+<td>Ensayos clínicos con personas</td>
+<td>Reglamento (UE) 536/2014 e ICH E6(R3)</td>
+</tr>
+<tr class="odd">
+<td><strong>GLP</strong></td>
+<td><em>Good Laboratory Practice</em></td>
+<td>Estudios no clínicos de seguridad (toxicología…)</td>
+<td>Directiva 2004/10/CE y Principios BPL de la OCDE</td>
+</tr>
+<tr class="even">
+<td><strong>GDP</strong></td>
+<td><em>Good Distribution Practice</em></td>
+<td>Almacenamiento y transporte</td>
+<td>Directrices 2013/C 343/01</td>
+</tr>
+<tr class="odd">
+<td><strong>GVP</strong></td>
+<td><em>Good Pharmacovigilance Practice</em></td>
+<td>Vigilancia de la seguridad tras la comercialización</td>
+<td>Reglamento de Ejecución (UE) 520/2012 y módulos GVP de la EMA</td>
+</tr>
+</tbody>
+</table>
+<p>(Ojo: <strong>GDP</strong> en farma no tiene nada que ver con el PIB ni con el RGPD, que en inglés es GDPR.)</p>
+</section>
+<section id="lo-que-tienen-en-común" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-tienen-en-común">Lo que tienen en común</h2>
+<p>Cada GxP regula una fase distinta de la vida de un medicamento, pero todas comparten la misma idea de fondo:</p>
+<blockquote class="blockquote">
+<p>Si no está documentado, no ha ocurrido.</p>
+</blockquote>
+<p>De ahí salen unos cuantos pilares que se repiten en todas ellas:</p>
+<ul>
+<li><strong>Trazabilidad:</strong> poder reconstruir quién hizo qué, cuándo y por qué.</li>
+<li><strong>Integridad de datos:</strong> los datos deben cumplir <a href="../../../notas/2026/11-alcoa-plus-plus/index.html">ALCOA++</a>.</li>
+<li><strong>Procedimientos escritos (SOP):</strong> las tareas críticas se hacen siempre igual y siguiendo un documento aprobado.</li>
+<li><strong>Formación documentada:</strong> cada persona está formada para lo que hace, y se puede demostrar.</li>
+<li><strong>Gestión de riesgos:</strong> el esfuerzo se concentra donde más puede afectar al paciente o al producto.</li>
+<li><strong>Inspecciones:</strong> las autoridades comprueban que todo lo anterior se cumple de verdad.</li>
+</ul>
+</section>
+<section id="un-ejemplo-la-vida-de-un-comprimido" class="level2">
+<h2 class="anchored" data-anchor-id="un-ejemplo-la-vida-de-un-comprimido">Un ejemplo: la vida de un comprimido</h2>
+<ol type="1">
+<li>En el laboratorio se estudia su toxicidad en modelos no clínicos → <strong>GLP</strong>.</li>
+<li>Se prueba en pacientes dentro de un ensayo clínico → <strong>GCP</strong>.</li>
+<li>Se fabrica a escala industrial → <strong>GMP</strong>.</li>
+<li>Viaja en camión refrigerado hasta la farmacia → <strong>GDP</strong>.</li>
+<li>Una vez en el mercado, se recogen y analizan las sospechas de reacciones adversas → <strong>GVP</strong>.</li>
+</ol>
+<p>Cada paso tiene su propio reglamento, pero el hilo conductor es el mismo: demostrar que se ha hecho bien.</p>
+</section>
+<section id="y-los-sistemas-informáticos" class="level2">
+<h2 class="anchored" data-anchor-id="y-los-sistemas-informáticos">¿Y los sistemas informáticos?</h2>
+<p>Aquí aparece el término <strong>GxP computerised systems</strong>: cualquier software que genera, procesa o almacena datos relevantes para alguna de estas prácticas. Una hoja de Excel que calcula resultados de un ensayo de laboratorio puede ser un sistema GxP. De eso tratan el <a href="../../../notas/2026/11-anexo-11/index.html">Anexo 11</a> para fabricación y la guía de la EMA sobre sistemas informatizados en ensayos clínicos.</p>
+</section>
+<section id="lo-que-me-llevo" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-me-llevo">Lo que me llevo</h2>
+<p>GxP no es una norma, sino una forma de trabajar. Para alguien que viene de la informática, la traducción es casi directa: control de versiones, <em>logs</em>, tests reproducibles y documentación. La diferencia es que aquí, si falta algo, no se rompe un <em>build</em>: se pone en duda la seguridad de un paciente.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li>Directiva (UE) 2017/1572 de la Comisión, de 15 de septiembre de 2017, sobre principios y directrices de prácticas correctas de fabricación de medicamentos de uso humano. <a href="https://eur-lex.europa.eu/eli/dir/2017/1572/oj">EUR-Lex</a></li>
+<li>Comisión Europea. <em>EudraLex Volume 4 – Good Manufacturing Practice (GMP) guidelines</em>. <a href="https://health.ec.europa.eu/medicinal-products/eudralex/eudralex-volume-4_en">Enlace</a></li>
+<li>Reglamento (UE) n.º 536/2014, de 16 de abril de 2014, sobre los ensayos clínicos de medicamentos de uso humano. <a href="https://eur-lex.europa.eu/eli/reg/2014/536/oj">EUR-Lex</a></li>
+<li>ICH E6(R3) <em>Good Clinical Practice</em>. Principios y Anexo 1 en vigor desde el 23 de julio de 2025; Anexo 2 aplicable desde el 15 de enero de 2027. <a href="https://www.ema.europa.eu/en/ich-e6-good-clinical-practice-scientific-guideline">EMA</a></li>
+<li>Directiva 2004/10/CE, de 11 de febrero de 2004, sobre buenas prácticas de laboratorio.</li>
+<li>OCDE (1998). <em>OECD Principles on Good Laboratory Practice</em>. ENV/MC/CHEM(98)17.</li>
+<li>Directrices de 5 de noviembre de 2013 sobre prácticas correctas de distribución de medicamentos para uso humano (2013/C 343/01).</li>
+<li>Reglamento de Ejecución (UE) n.º 520/2012 de la Comisión, sobre actividades de farmacovigilancia.</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>regulación</category>
+  <category>salud</category>
+  <category>datos</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/11-gxp/</guid>
+  <pubDate>Sat, 28 Nov 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>ISO/IEC 42001: un sistema de gestión para la inteligencia artificial</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/11-iso-42001/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<p>Si ISO 9001 es la norma de la calidad e ISO/IEC 27001 la de la seguridad de la información, <strong>ISO/IEC 42001</strong> es la de la <strong>inteligencia artificial</strong>. Se publicó en diciembre de 2023 y es la primera norma internacional que permite <strong>certificar</strong> cómo una organización gestiona la IA.</p>
+<section id="qué-es-un-aims" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-un-aims">¿Qué es un AIMS?</h2>
+<p>La norma define los requisitos de un <strong>sistema de gestión de la IA</strong> (<em>AI Management System</em>, AIMS). No evalúa si un modelo concreto es bueno, sino si la organización que lo desarrolla, lo usa o lo vende tiene un marco para hacerlo de forma responsable a lo largo de todo su ciclo de vida.</p>
+<p>Se aplica tanto a quien <strong>desarrolla</strong> IA como a quien solo la <strong>usa</strong> o la <strong>integra</strong> en sus productos.</p>
+</section>
+<section id="la-misma-estructura-de-siempre" class="level2">
+<h2 class="anchored" data-anchor-id="la-misma-estructura-de-siempre">La misma estructura de siempre</h2>
+<p>Sigue la estructura armonizada de ISO (cláusulas 4 a 10), igual que <a href="../../../notas/2026/11-iso-9001-27001/index.html">ISO 9001 e ISO/IEC 27001</a>. Por eso es fácil integrarla en un sistema de gestión que ya exista. Lo específico de la IA aparece en:</p>
+<ul>
+<li><strong>Evaluación de riesgos de IA:</strong> sesgos, falta de transparencia, errores con consecuencias para las personas, uso indebido…</li>
+<li><strong>Evaluación de impacto de los sistemas de IA:</strong> cómo puede afectar el sistema a personas, grupos y a la sociedad.</li>
+<li><strong>Anexo A:</strong> controles de referencia, por ejemplo sobre políticas de IA, datos usados por los sistemas, ciclo de vida, información a las partes interesadas, uso responsable y relaciones con terceros.</li>
+<li><strong>Anexo B:</strong> guía para implementar esos controles.</li>
+</ul>
+</section>
+<section id="un-ejemplo" class="level2">
+<h2 class="anchored" data-anchor-id="un-ejemplo">Un ejemplo</h2>
+<p>Un grupo de investigación desarrolla un modelo de <em>deep learning</em> para analizar fotografías clínicas. Siguiendo ISO/IEC 42001, se preguntaría:</p>
+<ul>
+<li><strong>Datos:</strong> ¿de dónde vienen las imágenes? ¿Son representativas de todos los tipos de piel, edades y condiciones de captura?</li>
+<li><strong>Impacto:</strong> ¿qué pasa si el modelo se equivoca? ¿Quién revisa sus resultados antes de tomar una decisión clínica?</li>
+<li><strong>Ciclo de vida:</strong> ¿cómo se documentan las versiones del modelo? ¿Cuándo se reentrena y quién lo aprueba?</li>
+<li><strong>Transparencia:</strong> ¿saben los profesionales y pacientes que están usando una herramienta de IA y cuáles son sus limitaciones?</li>
+</ul>
+</section>
+<section id="y-la-ley-de-ia-europea" class="level2">
+<h2 class="anchored" data-anchor-id="y-la-ley-de-ia-europea">¿Y la Ley de IA europea?</h2>
+<p>La <strong>Ley de IA</strong> (Reglamento (UE) 2024/1689) es <strong>obligatoria</strong>; ISO/IEC 42001 es <strong>voluntaria</strong>. Implantar la norma ayuda a cumplir parte de la ley (gestión de riesgos, documentación, supervisión humana), pero no garantiza su cumplimiento automáticamente.</p>
+<p>La Ley de IA ya ha sido modificada por el Reglamento (UE) 2026/1744 (el «Omnibus digital» sobre IA), que cambió el calendario de algunas obligaciones. Conviene comprobar siempre las fechas vigentes en el texto consolidado.</p>
+</section>
+<section id="normas-relacionadas" class="level2">
+<h2 class="anchored" data-anchor-id="normas-relacionadas">Normas relacionadas</h2>
+<ul>
+<li><strong>ISO/IEC 22989:</strong> conceptos y terminología de IA.</li>
+<li><strong>ISO/IEC 23894:</strong> guía de gestión de riesgos de la IA.</li>
+<li><strong>ISO/IEC 27001:</strong> seguridad de la información; muchos controles se complementan.</li>
+</ul>
+</section>
+<section id="lo-que-me-llevo" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-me-llevo">Lo que me llevo</h2>
+<p>ISO/IEC 42001 lleva a la IA lo que otras normas llevan haciendo décadas con la calidad o la seguridad: no basta con que algo funcione, hay que poder demostrar que se gestiona de forma responsable. Para quien investiga con IA en salud, es una buena lista de preguntas incómodas que conviene hacerse antes de que nos las haga otra persona.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li>ISO/IEC 42001:2023. <em>Information technology — Artificial intelligence — Management system</em>. ISO/IEC, 2023.</li>
+<li>ISO/IEC 22989:2022. <em>Information technology — Artificial intelligence — Artificial intelligence concepts and terminology</em>. ISO/IEC, 2022.</li>
+<li>ISO/IEC 23894:2023. <em>Information technology — Artificial intelligence — Guidance on risk management</em>. ISO/IEC, 2023.</li>
+<li>Reglamento (UE) 2024/1689, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Ley de IA). <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">EUR-Lex</a></li>
+<li>Reglamento (UE) 2026/1744, que modifica el Reglamento (UE) 2024/1689 (Omnibus digital sobre IA).</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>IA</category>
+  <category>calidad</category>
+  <category>regulación</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/11-iso-42001/</guid>
+  <pubDate>Sat, 28 Nov 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/11-iso-9001-27001/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<p>Las GxP son obligatorias por ley. Las normas ISO, en cambio, son <strong>voluntarias</strong>: una organización decide adoptarlas y, si quiere, certificarse con una entidad externa. Aun así, en el sector salud son casi imprescindibles, porque clientes, hospitales y socios suelen pedirlas.</p>
+<section id="una-estructura-común" class="level2">
+<h2 class="anchored" data-anchor-id="una-estructura-común">Una estructura común</h2>
+<p>Las dos siguen la misma <strong>estructura armonizada</strong> de ISO para sistemas de gestión. Si entiendes una, ya tienes media otra:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 47%">
+<col style="width: 52%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Cláusula</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4</td>
+<td>Contexto de la organización</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Liderazgo</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>Planificación (riesgos y oportunidades, objetivos)</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>Apoyo (recursos, competencia, documentación)</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Operación</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>Evaluación del desempeño (auditorías internas, revisión por la dirección)</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>Mejora</td>
+</tr>
+</tbody>
+</table>
+<p>Detrás está el ciclo <strong>PDCA</strong>: planificar, hacer, verificar y actuar, y vuelta a empezar.</p>
+</section>
+<section id="iso-9001-gestión-de-la-calidad" class="level2">
+<h2 class="anchored" data-anchor-id="iso-9001-gestión-de-la-calidad">ISO 9001: gestión de la calidad</h2>
+<p>Es la norma de sistemas de gestión más extendida del mundo. No dice cómo fabricar un producto concreto; dice cómo organizarse para hacerlo bien de forma sistemática y satisfacer al cliente. Se apoya en siete principios de gestión de la calidad (definidos en ISO 9000):</p>
+<ol type="1">
+<li>Enfoque al cliente</li>
+<li>Liderazgo</li>
+<li>Compromiso de las personas</li>
+<li>Enfoque a procesos</li>
+<li>Mejora</li>
+<li>Toma de decisiones basada en la evidencia</li>
+<li>Gestión de las relaciones</li>
+</ol>
+<p><strong>Novedad:</strong> el 16 de septiembre de 2026 se publicó <strong>ISO 9001:2026</strong>, que sustituye a la versión de 2015. Es una evolución, no una revolución. Entre los cambios:</p>
+<ul>
+<li>Se añade la promoción de la <strong>cultura de la calidad y el comportamiento ético</strong> como responsabilidad de la dirección (5.1.1).</li>
+<li>La cláusula 6.1 separa más claramente los <strong>riesgos</strong> de las <strong>oportunidades</strong>.</li>
+<li>Se refuerza la gestión de los <strong>cambios</strong> en el sistema (6.3).</li>
+</ul>
+<p>Las organizaciones certificadas con la versión de 2015 tienen hasta el <strong>30 de septiembre de 2029</strong> para pasar a la nueva.</p>
+</section>
+<section id="isoiec-27001-seguridad-de-la-información" class="level2">
+<h2 class="anchored" data-anchor-id="isoiec-27001-seguridad-de-la-información">ISO/IEC 27001: seguridad de la información</h2>
+<p>Define cómo montar un <strong>SGSI</strong> (sistema de gestión de la seguridad de la información). Su objetivo es proteger tres propiedades de la información, la llamada <strong>tríada CIA</strong>:</p>
+<ul>
+<li><strong>Confidencialidad:</strong> solo accede quien debe.</li>
+<li><strong>Integridad:</strong> la información no se altera sin control.</li>
+<li><strong>Disponibilidad:</strong> está accesible cuando se necesita.</li>
+</ul>
+<p>El núcleo es la <strong>evaluación de riesgos</strong>: identificar amenazas y vulnerabilidades y decidir cómo tratarlas. Para ello, el Anexo A ofrece un catálogo de <strong>93 controles</strong> agrupados en cuatro temas: organizativos, de personas, físicos y tecnológicos. No todos son obligatorios: la organización elige los que necesita y justifica sus decisiones en la <strong>Declaración de Aplicabilidad</strong>. La guía de cómo implementar cada control está en la norma hermana, ISO/IEC 27002.</p>
+<p>La versión vigente es la de <strong>2022</strong>, con una enmienda de 2024 que añade la consideración del cambio climático en el análisis del contexto. No existe una edición de 2026.</p>
+</section>
+<section id="un-ejemplo" class="level2">
+<h2 class="anchored" data-anchor-id="un-ejemplo">Un ejemplo</h2>
+<p>Un hospital que desarrolla una herramienta de IA con imágenes clínicas:</p>
+<ul>
+<li>Con <strong>ISO 9001</strong> demostraría que tiene procesos definidos para diseñar, probar y mejorar la herramienta, y que recoge y atiende las quejas de los usuarios.</li>
+<li>Con <strong>ISO/IEC 27001</strong> demostraría que ha analizado los riesgos de las imágenes (acceso no autorizado, pérdida, manipulación) y que aplica controles como cifrado, gestión de accesos o copias de seguridad.</li>
+</ul>
+</section>
+<section id="cómo-se-relacionan-con-gxp" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-se-relacionan-con-gxp">¿Cómo se relacionan con GxP?</h2>
+<p>Se solapan mucho. El <a href="../../../notas/2026/11-anexo-11/index.html">Anexo 11</a> revisado incluye una sección de seguridad que recuerda a ISO 27001, y los sistemas de calidad farmacéuticos comparten la lógica de ISO 9001. Pero hay una diferencia clave: un certificado ISO <strong>no</strong> sustituye el cumplimiento GxP, que es obligatorio e inspeccionado por las autoridades sanitarias.</p>
+</section>
+<section id="lo-que-me-llevo" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-me-llevo">Lo que me llevo</h2>
+<p>ISO 9001 responde a «¿hacemos bien las cosas y lo podemos demostrar?». ISO/IEC 27001 responde a «¿protegemos bien la información y lo podemos demostrar?». La segunda parte de las dos preguntas es la que importa: en todas estas normas, la evidencia lo es todo.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li>ISO 9001:2026. <em>Quality management systems — Requirements</em>. Ed. 6. International Organization for Standardization, 2026.</li>
+<li>ISO 9000:2015. <em>Quality management systems — Fundamentals and vocabulary</em>. International Organization for Standardization, 2015.</li>
+<li>ISO/IEC 27001:2022. <em>Information security, cybersecurity and privacy protection — Information security management systems — Requirements</em>. ISO/IEC, 2022.</li>
+<li>ISO/IEC 27001:2022/Amd 1:2024. <em>Amendment 1: Climate action changes</em>. ISO/IEC, 2024.</li>
+<li>ISO/IEC 27002:2022. <em>Information security, cybersecurity and privacy protection — Information security controls</em>. ISO/IEC, 2022.</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>calidad</category>
+  <category>seguridad</category>
+  <category>regulación</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/11-iso-9001-27001/</guid>
+  <pubDate>Sat, 28 Nov 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>RGPD: proteger los datos personales (sobre todo los de salud)</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/notas/2026/11-rgpd/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<p>Del <strong>RGPD</strong> (Reglamento General de Protección de Datos, <em>GDPR</em> en inglés) casi todo el mundo conoce los avisos de <em>cookies</em>. Pero es mucho más: es la norma que regula cualquier tratamiento de datos personales en la UE desde el <strong>25 de mayo de 2018</strong>. Y si trabajas con datos de salud, es la que más te afecta.</p>
+<section id="conceptos-básicos" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-básicos">Conceptos básicos</h2>
+<ul>
+<li><strong>Dato personal:</strong> cualquier información sobre una persona identificada o <strong>identificable</strong>, aunque sea de forma indirecta.</li>
+<li><strong>Tratamiento:</strong> casi cualquier cosa que se haga con los datos, como recogerlos, guardarlos, analizarlos, compartirlos o borrarlos.</li>
+<li><strong>Responsable del tratamiento:</strong> quien decide para qué y cómo se tratan los datos.</li>
+<li><strong>Encargado del tratamiento:</strong> quien trata los datos por cuenta del responsable, por ejemplo un proveedor de la nube.</li>
+</ul>
+</section>
+<section id="los-siete-principios-artículo-5" class="level2">
+<h2 class="anchored" data-anchor-id="los-siete-principios-artículo-5">Los siete principios (artículo 5)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Principio</th>
+<th>En una frase</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Licitud, lealtad y transparencia</td>
+<td>Hay una base legal y la persona sabe qué se hace con sus datos</td>
+</tr>
+<tr class="even">
+<td>Limitación de la finalidad</td>
+<td>Se recogen para un fin concreto y no se usan para otro incompatible</td>
+</tr>
+<tr class="odd">
+<td>Minimización</td>
+<td>Solo los datos necesarios, ni uno más</td>
+</tr>
+<tr class="even">
+<td>Exactitud</td>
+<td>Correctos y actualizados</td>
+</tr>
+<tr class="odd">
+<td>Limitación del plazo de conservación</td>
+<td>No se guardan más tiempo del necesario</td>
+</tr>
+<tr class="even">
+<td>Integridad y confidencialidad</td>
+<td>Protegidos frente a accesos, pérdidas o daños</td>
+</tr>
+<tr class="odd">
+<td>Responsabilidad proactiva</td>
+<td>El responsable debe poder <strong>demostrar</strong> que cumple todo lo anterior</td>
+</tr>
+</tbody>
+</table>
+<p>¿Te suena? El último principio es el mismo espíritu de <a href="../../../notas/2026/11-gxp/index.html">GxP</a> y de las normas ISO: no basta con cumplir, hay que poder demostrarlo.</p>
+</section>
+<section id="los-datos-de-salud-son-especiales" class="level2">
+<h2 class="anchored" data-anchor-id="los-datos-de-salud-son-especiales">Los datos de salud son especiales</h2>
+<p>El artículo 9 considera los datos de salud, genéticos y biométricos <strong>categorías especiales</strong>: en principio, está prohibido tratarlos, salvo excepciones como el consentimiento explícito, la asistencia sanitaria o la <strong>investigación científica</strong> con garantías adecuadas (artículo 89).</p>
+<p>En España, la <strong>LOPDGDD</strong> (Ley Orgánica 3/2018) desarrolla el RGPD y su disposición adicional decimoséptima regula específicamente el uso de datos de salud en investigación.</p>
+</section>
+<section id="seudonimizar-no-es-anonimizar" class="level2">
+<h2 class="anchored" data-anchor-id="seudonimizar-no-es-anonimizar">Seudonimizar no es anonimizar</h2>
+<p>Es una de las confusiones más habituales:</p>
+<ul>
+<li><strong>Datos seudonimizados:</strong> se sustituyen los identificadores por un código, pero con información adicional (la «llave») se puede volver a identificar a la persona. <strong>Siguen siendo datos personales</strong> y el RGPD se aplica.</li>
+<li><strong>Datos anónimos:</strong> ya no se puede identificar a la persona por ningún medio razonable. <strong>El RGPD deja de aplicarse.</strong></li>
+</ul>
+<p>Con imágenes médicas, la anonimización es más difícil de lo que parece: una fotografía puede contener una cara, un tatuaje o metadatos con fecha, hora y dispositivo.</p>
+</section>
+<section id="un-ejemplo" class="level2">
+<h2 class="anchored" data-anchor-id="un-ejemplo">Un ejemplo</h2>
+<p>Un proyecto de investigación recoge fotografías clínicas de pacientes para entrenar un modelo de IA:</p>
+<ul>
+<li><strong>Base legal y transparencia:</strong> el paciente recibe información clara sobre el proyecto y, según el caso, da su consentimiento.</li>
+<li><strong>Minimización:</strong> se recorta la imagen a la zona de interés y se eliminan los metadatos innecesarios.</li>
+<li><strong>Seudonimización:</strong> cada paciente tiene un código; la tabla que relaciona códigos y nombres se guarda aparte y con acceso restringido.</li>
+<li><strong>Evaluación de impacto (artículo 35):</strong> por tratar datos de salud a gran escala con tecnologías nuevas, probablemente sea obligatoria.</li>
+<li><strong>Brechas de seguridad (artículo 33):</strong> si se pierden o filtran datos, hay <strong>72 horas</strong> para notificarlo a la autoridad de control (en España, la AEPD).</li>
+</ul>
+</section>
+<section id="va-a-cambiar-el-rgpd" class="level2">
+<h2 class="anchored" data-anchor-id="va-a-cambiar-el-rgpd">¿Va a cambiar el RGPD?</h2>
+<p>En noviembre de 2025 la Comisión Europea propuso el <strong>Omnibus digital</strong>, que modificaría partes del RGPD y de las normas sobre <em>cookies</em>. A finales de noviembre de 2026 <strong>sigue siendo una propuesta</strong>: el Consejo ya tiene su posición, pero el Parlamento todavía no. Mientras tanto, el RGPD se aplica sin cambios.</p>
+<p>En el ámbito de la salud también conviene seguir el <strong>Espacio Europeo de Datos Sanitarios</strong> (Reglamento (UE) 2025/327), que regulará el uso secundario de datos de salud para investigación.</p>
+</section>
+<section id="lo-que-me-llevo" class="level2">
+<h2 class="anchored" data-anchor-id="lo-que-me-llevo">Lo que me llevo</h2>
+<p>El RGPD no prohíbe investigar con datos de salud; exige hacerlo con cabeza: con una finalidad clara, solo con los datos necesarios, protegidos y pudiendo demostrarlo. Muchas de sus exigencias son, al final, buenas prácticas de ingeniería de datos con nombre jurídico.</p>
+</section>
+<section id="referencias" class="level2">
+<h2 class="anchored" data-anchor-id="referencias">Referencias</h2>
+<ul>
+<li>Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD). <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">EUR-Lex</a></li>
+<li>Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD). <a href="https://www.boe.es/eli/es/lo/2018/12/05/3">BOE</a></li>
+<li>Comisión Europea (2025). Propuesta de Reglamento sobre el Omnibus digital, COM(2025) 837, procedimiento 2025/0360(COD).</li>
+<li>Reglamento (UE) 2025/327, de 11 de febrero de 2025, relativo al Espacio Europeo de Datos Sanitarios. <a href="https://eur-lex.europa.eu/eli/reg/2025/327/oj">EUR-Lex</a></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>privacidad</category>
+  <category>datos</category>
+  <category>salud</category>
+  <category>regulación</category>
+  <guid>https://thisisjosepablo.github.io/notas/2026/11-rgpd/</guid>
+  <pubDate>Sat, 28 Nov 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Participación en CAEPIA 26</title>
   <dc:creator>José Pablo Soriano Torres</dc:creator>

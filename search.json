@@ -182,6 +182,461 @@
     "text": "Reconocimientos y premios\n\n\n\n\n  \n    \n      \n    \n    \n      Premio Extraordinario de Grado\n      \n      Universidad de Jaén\n      \n        2025\n      \n      \n      \n      \n      \n      \n      \n        \n          \n          \n          Asociado con Grado en Ingeniería Informática\n        \n      \n      \n      \n      \n    \n  \n\n  \n    \n      \n    \n    \n      Reconocimiento al mejor expediente del curso 2024/2025\n      \n      Universidad de Jaén\n      \n        2025\n      \n      \n      \n      \n      \n      \n      \n        \n          \n          \n          Asociado con Grado en Ingeniería Informática\n        \n      \n      Nota media de 9,4 y 20 matrículas de honor.\n      \n      \n    \n  \n\n  \n    \n      \n    \n    \n      Beca de Excelencia 360\n      \n      Banco Santander\n      \n        2025\n      \n      \n      \n      \n      \n      \n      \n      Beca muy competitiva, concedida a estudiantes con trayectoria académica destacada.\n      \n      \n    \n  \n\n\nNo hay resultados"
   },
   {
+    "objectID": "notas/2026/11-rgpd/index.html",
+    "href": "notas/2026/11-rgpd/index.html",
+    "title": "RGPD: proteger los datos personales (sobre todo los de salud)",
+    "section": "",
+    "text": "Del RGPD (Reglamento General de Protección de Datos, GDPR en inglés) casi todo el mundo conoce los avisos de cookies. Pero es mucho más: es la norma que regula cualquier tratamiento de datos personales en la UE desde el 25 de mayo de 2018. Y si trabajas con datos de salud, es la que más te afecta."
+  },
+  {
+    "objectID": "notas/2026/11-rgpd/index.html#conceptos-básicos",
+    "href": "notas/2026/11-rgpd/index.html#conceptos-básicos",
+    "title": "RGPD: proteger los datos personales (sobre todo los de salud)",
+    "section": "Conceptos básicos",
+    "text": "Conceptos básicos\n\nDato personal: cualquier información sobre una persona identificada o identificable, aunque sea de forma indirecta.\nTratamiento: casi cualquier cosa que se haga con los datos, como recogerlos, guardarlos, analizarlos, compartirlos o borrarlos.\nResponsable del tratamiento: quien decide para qué y cómo se tratan los datos.\nEncargado del tratamiento: quien trata los datos por cuenta del responsable, por ejemplo un proveedor de la nube."
+  },
+  {
+    "objectID": "notas/2026/11-rgpd/index.html#los-siete-principios-artículo-5",
+    "href": "notas/2026/11-rgpd/index.html#los-siete-principios-artículo-5",
+    "title": "RGPD: proteger los datos personales (sobre todo los de salud)",
+    "section": "Los siete principios (artículo 5)",
+    "text": "Los siete principios (artículo 5)\n\n\n\n\n\n\n\nPrincipio\nEn una frase\n\n\n\n\nLicitud, lealtad y transparencia\nHay una base legal y la persona sabe qué se hace con sus datos\n\n\nLimitación de la finalidad\nSe recogen para un fin concreto y no se usan para otro incompatible\n\n\nMinimización\nSolo los datos necesarios, ni uno más\n\n\nExactitud\nCorrectos y actualizados\n\n\nLimitación del plazo de conservación\nNo se guardan más tiempo del necesario\n\n\nIntegridad y confidencialidad\nProtegidos frente a accesos, pérdidas o daños\n\n\nResponsabilidad proactiva\nEl responsable debe poder demostrar que cumple todo lo anterior\n\n\n\n¿Te suena? El último principio es el mismo espíritu de GxP y de las normas ISO: no basta con cumplir, hay que poder demostrarlo."
+  },
+  {
+    "objectID": "notas/2026/11-rgpd/index.html#los-datos-de-salud-son-especiales",
+    "href": "notas/2026/11-rgpd/index.html#los-datos-de-salud-son-especiales",
+    "title": "RGPD: proteger los datos personales (sobre todo los de salud)",
+    "section": "Los datos de salud son especiales",
+    "text": "Los datos de salud son especiales\nEl artículo 9 considera los datos de salud, genéticos y biométricos categorías especiales: en principio, está prohibido tratarlos, salvo excepciones como el consentimiento explícito, la asistencia sanitaria o la investigación científica con garantías adecuadas (artículo 89).\nEn España, la LOPDGDD (Ley Orgánica 3/2018) desarrolla el RGPD y su disposición adicional decimoséptima regula específicamente el uso de datos de salud en investigación."
+  },
+  {
+    "objectID": "notas/2026/11-rgpd/index.html#seudonimizar-no-es-anonimizar",
+    "href": "notas/2026/11-rgpd/index.html#seudonimizar-no-es-anonimizar",
+    "title": "RGPD: proteger los datos personales (sobre todo los de salud)",
+    "section": "Seudonimizar no es anonimizar",
+    "text": "Seudonimizar no es anonimizar\nEs una de las confusiones más habituales:\n\nDatos seudonimizados: se sustituyen los identificadores por un código, pero con información adicional (la «llave») se puede volver a identificar a la persona. Siguen siendo datos personales y el RGPD se aplica.\nDatos anónimos: ya no se puede identificar a la persona por ningún medio razonable. El RGPD deja de aplicarse.\n\nCon imágenes médicas, la anonimización es más difícil de lo que parece: una fotografía puede contener una cara, un tatuaje o metadatos con fecha, hora y dispositivo."
+  },
+  {
+    "objectID": "notas/2026/11-rgpd/index.html#un-ejemplo",
+    "href": "notas/2026/11-rgpd/index.html#un-ejemplo",
+    "title": "RGPD: proteger los datos personales (sobre todo los de salud)",
+    "section": "Un ejemplo",
+    "text": "Un ejemplo\nUn proyecto de investigación recoge fotografías clínicas de pacientes para entrenar un modelo de IA:\n\nBase legal y transparencia: el paciente recibe información clara sobre el proyecto y, según el caso, da su consentimiento.\nMinimización: se recorta la imagen a la zona de interés y se eliminan los metadatos innecesarios.\nSeudonimización: cada paciente tiene un código; la tabla que relaciona códigos y nombres se guarda aparte y con acceso restringido.\nEvaluación de impacto (artículo 35): por tratar datos de salud a gran escala con tecnologías nuevas, probablemente sea obligatoria.\nBrechas de seguridad (artículo 33): si se pierden o filtran datos, hay 72 horas para notificarlo a la autoridad de control (en España, la AEPD)."
+  },
+  {
+    "objectID": "notas/2026/11-rgpd/index.html#va-a-cambiar-el-rgpd",
+    "href": "notas/2026/11-rgpd/index.html#va-a-cambiar-el-rgpd",
+    "title": "RGPD: proteger los datos personales (sobre todo los de salud)",
+    "section": "¿Va a cambiar el RGPD?",
+    "text": "¿Va a cambiar el RGPD?\nEn noviembre de 2025 la Comisión Europea propuso el Omnibus digital, que modificaría partes del RGPD y de las normas sobre cookies. A finales de noviembre de 2026 sigue siendo una propuesta: el Consejo ya tiene su posición, pero el Parlamento todavía no. Mientras tanto, el RGPD se aplica sin cambios.\nEn el ámbito de la salud también conviene seguir el Espacio Europeo de Datos Sanitarios (Reglamento (UE) 2025/327), que regulará el uso secundario de datos de salud para investigación."
+  },
+  {
+    "objectID": "notas/2026/11-rgpd/index.html#lo-que-me-llevo",
+    "href": "notas/2026/11-rgpd/index.html#lo-que-me-llevo",
+    "title": "RGPD: proteger los datos personales (sobre todo los de salud)",
+    "section": "Lo que me llevo",
+    "text": "Lo que me llevo\nEl RGPD no prohíbe investigar con datos de salud; exige hacerlo con cabeza: con una finalidad clara, solo con los datos necesarios, protegidos y pudiendo demostrarlo. Muchas de sus exigencias son, al final, buenas prácticas de ingeniería de datos con nombre jurídico."
+  },
+  {
+    "objectID": "notas/2026/11-rgpd/index.html#referencias",
+    "href": "notas/2026/11-rgpd/index.html#referencias",
+    "title": "RGPD: proteger los datos personales (sobre todo los de salud)",
+    "section": "Referencias",
+    "text": "Referencias\n\nReglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD). EUR-Lex\nLey Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD). BOE\nComisión Europea (2025). Propuesta de Reglamento sobre el Omnibus digital, COM(2025) 837, procedimiento 2025/0360(COD).\nReglamento (UE) 2025/327, de 11 de febrero de 2025, relativo al Espacio Europeo de Datos Sanitarios. EUR-Lex"
+  },
+  {
+    "objectID": "notas/2026/11-iso-9001-27001/index.html",
+    "href": "notas/2026/11-iso-9001-27001/index.html",
+    "title": "ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información",
+    "section": "",
+    "text": "Las GxP son obligatorias por ley. Las normas ISO, en cambio, son voluntarias: una organización decide adoptarlas y, si quiere, certificarse con una entidad externa. Aun así, en el sector salud son casi imprescindibles, porque clientes, hospitales y socios suelen pedirlas."
+  },
+  {
+    "objectID": "notas/2026/11-iso-9001-27001/index.html#una-estructura-común",
+    "href": "notas/2026/11-iso-9001-27001/index.html#una-estructura-común",
+    "title": "ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información",
+    "section": "Una estructura común",
+    "text": "Una estructura común\nLas dos siguen la misma estructura armonizada de ISO para sistemas de gestión. Si entiendes una, ya tienes media otra:\n\n\n\n\n\n\n\nCláusula\nContenido\n\n\n\n\n4\nContexto de la organización\n\n\n5\nLiderazgo\n\n\n6\nPlanificación (riesgos y oportunidades, objetivos)\n\n\n7\nApoyo (recursos, competencia, documentación)\n\n\n8\nOperación\n\n\n9\nEvaluación del desempeño (auditorías internas, revisión por la dirección)\n\n\n10\nMejora\n\n\n\nDetrás está el ciclo PDCA: planificar, hacer, verificar y actuar, y vuelta a empezar."
+  },
+  {
+    "objectID": "notas/2026/11-iso-9001-27001/index.html#iso-9001-gestión-de-la-calidad",
+    "href": "notas/2026/11-iso-9001-27001/index.html#iso-9001-gestión-de-la-calidad",
+    "title": "ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información",
+    "section": "ISO 9001: gestión de la calidad",
+    "text": "ISO 9001: gestión de la calidad\nEs la norma de sistemas de gestión más extendida del mundo. No dice cómo fabricar un producto concreto; dice cómo organizarse para hacerlo bien de forma sistemática y satisfacer al cliente. Se apoya en siete principios de gestión de la calidad (definidos en ISO 9000):\n\nEnfoque al cliente\nLiderazgo\nCompromiso de las personas\nEnfoque a procesos\nMejora\nToma de decisiones basada en la evidencia\nGestión de las relaciones\n\nNovedad: el 16 de septiembre de 2026 se publicó ISO 9001:2026, que sustituye a la versión de 2015. Es una evolución, no una revolución. Entre los cambios:\n\nSe añade la promoción de la cultura de la calidad y el comportamiento ético como responsabilidad de la dirección (5.1.1).\nLa cláusula 6.1 separa más claramente los riesgos de las oportunidades.\nSe refuerza la gestión de los cambios en el sistema (6.3).\n\nLas organizaciones certificadas con la versión de 2015 tienen hasta el 30 de septiembre de 2029 para pasar a la nueva."
+  },
+  {
+    "objectID": "notas/2026/11-iso-9001-27001/index.html#isoiec-27001-seguridad-de-la-información",
+    "href": "notas/2026/11-iso-9001-27001/index.html#isoiec-27001-seguridad-de-la-información",
+    "title": "ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información",
+    "section": "ISO/IEC 27001: seguridad de la información",
+    "text": "ISO/IEC 27001: seguridad de la información\nDefine cómo montar un SGSI (sistema de gestión de la seguridad de la información). Su objetivo es proteger tres propiedades de la información, la llamada tríada CIA:\n\nConfidencialidad: solo accede quien debe.\nIntegridad: la información no se altera sin control.\nDisponibilidad: está accesible cuando se necesita.\n\nEl núcleo es la evaluación de riesgos: identificar amenazas y vulnerabilidades y decidir cómo tratarlas. Para ello, el Anexo A ofrece un catálogo de 93 controles agrupados en cuatro temas: organizativos, de personas, físicos y tecnológicos. No todos son obligatorios: la organización elige los que necesita y justifica sus decisiones en la Declaración de Aplicabilidad. La guía de cómo implementar cada control está en la norma hermana, ISO/IEC 27002.\nLa versión vigente es la de 2022, con una enmienda de 2024 que añade la consideración del cambio climático en el análisis del contexto. No existe una edición de 2026."
+  },
+  {
+    "objectID": "notas/2026/11-iso-9001-27001/index.html#un-ejemplo",
+    "href": "notas/2026/11-iso-9001-27001/index.html#un-ejemplo",
+    "title": "ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información",
+    "section": "Un ejemplo",
+    "text": "Un ejemplo\nUn hospital que desarrolla una herramienta de IA con imágenes clínicas:\n\nCon ISO 9001 demostraría que tiene procesos definidos para diseñar, probar y mejorar la herramienta, y que recoge y atiende las quejas de los usuarios.\nCon ISO/IEC 27001 demostraría que ha analizado los riesgos de las imágenes (acceso no autorizado, pérdida, manipulación) y que aplica controles como cifrado, gestión de accesos o copias de seguridad."
+  },
+  {
+    "objectID": "notas/2026/11-iso-9001-27001/index.html#cómo-se-relacionan-con-gxp",
+    "href": "notas/2026/11-iso-9001-27001/index.html#cómo-se-relacionan-con-gxp",
+    "title": "ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información",
+    "section": "¿Cómo se relacionan con GxP?",
+    "text": "¿Cómo se relacionan con GxP?\nSe solapan mucho. El Anexo 11 revisado incluye una sección de seguridad que recuerda a ISO 27001, y los sistemas de calidad farmacéuticos comparten la lógica de ISO 9001. Pero hay una diferencia clave: un certificado ISO no sustituye el cumplimiento GxP, que es obligatorio e inspeccionado por las autoridades sanitarias."
+  },
+  {
+    "objectID": "notas/2026/11-iso-9001-27001/index.html#lo-que-me-llevo",
+    "href": "notas/2026/11-iso-9001-27001/index.html#lo-que-me-llevo",
+    "title": "ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información",
+    "section": "Lo que me llevo",
+    "text": "Lo que me llevo\nISO 9001 responde a «¿hacemos bien las cosas y lo podemos demostrar?». ISO/IEC 27001 responde a «¿protegemos bien la información y lo podemos demostrar?». La segunda parte de las dos preguntas es la que importa: en todas estas normas, la evidencia lo es todo."
+  },
+  {
+    "objectID": "notas/2026/11-iso-9001-27001/index.html#referencias",
+    "href": "notas/2026/11-iso-9001-27001/index.html#referencias",
+    "title": "ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información",
+    "section": "Referencias",
+    "text": "Referencias\n\nISO 9001:2026. Quality management systems — Requirements. Ed. 6. International Organization for Standardization, 2026.\nISO 9000:2015. Quality management systems — Fundamentals and vocabulary. International Organization for Standardization, 2015.\nISO/IEC 27001:2022. Information security, cybersecurity and privacy protection — Information security management systems — Requirements. ISO/IEC, 2022.\nISO/IEC 27001:2022/Amd 1:2024. Amendment 1: Climate action changes. ISO/IEC, 2024.\nISO/IEC 27002:2022. Information security, cybersecurity and privacy protection — Information security controls. ISO/IEC, 2022."
+  },
+  {
+    "objectID": "notas/2026/11-gxp/index.html",
+    "href": "notas/2026/11-gxp/index.html",
+    "title": "GxP: la familia de las «buenas prácticas»",
+    "section": "",
+    "text": "Cuando empiezas a leer sobre regulación farmacéutica aparece una palabra que parece una errata: GxP. No lo es. Es una plantilla: Good x Practice, donde la x se sustituye por la actividad concreta."
+  },
+  {
+    "objectID": "notas/2026/11-gxp/index.html#la-x-es-comodín",
+    "href": "notas/2026/11-gxp/index.html#la-x-es-comodín",
+    "title": "GxP: la familia de las «buenas prácticas»",
+    "section": "La x es comodín",
+    "text": "La x es comodín\n\n\n\n\n\n\n\n\n\nSigla\nNombre\n¿Qué cubre?\nReferencia principal en la UE\n\n\n\n\nGMP\nGood Manufacturing Practice\nFabricación de medicamentos\nDirectiva (UE) 2017/1572 y EudraLex vol. 4\n\n\nGCP\nGood Clinical Practice\nEnsayos clínicos con personas\nReglamento (UE) 536/2014 e ICH E6(R3)\n\n\nGLP\nGood Laboratory Practice\nEstudios no clínicos de seguridad (toxicología…)\nDirectiva 2004/10/CE y Principios BPL de la OCDE\n\n\nGDP\nGood Distribution Practice\nAlmacenamiento y transporte\nDirectrices 2013/C 343/01\n\n\nGVP\nGood Pharmacovigilance Practice\nVigilancia de la seguridad tras la comercialización\nReglamento de Ejecución (UE) 520/2012 y módulos GVP de la EMA\n\n\n\n(Ojo: GDP en farma no tiene nada que ver con el PIB ni con el RGPD, que en inglés es GDPR.)"
+  },
+  {
+    "objectID": "notas/2026/11-gxp/index.html#lo-que-tienen-en-común",
+    "href": "notas/2026/11-gxp/index.html#lo-que-tienen-en-común",
+    "title": "GxP: la familia de las «buenas prácticas»",
+    "section": "Lo que tienen en común",
+    "text": "Lo que tienen en común\nCada GxP regula una fase distinta de la vida de un medicamento, pero todas comparten la misma idea de fondo:\n\nSi no está documentado, no ha ocurrido.\n\nDe ahí salen unos cuantos pilares que se repiten en todas ellas:\n\nTrazabilidad: poder reconstruir quién hizo qué, cuándo y por qué.\nIntegridad de datos: los datos deben cumplir ALCOA++.\nProcedimientos escritos (SOP): las tareas críticas se hacen siempre igual y siguiendo un documento aprobado.\nFormación documentada: cada persona está formada para lo que hace, y se puede demostrar.\nGestión de riesgos: el esfuerzo se concentra donde más puede afectar al paciente o al producto.\nInspecciones: las autoridades comprueban que todo lo anterior se cumple de verdad."
+  },
+  {
+    "objectID": "notas/2026/11-gxp/index.html#un-ejemplo-la-vida-de-un-comprimido",
+    "href": "notas/2026/11-gxp/index.html#un-ejemplo-la-vida-de-un-comprimido",
+    "title": "GxP: la familia de las «buenas prácticas»",
+    "section": "Un ejemplo: la vida de un comprimido",
+    "text": "Un ejemplo: la vida de un comprimido\n\nEn el laboratorio se estudia su toxicidad en modelos no clínicos → GLP.\nSe prueba en pacientes dentro de un ensayo clínico → GCP.\nSe fabrica a escala industrial → GMP.\nViaja en camión refrigerado hasta la farmacia → GDP.\nUna vez en el mercado, se recogen y analizan las sospechas de reacciones adversas → GVP.\n\nCada paso tiene su propio reglamento, pero el hilo conductor es el mismo: demostrar que se ha hecho bien."
+  },
+  {
+    "objectID": "notas/2026/11-gxp/index.html#y-los-sistemas-informáticos",
+    "href": "notas/2026/11-gxp/index.html#y-los-sistemas-informáticos",
+    "title": "GxP: la familia de las «buenas prácticas»",
+    "section": "¿Y los sistemas informáticos?",
+    "text": "¿Y los sistemas informáticos?\nAquí aparece el término GxP computerised systems: cualquier software que genera, procesa o almacena datos relevantes para alguna de estas prácticas. Una hoja de Excel que calcula resultados de un ensayo de laboratorio puede ser un sistema GxP. De eso tratan el Anexo 11 para fabricación y la guía de la EMA sobre sistemas informatizados en ensayos clínicos."
+  },
+  {
+    "objectID": "notas/2026/11-gxp/index.html#lo-que-me-llevo",
+    "href": "notas/2026/11-gxp/index.html#lo-que-me-llevo",
+    "title": "GxP: la familia de las «buenas prácticas»",
+    "section": "Lo que me llevo",
+    "text": "Lo que me llevo\nGxP no es una norma, sino una forma de trabajar. Para alguien que viene de la informática, la traducción es casi directa: control de versiones, logs, tests reproducibles y documentación. La diferencia es que aquí, si falta algo, no se rompe un build: se pone en duda la seguridad de un paciente."
+  },
+  {
+    "objectID": "notas/2026/11-gxp/index.html#referencias",
+    "href": "notas/2026/11-gxp/index.html#referencias",
+    "title": "GxP: la familia de las «buenas prácticas»",
+    "section": "Referencias",
+    "text": "Referencias\n\nDirectiva (UE) 2017/1572 de la Comisión, de 15 de septiembre de 2017, sobre principios y directrices de prácticas correctas de fabricación de medicamentos de uso humano. EUR-Lex\nComisión Europea. EudraLex Volume 4 – Good Manufacturing Practice (GMP) guidelines. Enlace\nReglamento (UE) n.º 536/2014, de 16 de abril de 2014, sobre los ensayos clínicos de medicamentos de uso humano. EUR-Lex\nICH E6(R3) Good Clinical Practice. Principios y Anexo 1 en vigor desde el 23 de julio de 2025; Anexo 2 aplicable desde el 15 de enero de 2027. EMA\nDirectiva 2004/10/CE, de 11 de febrero de 2004, sobre buenas prácticas de laboratorio.\nOCDE (1998). OECD Principles on Good Laboratory Practice. ENV/MC/CHEM(98)17.\nDirectrices de 5 de noviembre de 2013 sobre prácticas correctas de distribución de medicamentos para uso humano (2013/C 343/01).\nReglamento de Ejecución (UE) n.º 520/2012 de la Comisión, sobre actividades de farmacovigilancia."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-11/index.html",
+    "href": "notas/2026/11-anexo-11/index.html",
+    "title": "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)",
+    "section": "",
+    "text": "AdvertenciaEstado a noviembre de 2026\n\n\n\nLa versión en vigor sigue siendo la de 2011. La revisión que comento aquí es un borrador (julio de 2025) y todavía puede cambiar. Actualizaré esta nota cuando se publique el texto final."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-11/index.html#qué-es-el-anexo-11",
+    "href": "notas/2026/11-anexo-11/index.html#qué-es-el-anexo-11",
+    "title": "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)",
+    "section": "¿Qué es el Anexo 11?",
+    "text": "¿Qué es el Anexo 11?\nLas normas de fabricación de medicamentos de la UE (las GMP) se recogen en el volumen 4 de EudraLex. Ese volumen tiene una parte principal y una serie de anexos temáticos. El Anexo 11 trata de los sistemas informatizados: cualquier software o equipo informático que participe en una actividad GMP, desde el sistema que controla un reactor hasta el que guarda los registros de lotes.\nSu idea central cabe en una frase: informatizar un proceso no puede hacerlo menos fiable que el mismo proceso en papel."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-11/index.html#el-problema-un-texto-de-2011",
+    "href": "notas/2026/11-anexo-11/index.html#el-problema-un-texto-de-2011",
+    "title": "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)",
+    "section": "El problema: un texto de 2011",
+    "text": "El problema: un texto de 2011\nLa versión vigente tiene unas cinco páginas, se escribió antes de que la nube, el SaaS o la IA fueran habituales en la industria y se apoya en principios generales. Funcionó bien durante años, pero dejaba demasiado margen de interpretación."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-11/index.html#la-revisión-paso-a-paso",
+    "href": "notas/2026/11-anexo-11/index.html#la-revisión-paso-a-paso",
+    "title": "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)",
+    "section": "La revisión, paso a paso",
+    "text": "La revisión, paso a paso\n\n\n\n\n\n\n\nFecha\nHito\n\n\n\n\nJunio de 2011\nEntra en vigor el Anexo 11 actual\n\n\nNoviembre de 2022\nLa EMA y PIC/S publican el concept paper que anuncia la revisión\n\n\n7 de julio de 2025\nSe publica el borrador junto con un Capítulo 4 revisado (Documentación) y un nuevo Anexo 22 (IA)\n\n\n7 de octubre de 2025\nSe cierra la consulta pública\n\n\n4.º trimestre de 2026\nObjetivo para entregar el texto final a la Comisión"
+  },
+  {
+    "objectID": "notas/2026/11-anexo-11/index.html#qué-cambia-en-el-borrador",
+    "href": "notas/2026/11-anexo-11/index.html#qué-cambia-en-el-borrador",
+    "title": "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)",
+    "section": "¿Qué cambia en el borrador?",
+    "text": "¿Qué cambia en el borrador?\nLo primero que llama la atención es el tamaño: pasa de unas 5 a 19 páginas, organizadas en 17 secciones:\n\nÁmbito\nPrincipios\nSistema de calidad farmacéutico\nGestión de riesgos\nPersonal y formación\nRequisitos del sistema\nGestión de proveedores y servicios\nAlarmas\nCualificación y validación\nManejo de datos\nGestión de identidades y accesos\nAudit trails\nFirma electrónica\nRevisión periódica\nSeguridad\nCopias de seguridad\nArchivo\n\nDe esta lista me quedo con cinco ideas:\n\nGestión de riesgos durante todo el ciclo de vida: no basta con validar el sistema una vez; el riesgo se evalúa desde los requisitos hasta la retirada.\nRequisitos de usuario (URS) para todo: si no sabes qué tiene que hacer el sistema, no puedes demostrar que lo hace.\nEl audit trail no se guarda para nada: hay que revisarlo.\nLa ciberseguridad pasa a ser un requisito GMP: accesos, contraseñas, parches y redes entran en la inspección.\nProveedores y nube: que el sistema esté en manos de un tercero (SaaS) no exime a la empresa de su responsabilidad."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-11/index.html#un-ejemplo",
+    "href": "notas/2026/11-anexo-11/index.html#un-ejemplo",
+    "title": "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)",
+    "section": "Un ejemplo",
+    "text": "Un ejemplo\nUn laboratorio de control de calidad usa un software en la nube para registrar los resultados analíticos. Con el borrador en la mano, la empresa debería poder enseñar:\n\nQué requisitos definió antes de contratarlo y cómo comprobó que se cumplían.\nUn contrato con el proveedor que deje claro quién hace las copias de seguridad, quién gestiona los incidentes y dónde están los datos.\nQuién tiene acceso, con qué permisos y cuándo se revisaron por última vez.\nPruebas de que alguien revisa periódicamente el audit trail de los resultados."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-11/index.html#y-en-ensayos-clínicos",
+    "href": "notas/2026/11-anexo-11/index.html#y-en-ensayos-clínicos",
+    "title": "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)",
+    "section": "¿Y en ensayos clínicos?",
+    "text": "¿Y en ensayos clínicos?\nEl Anexo 11 es de fabricación (GMP). En ensayos clínicos (GCP) la referencia equivalente es la Guideline on computerised systems and electronic data in clinical trials de la EMA, de la que hablé en la nota sobre ALCOA++. Las dos apuntan en la misma dirección."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-11/index.html#lo-que-me-llevo",
+    "href": "notas/2026/11-anexo-11/index.html#lo-que-me-llevo",
+    "title": "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)",
+    "section": "Lo que me llevo",
+    "text": "Lo que me llevo\nEl Anexo 11 revisado se parece mucho a lo que en ingeniería del software llamaríamos buenas prácticas: requisitos, tests, control de accesos, logs, backups y revisiones. La diferencia es que aquí no es opcional ni depende del equipo: es lo que mirará un inspector."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-11/index.html#referencias",
+    "href": "notas/2026/11-anexo-11/index.html#referencias",
+    "title": "Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)",
+    "section": "Referencias",
+    "text": "Referencias\n\nComisión Europea (2011). EudraLex Volume 4, Annex 11: Computerised Systems (versión vigente). PDF\nComisión Europea (2025). Stakeholders’ Consultation on EudraLex Volume 4 – Good Manufacturing Practice Guidelines: Chapter 4, Annex 11 and New Annex 22 (borradores, julio de 2025). Enlace\nComisión Europea. EudraLex Volume 4 – Good Manufacturing Practice (GMP) guidelines. Enlace\nEMA / PIC/S (2022). Concept paper on the revision of Annex 11 of the guidelines on Good Manufacturing Practice for medicinal products – Computerised Systems."
+  },
+  {
+    "objectID": "notas/2026/10-infinite-monkey-theorem/index.html",
+    "href": "notas/2026/10-infinite-monkey-theorem/index.html",
+    "title": "Teorema del mono infinito",
+    "section": "",
+    "text": "Imagina que tienes en tu casa el siguiente mono, lo vamos a llamar Paquito.\n\nA Paquito le encanta tocar los platillos, esta todo el día liado con ellos. Sin embargo, el dueño del mono piensa: ¿por qué no darle un ordenador y domesticarlo para que escriba los correos, conteste los mensajes no leídos, etc?\nAsí, le compra el nuevo macbook pro y se lo da.\n\nPaquito está flipando, pero hay un GRAN PROBLEMA.\nEs cierto que sabe tocar los platillos, pero habla un idioma que el ser humano no entiende y, por tanto, el dueño no le puede enseñar a utilizar el ordenador.\nNo obstante, el dueño de Paquito (pobre Paquito), gran fanático de Miguel Cervantes y de las matemáticas, piensa lo siguiente:\n¿Qué pasaría si Paquito estuviera pulsando las teclas del macbook de manera infinita, solo parando para comer, hacer sus necesidades y dormir?\nÉl empieza a divigar y a pensar …\nSi el macbook pro tiene 78 teclas, ¿cuál es la probabilidad de que Paquito escribiera la palabra “quijote” pulsando teclas aleatoriamente?\nLa probabilidad de que la primera tecla pulsada sea “q” es \\(\\frac{1}{78}\\), y la probabilidad de que la segunda tecla pulsada sea “u” es también \\(\\frac{1}{78}\\), y así, sucesivamente. Por tanto, la probabilidad de 7 letras formando la palabra “quijote” es:\n\\[\n\\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} = \\left(\\frac{1}{78}\\right)^7 = \\frac{1}{1.7568 \\times 10^{13}}\n\\]\nPodemos ver, que aún así, el resultado no es cero, por tanto, es posible que pueda ocurrir.\nPor otro lado, la probabilidad de no escribir la palabra “quijote” en 7 intentos es \\(1 - \\left(\\frac{1}{78}\\right)^7\\). Como los intentos son independientes, la probabilidad \\(X_n\\) de no escribir “quijote” en ningún \\(n\\) conjunto de 7 intentos es:\n\\[\nX_n = \\left(1 - \\left(\\frac{1}{78}\\right)^7\\right)^n\n\\]\nConforme \\(n\\) crece, la probabilidad de NO escribir en \\(n\\) bloques de 7 intentos la palabra “quijote”, disminuye. Para \\(n=1\\) millón, \\(X_n = 0,999999943\\), pero para \\(n = 100\\) billones, la probabilidad cae a \\(0,565923969\\).\nPor tanto, el dueño se dio cuenta que conforme el número de intentos que Paquito tenía pulsando teclas en el macbook, aumentaban, era problable que pudiera escribir cada una de las palabras que componen “Don Quijote de la Mancha”.\nY así, el pobre Paquito\nDejó de ser Paquito\nPara convertirse en Cervantes"
+  },
+  {
+    "objectID": "notas/2026/10-articulo_video_yt/index.html",
+    "href": "notas/2026/10-articulo_video_yt/index.html",
+    "title": "Usando Manim para estudiar",
+    "section": "",
+    "text": "Portada del artículo\n\n\nEn una asignatura del máster nos comentaron que teníamos que leer un artículo. Esta asignatura se llama PROTEOMICS FOR HEALTH RESEARCH . El artículo era parte del primer tema que nos presentaban, una introducción a la proteómica, un concepto que hasta ahora desconocía totalmente.\nComencé a leerlo y me costaba entenderlo. Se tocaban conceptos muy relacionados con el ámbito bioquímico, y claro, yo más perdido que el barco del arroz.\nPensé: ¿y por qué no decirle a la IA o SI que cree un vídeo explicativo tal y cual, pero usando python? Todo por el siguiente tweet que leí de Karpathy:\n\nExplainer videos. The output format I am most bullish on is fully custom / bespoke explainer videos generated on any arbitrary topic. Experiment with things like “Create a 3b1b style video explainer on X. Use my ElevenLabs API key for audio narration”. (you’d need an API key for the latter or you can ask your LLM to find you decent free alternatives that use your local compute). This is actually starting to work!\n— Andrej Karpathy, X\n\nY como era de esperar, tenía razón XD.\nAsí, con la ayuda de Claude, generé un vídeo con Manim usando python. De la misma forma, generé el guión y comencé a grabar. El resultado es el siguiente:\n\nGracias a esto no solo me ha permitido crear un contenido bastante chulo sino que me ha permitido entender el artículo que en un inicio no tenía ni idea."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "José Pablo Soriano Torres",
+    "section": "",
+    "text": "José Pablo Soriano Torres\nInvestigador en la Universidad de Jaén · Máster en Health Data Science (URV)\n\n GitHub  Sobre mí\n\n\n\n 59°15′N 14°56′E\n\n\nActualmente, estoy investigando en la Universidad de Jaén, con el uso de modelos IA en el campo de la salud; aplico deep learning al análisis de imágenes de pacientes ostomizados en el proyecto EPPIA. Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible. Aquí comparto lo que voy aprendiendo por el camino: proyectos, notas, lecturas y alguna que otra aventura.\n\n\n\n\n«[…] ellos exigen del individuo la más absoluta impersonalidad, ¡y en eso cifran la sal de la vida! ¡No ser uno mismo, parecerse lo menos posible a sí mismo!»\nFiódor Dostoievski, Crimen y castigo"
+  },
+  {
+    "objectID": "aventuras/index.html",
+    "href": "aventuras/index.html",
+    "title": "Aventuras",
+    "section": "",
+    "text": "18 oct 2026\n          \n        \n        Tree climbing con los hermanos\n        Resuelve el acertijo para ver esta aventura.\n      \n      \n        \n      \n    \n  \n\n  \n    \n      \n      \n        \n          4 oct 2026\n          \n        \n        Una cumbre secreta\n        Resuelve el acertijo para ver esta aventura.\n      \n      \n        \n      \n    \n  \n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "biblioteca/index.html",
+    "href": "biblioteca/index.html",
+    "title": "Biblioteca",
+    "section": "",
+    "text": "Ex libris de José Pablo Soriano Torres"
+  },
+  {
+    "objectID": "biblioteca/index.html#biblioteca-bajo-construcción",
+    "href": "biblioteca/index.html#biblioteca-bajo-construcción",
+    "title": "Biblioteca",
+    "section": "🚧 Biblioteca bajo construcción 🚧",
+    "text": "🚧 Biblioteca bajo construcción 🚧"
+  },
+  {
+    "objectID": "biblioteca/index.html#leyendo-ahora",
+    "href": "biblioteca/index.html#leyendo-ahora",
+    "title": "Biblioteca",
+    "section": "📖 Leyendo ahora",
+    "text": "📖 Leyendo ahora\n\n\n\n  \n    \n      \n    \n    \n      Anna Karénina\n      Lev Tolstói\n      \n      \n        Primer libro comprado en la librería Orwell\n      \n      \n        9 oct 2026\n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "biblioteca/index.html#leídos",
+    "href": "biblioteca/index.html#leídos",
+    "title": "Biblioteca",
+    "section": "✅ Leídos",
+    "text": "✅ Leídos\n\n\n\n  \n    \n      \n    \n    \n      Reina Roja\n      Juan Gómez Jurado\n      \n        ★★★★★\n      \n      \n        Engancha la historia y sobretodo el persona principal\n      \n      \n        28 sept 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      Patria\n      Fernando Aramburu\n      \n      \n      \n        28 jul 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      La asistenta\n      Freida McFadden\n      \n        ★★★★★\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      El secreto de la asistenta\n      Freida McFadden\n      \n        ★★★★☆\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      La asistenta te vigila\n      Freida McFadden\n      \n        ★★★☆☆\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      Hábitos atómicos\n      James Clear\n      \n        ★★★☆☆\n      \n      \n      \n        2 jun 2025\n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "notas/2026/09-bienvenida/index.html",
+    "href": "notas/2026/09-bienvenida/index.html",
+    "title": "Bienvenida",
+    "section": "",
+    "text": "Hola. Esta es mi primera nota de la web, así que, quería saludarte antes de todo :)\nNo me gustan demasiado las redes sociales, por ello no tengo ni Instagram, TikTok o incluso Linkedin. Aunque sí es cierto que tengo X/Twitter, pero el algoritmo entrenado por mí mismo de tal manera que es solo meterte en la aplicación y te empiece a aburrir XD.\nNo obstante, Linkedin me gustaba bastante, pero desde mi punto de vista, se ha convertido en algo que no me gusta (me reservo la opinión :P). Por tanto, durante mucho tiempo pensé de crear mi página web personal que sirviera para poder reemplazar este tipo de redes sociales, con la diferencia de que no existen algoritmos adictivos que te hacen scrollear mucho tiempo, y bueno, la restricción de tener que ajustarme a la manera de que cada red social te obliga a publicar contenido.\nAsí, nace este proyecto con mucha ilusión y, además, con un diseño que evoca al lugar donde nací. Así como, algunos easter eggs :)\nEn él, además de servir como portfolio, le daré las siguientes utilidades:\n\nPublicación de notas tanto profesionales como personales.\nMantendré actualizada mi biblioteca digital que no es más que un enlace simbólico a mi biblioteca física. No obstante, está sin acabar y la iré construyendo poco a poco con el paso del tiempo.\nSección de aventuras. Como una alacena donde iré guardando recuerdos y experiencias para que perduren en el tiempo.\n\nY bueno, hasta aquí la nota. Si habeís llegado hasta aquí leyendo, me apiado de vosotros, ya que aguantarme seguro que no ha tenido que ser muy fácil jeje.\nPost data (Detrás de los datos ?): esta sección es un poco más informal y personal, así que, el estilo de escritura, palabras usadas, entre otras cosas, se adaptarán a ello. Ademaś de que en esta sección ESTÁ PROHIBIDO EL USO DE IA."
+  },
+  {
+    "objectID": "notas/2026/10-david_gonzales_rivas1/index.html",
+    "href": "notas/2026/10-david_gonzales_rivas1/index.html",
+    "title": "Conocí a Diego González Rivas",
+    "section": "",
+    "text": "Diego González Rivas es un cirujano torácico de prestigio mundial, conocido por desarrollar una técnica mínimamente invasiva a través de una sola incisión.\n\nEsta técnica permite operar al paciente realizando una única y milimétrica incisión, en lugar de abrirle las costillas con un separador costal, algo muchísimo más doloroso e invasivo.\nA pesar de este gran avance, Diego decidió innovar aún más. Por ello, empresas de Silicon Valley contactaron con él. Estas empresas le ofrecían patentes que permitieran operar al paciente usando dicha técnica pero de manera más robótica.\nAsí, con el paso del tiempo y con algún que otro incoveniente con dichas empresas, logró hacer la primera cirugía puramente robótica uniportal en el mundo (URATS).\n\nTambién, un hito que me gustaría mostrar es que realizó la primera telecirugía torácida del mundo transcontinental (8000 km).\nAl finalizar la conferencia, tuve la oportunidad de preguntarle:\n\nYo: ¿Qué limites observastéis relacionado con la conexión, puesto que un desfase de milisegundos podía provocar una situación indebida?\nDiego: Ninguna, la conexión basada en starlink funcionaba sin ningún tipo de problema, era super rápida. ¿El problema? Que este tipo de conexión es carísima y, por ejemplo, hospitales públicos no se lo pueden permitir.\n\nY después, le pedí una firma. ¿Dónde? En mi portatil. Diego se sorprendío, porque era la primera vez que firmaba uno (no sé cómo lo hace, pero siempre consigue ser el primero en conseguir algo :P). ¡Hasta se hizo un vídeo para subirlo a sus redes sociales!"
+  },
+  {
+    "objectID": "notas/2026/11-alcoa-plus-plus/index.html",
+    "href": "notas/2026/11-alcoa-plus-plus/index.html",
+    "title": "ALCOA++: los diez principios para que un dato sea fiable",
+    "section": "",
+    "text": "Leyendo la Guideline on computerised systems and electronic data in clinical trials de la EMA me encontré con un acrónimo que aparece una y otra vez: ALCOA++. Parece una sopa de letras, pero en realidad responde a una pregunta muy sencilla:\nEn un ensayo clínico, la respuesta importa mucho. De esos datos depende que un medicamento se apruebe o no y, sobre todo, la seguridad de los pacientes que participan. Por eso los inspectores no solo miran qué dice un dato, sino cómo se generó, quién lo tocó y si se puede reconstruir su historia."
+  },
+  {
+    "objectID": "notas/2026/11-alcoa-plus-plus/index.html#de-dónde-viene",
+    "href": "notas/2026/11-alcoa-plus-plus/index.html#de-dónde-viene",
+    "title": "ALCOA++: los diez principios para que un dato sea fiable",
+    "section": "De dónde viene",
+    "text": "De dónde viene\nEl acrónimo original, ALCOA, se atribuye a Stan W. Woollen, de la FDA, en los años 90. Tenía cinco letras. Con el tiempo se le añadieron cuatro más (ALCOA+) y, finalmente, una décima: la trazabilidad (ALCOA++). Esta última versión es la que recoge la guía de la EMA, vigente desde septiembre de 2023."
+  },
+  {
+    "objectID": "notas/2026/11-alcoa-plus-plus/index.html#las-diez-letras",
+    "href": "notas/2026/11-alcoa-plus-plus/index.html#las-diez-letras",
+    "title": "ALCOA++: los diez principios para que un dato sea fiable",
+    "section": "Las diez letras",
+    "text": "Las diez letras\n\n\n\n\n\n\n\n\nLetra\nPrincipio\nEn una frase\n\n\n\n\nA\nAttributable (atribuible)\nSe sabe quién generó o modificó el dato y cuándo.\n\n\nL\nLegible (legible)\nSe puede leer y entender, hoy y dentro de años.\n\n\nC\nContemporaneous (contemporáneo)\nSe registró en el momento en que ocurrió, no días después de memoria.\n\n\nO\nOriginal (original)\nEs el primer registro (o una copia certificada), no una transcripción cualquiera.\n\n\nA\nAccurate (exacto)\nRefleja fielmente lo que pasó, sin errores.\n\n\nC\nComplete (completo)\nNo falta nada, incluidos los metadatos y el historial de cambios.\n\n\nC\nConsistent (consistente)\nSe registra de la misma forma siempre, con fechas y secuencias coherentes.\n\n\nE\nEnduring (perdurable)\nSe conserva durante todo el tiempo exigido, sin degradarse.\n\n\nA\nAvailable (disponible)\nSe puede consultar cuando hace falta, por ejemplo, en una inspección.\n\n\nT\nTraceable (trazable)\nSe puede reconstruir toda su vida: de dónde viene y qué cambios ha sufrido.\n\n\n\n\n\n\nLos diez principios de ALCOA++"
+  },
+  {
+    "objectID": "notas/2026/11-alcoa-plus-plus/index.html#un-ejemplo-para-aterrizarlo",
+    "href": "notas/2026/11-alcoa-plus-plus/index.html#un-ejemplo-para-aterrizarlo",
+    "title": "ALCOA++: los diez principios para que un dato sea fiable",
+    "section": "Un ejemplo para aterrizarlo",
+    "text": "Un ejemplo para aterrizarlo\nImaginemos que en un estudio se toma una fotografía clínica de un paciente para evaluar una lesión:\n\nAtribuible: el sistema registra qué usuario hizo la foto (no vale una cuenta compartida por todo el equipo).\nContemporáneo: la foto lleva la fecha y hora reales de captura, no la de cuando se subió al servidor una semana después.\nOriginal: se guarda el archivo tal como salió de la cámara. Si se recorta o se comprime, eso es una copia derivada y debe quedar indicado.\nCompleto: junto a la imagen se conservan sus metadatos (dispositivo, resolución, paciente codificado…).\nTrazable: si alguien corrige la etiqueta de la imagen, queda un audit trail con el valor anterior, el nuevo, quién lo cambió, cuándo y por qué.\nPerdurable y disponible: la imagen sigue siendo accesible y legible años después, aunque cambie el software.\n\nSi falla cualquiera de estos puntos, la foto puede ser perfecta desde el punto de vista técnico y aun así no servir como evidencia."
+  },
+  {
+    "objectID": "notas/2026/11-alcoa-plus-plus/index.html#por-qué-es-importante",
+    "href": "notas/2026/11-alcoa-plus-plus/index.html#por-qué-es-importante",
+    "title": "ALCOA++: los diez principios para que un dato sea fiable",
+    "section": "Por qué es importante",
+    "text": "Por qué es importante\nALCOA++ no es un requisito informático, sino una forma de pensar los datos. Un modelo de IA entrenado con datos que no cumplen estos principios hereda sus problemas: si no sé de dónde viene una imagen ni si la han modificado, tampoco puedo confiar del todo en lo que el modelo aprenda de ella. Garbage in, garbage out, pero con normativa europea detrás."
+  },
+  {
+    "objectID": "notas/2026/11-alcoa-plus-plus/index.html#referencias",
+    "href": "notas/2026/11-alcoa-plus-plus/index.html#referencias",
+    "title": "ALCOA++: los diez principios para que un dato sea fiable",
+    "section": "Referencias",
+    "text": "Referencias\n\nEuropean Medicines Agency (2023). Guideline on computerised systems and electronic data in clinical trials (EMA/INS/GCP/112288/2023). Enlace al PDF"
+  },
+  {
+    "objectID": "notas/2026/11-anexo-22/index.html",
+    "href": "notas/2026/11-anexo-22/index.html",
+    "title": "Anexo 22: la primera norma GMP europea sobre inteligencia artificial",
+    "section": "",
+    "text": "AdvertenciaEstado a noviembre de 2026\n\n\n\nEl Anexo 22 es todavía un borrador (julio de 2025). No es vinculante y el texto final puede cambiar, sobre todo en lo relativo a la IA generativa."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-22/index.html#qué-es",
+    "href": "notas/2026/11-anexo-22/index.html#qué-es",
+    "title": "Anexo 22: la primera norma GMP europea sobre inteligencia artificial",
+    "section": "¿Qué es?",
+    "text": "¿Qué es?\nEs un anexo nuevo de las GMP europeas (EudraLex vol. 4), el primero escrito específicamente para la inteligencia artificial. Lo redactó el grupo de inspectores GMP de la EMA junto con PIC/S y se publicó para consulta junto con el borrador del Anexo 11.\nSe aplica a modelos de IA integrados en sistemas informatizados que se usan en aplicaciones críticas de la fabricación de medicamentos y principios activos, es decir, aquellas que afectan directamente a la seguridad del paciente, a la calidad del producto o a la integridad de los datos."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-22/index.html#la-gran-decisión-qué-modelos-sí-y-cuáles-no",
+    "href": "notas/2026/11-anexo-22/index.html#la-gran-decisión-qué-modelos-sí-y-cuáles-no",
+    "title": "Anexo 22: la primera norma GMP europea sobre inteligencia artificial",
+    "section": "La gran decisión: qué modelos sí y cuáles no",
+    "text": "La gran decisión: qué modelos sí y cuáles no\nEsta es la parte que más debate ha generado. El borrador solo contempla para usos críticos los modelos:\n\nEstáticos: sus parámetros quedan congelados una vez desplegados; no siguen aprendiendo en producción.\nDeterministas: con la misma entrada, dan siempre la misma salida.\n\nY excluye de las aplicaciones críticas:\n\nLos modelos dinámicos, que aprenden de forma continua.\nLos modelos probabilísticos, cuya salida puede variar con la misma entrada.\nLa IA generativa y los LLM.\n\nEstos últimos podrían usarse en tareas no críticas, siempre con una persona cualificada que revise el resultado."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-22/index.html#qué-exige-a-los-modelos-permitidos",
+    "href": "notas/2026/11-anexo-22/index.html#qué-exige-a-los-modelos-permitidos",
+    "title": "Anexo 22: la primera norma GMP europea sobre inteligencia artificial",
+    "section": "Qué exige a los modelos permitidos",
+    "text": "Qué exige a los modelos permitidos\nA grandes rasgos, el borrador pide:\n\nUso previsto definido: qué hace el modelo, con qué datos, en qué parte del proceso y con qué limitaciones.\nCriterios de aceptación: métricas de rendimiento fijadas antes de probar el modelo, al menos tan buenas como las del proceso al que sustituye.\nDatos de test independientes y representativos: los datos de prueba no pueden haberse usado para entrenar el modelo.\nExplicabilidad: poder entender en qué se basa una decisión.\nConfianza: registrar cuán seguro está el modelo de cada predicción y actuar cuando la confianza es baja.\nSupervisión en operación: control de cambios, monitorización del rendimiento y revisión humana cuando sea necesario."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-22/index.html#un-ejemplo",
+    "href": "notas/2026/11-anexo-22/index.html#un-ejemplo",
+    "title": "Anexo 22: la primera norma GMP europea sobre inteligencia artificial",
+    "section": "Un ejemplo",
+    "text": "Un ejemplo\nUna planta usa una red neuronal convolucional para detectar defectos en viales mediante visión artificial:\n\nUso previsto: clasificar viales en «aceptable» o «rechazo» a partir de imágenes de una cámara concreta.\nCriterio de aceptación: la tasa de defectos no detectados debe ser igual o inferior a la de la inspección manual.\nTest independiente: un conjunto de imágenes que el modelo nunca ha visto, con defectos reales de todos los tipos.\nOperación: si se cambia la cámara o la iluminación, se trata como un cambio controlado y se vuelve a evaluar el modelo.\n\nEste planteamiento me resulta familiar: separar train y test, fijar métricas antes de mirar resultados y vigilar el data drift son buenas prácticas de machine learning de toda la vida. La diferencia es que aquí pasan a ser una exigencia regulatoria."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-22/index.html#cómo-encaja-con-el-resto",
+    "href": "notas/2026/11-anexo-22/index.html#cómo-encaja-con-el-resto",
+    "title": "Anexo 22: la primera norma GMP europea sobre inteligencia artificial",
+    "section": "Cómo encaja con el resto",
+    "text": "Cómo encaja con el resto\n\nAnexo 11: el modelo vive dentro de un sistema informatizado, así que el Anexo 11 sigue aplicándose. El Anexo 22 añade los requisitos específicos de IA.\nLey de IA de la UE (Reglamento 2024/1689): es una ley horizontal para cualquier sector; el Anexo 22 es una guía específica de fabricación farmacéutica. Son complementarias."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-22/index.html#lo-que-me-llevo",
+    "href": "notas/2026/11-anexo-22/index.html#lo-que-me-llevo",
+    "title": "Anexo 22: la primera norma GMP europea sobre inteligencia artificial",
+    "section": "Lo que me llevo",
+    "text": "Lo que me llevo\nEl Anexo 22 está pensado para la fabricación, no para la investigación clínica, pero su forma de pensar sirve para cualquier modelo que se use en salud: definir para qué sirve, probarlo con datos que no ha visto y no dejarlo solo una vez desplegado. Habrá que ver si el texto final abre más la puerta a la IA generativa; la EMA reunió a expertos en verano de 2026 precisamente para debatirlo."
+  },
+  {
+    "objectID": "notas/2026/11-anexo-22/index.html#referencias",
+    "href": "notas/2026/11-anexo-22/index.html#referencias",
+    "title": "Anexo 22: la primera norma GMP europea sobre inteligencia artificial",
+    "section": "Referencias",
+    "text": "Referencias\n\nComisión Europea (2025). EudraLex Volume 4, Annex 22: Artificial Intelligence (borrador para consulta, julio de 2025). Página de la consulta\nEMA (2026). Good manufacturing practice: Multistakeholder workshop on expert contributions to artificial intelligence guidance development (Annex 22), 30 de junio – 1 de julio de 2026. Enlace\nReglamento (UE) 2024/1689, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Ley de IA). EUR-Lex"
+  },
+  {
+    "objectID": "notas/2026/11-iso-42001/index.html",
+    "href": "notas/2026/11-iso-42001/index.html",
+    "title": "ISO/IEC 42001: un sistema de gestión para la inteligencia artificial",
+    "section": "",
+    "text": "Si ISO 9001 es la norma de la calidad e ISO/IEC 27001 la de la seguridad de la información, ISO/IEC 42001 es la de la inteligencia artificial. Se publicó en diciembre de 2023 y es la primera norma internacional que permite certificar cómo una organización gestiona la IA."
+  },
+  {
+    "objectID": "notas/2026/11-iso-42001/index.html#qué-es-un-aims",
+    "href": "notas/2026/11-iso-42001/index.html#qué-es-un-aims",
+    "title": "ISO/IEC 42001: un sistema de gestión para la inteligencia artificial",
+    "section": "¿Qué es un AIMS?",
+    "text": "¿Qué es un AIMS?\nLa norma define los requisitos de un sistema de gestión de la IA (AI Management System, AIMS). No evalúa si un modelo concreto es bueno, sino si la organización que lo desarrolla, lo usa o lo vende tiene un marco para hacerlo de forma responsable a lo largo de todo su ciclo de vida.\nSe aplica tanto a quien desarrolla IA como a quien solo la usa o la integra en sus productos."
+  },
+  {
+    "objectID": "notas/2026/11-iso-42001/index.html#la-misma-estructura-de-siempre",
+    "href": "notas/2026/11-iso-42001/index.html#la-misma-estructura-de-siempre",
+    "title": "ISO/IEC 42001: un sistema de gestión para la inteligencia artificial",
+    "section": "La misma estructura de siempre",
+    "text": "La misma estructura de siempre\nSigue la estructura armonizada de ISO (cláusulas 4 a 10), igual que ISO 9001 e ISO/IEC 27001. Por eso es fácil integrarla en un sistema de gestión que ya exista. Lo específico de la IA aparece en:\n\nEvaluación de riesgos de IA: sesgos, falta de transparencia, errores con consecuencias para las personas, uso indebido…\nEvaluación de impacto de los sistemas de IA: cómo puede afectar el sistema a personas, grupos y a la sociedad.\nAnexo A: controles de referencia, por ejemplo sobre políticas de IA, datos usados por los sistemas, ciclo de vida, información a las partes interesadas, uso responsable y relaciones con terceros.\nAnexo B: guía para implementar esos controles."
+  },
+  {
+    "objectID": "notas/2026/11-iso-42001/index.html#un-ejemplo",
+    "href": "notas/2026/11-iso-42001/index.html#un-ejemplo",
+    "title": "ISO/IEC 42001: un sistema de gestión para la inteligencia artificial",
+    "section": "Un ejemplo",
+    "text": "Un ejemplo\nUn grupo de investigación desarrolla un modelo de deep learning para analizar fotografías clínicas. Siguiendo ISO/IEC 42001, se preguntaría:\n\nDatos: ¿de dónde vienen las imágenes? ¿Son representativas de todos los tipos de piel, edades y condiciones de captura?\nImpacto: ¿qué pasa si el modelo se equivoca? ¿Quién revisa sus resultados antes de tomar una decisión clínica?\nCiclo de vida: ¿cómo se documentan las versiones del modelo? ¿Cuándo se reentrena y quién lo aprueba?\nTransparencia: ¿saben los profesionales y pacientes que están usando una herramienta de IA y cuáles son sus limitaciones?"
+  },
+  {
+    "objectID": "notas/2026/11-iso-42001/index.html#y-la-ley-de-ia-europea",
+    "href": "notas/2026/11-iso-42001/index.html#y-la-ley-de-ia-europea",
+    "title": "ISO/IEC 42001: un sistema de gestión para la inteligencia artificial",
+    "section": "¿Y la Ley de IA europea?",
+    "text": "¿Y la Ley de IA europea?\nLa Ley de IA (Reglamento (UE) 2024/1689) es obligatoria; ISO/IEC 42001 es voluntaria. Implantar la norma ayuda a cumplir parte de la ley (gestión de riesgos, documentación, supervisión humana), pero no garantiza su cumplimiento automáticamente.\nLa Ley de IA ya ha sido modificada por el Reglamento (UE) 2026/1744 (el «Omnibus digital» sobre IA), que cambió el calendario de algunas obligaciones. Conviene comprobar siempre las fechas vigentes en el texto consolidado."
+  },
+  {
+    "objectID": "notas/2026/11-iso-42001/index.html#normas-relacionadas",
+    "href": "notas/2026/11-iso-42001/index.html#normas-relacionadas",
+    "title": "ISO/IEC 42001: un sistema de gestión para la inteligencia artificial",
+    "section": "Normas relacionadas",
+    "text": "Normas relacionadas\n\nISO/IEC 22989: conceptos y terminología de IA.\nISO/IEC 23894: guía de gestión de riesgos de la IA.\nISO/IEC 27001: seguridad de la información; muchos controles se complementan."
+  },
+  {
+    "objectID": "notas/2026/11-iso-42001/index.html#lo-que-me-llevo",
+    "href": "notas/2026/11-iso-42001/index.html#lo-que-me-llevo",
+    "title": "ISO/IEC 42001: un sistema de gestión para la inteligencia artificial",
+    "section": "Lo que me llevo",
+    "text": "Lo que me llevo\nISO/IEC 42001 lleva a la IA lo que otras normas llevan haciendo décadas con la calidad o la seguridad: no basta con que algo funcione, hay que poder demostrar que se gestiona de forma responsable. Para quien investiga con IA en salud, es una buena lista de preguntas incómodas que conviene hacerse antes de que nos las haga otra persona."
+  },
+  {
+    "objectID": "notas/2026/11-iso-42001/index.html#referencias",
+    "href": "notas/2026/11-iso-42001/index.html#referencias",
+    "title": "ISO/IEC 42001: un sistema de gestión para la inteligencia artificial",
+    "section": "Referencias",
+    "text": "Referencias\n\nISO/IEC 42001:2023. Information technology — Artificial intelligence — Management system. ISO/IEC, 2023.\nISO/IEC 22989:2022. Information technology — Artificial intelligence — Artificial intelligence concepts and terminology. ISO/IEC, 2022.\nISO/IEC 23894:2023. Information technology — Artificial intelligence — Guidance on risk management. ISO/IEC, 2023.\nReglamento (UE) 2024/1689, de 13 de junio de 2024, por el que se establecen normas armonizadas en materia de inteligencia artificial (Ley de IA). EUR-Lex\nReglamento (UE) 2026/1744, que modifica el Reglamento (UE) 2024/1689 (Omnibus digital sobre IA)."
+  },
+  {
     "objectID": "notas/2026/11-participacion-en-caepia-26/index.html",
     "href": "notas/2026/11-participacion-en-caepia-26/index.html",
     "title": "Participación en CAEPIA 26",
@@ -217,81 +672,11 @@
     "text": "Para más información\nPara una explicación más detallada se puede ver en el propio trabajo a continuación."
   },
   {
-    "objectID": "notas/2026/10-david_gonzales_rivas1/index.html",
-    "href": "notas/2026/10-david_gonzales_rivas1/index.html",
-    "title": "Conocí a Diego González Rivas",
-    "section": "",
-    "text": "Diego González Rivas es un cirujano torácico de prestigio mundial, conocido por desarrollar una técnica mínimamente invasiva a través de una sola incisión.\n\nEsta técnica permite operar al paciente realizando una única y milimétrica incisión, en lugar de abrirle las costillas con un separador costal, algo muchísimo más doloroso e invasivo.\nA pesar de este gran avance, Diego decidió innovar aún más. Por ello, empresas de Silicon Valley contactaron con él. Estas empresas le ofrecían patentes que permitieran operar al paciente usando dicha técnica pero de manera más robótica.\nAsí, con el paso del tiempo y con algún que otro incoveniente con dichas empresas, logró hacer la primera cirugía puramente robótica uniportal en el mundo (URATS).\n\nTambién, un hito que me gustaría mostrar es que realizó la primera telecirugía torácida del mundo transcontinental (8000 km).\nAl finalizar la conferencia, tuve la oportunidad de preguntarle:\n\nYo: ¿Qué limites observastéis relacionado con la conexión, puesto que un desfase de milisegundos podía provocar una situación indebida?\nDiego: Ninguna, la conexión basada en starlink funcionaba sin ningún tipo de problema, era super rápida. ¿El problema? Que este tipo de conexión es carísima y, por ejemplo, hospitales públicos no se lo pueden permitir.\n\nY después, le pedí una firma. ¿Dónde? En mi portatil. Diego se sorprendío, porque era la primera vez que firmaba uno (no sé cómo lo hace, pero siempre consigue ser el primero en conseguir algo :P). ¡Hasta se hizo un vídeo para subirlo a sus redes sociales!"
-  },
-  {
-    "objectID": "notas/2026/09-bienvenida/index.html",
-    "href": "notas/2026/09-bienvenida/index.html",
-    "title": "Bienvenida",
-    "section": "",
-    "text": "Hola. Esta es mi primera nota de la web, así que, quería saludarte antes de todo :)\nNo me gustan demasiado las redes sociales, por ello no tengo ni Instagram, TikTok o incluso Linkedin. Aunque sí es cierto que tengo X/Twitter, pero el algoritmo entrenado por mí mismo de tal manera que es solo meterte en la aplicación y te empiece a aburrir XD.\nNo obstante, Linkedin me gustaba bastante, pero desde mi punto de vista, se ha convertido en algo que no me gusta (me reservo la opinión :P). Por tanto, durante mucho tiempo pensé de crear mi página web personal que sirviera para poder reemplazar este tipo de redes sociales, con la diferencia de que no existen algoritmos adictivos que te hacen scrollear mucho tiempo, y bueno, la restricción de tener que ajustarme a la manera de que cada red social te obliga a publicar contenido.\nAsí, nace este proyecto con mucha ilusión y, además, con un diseño que evoca al lugar donde nací. Así como, algunos easter eggs :)\nEn él, además de servir como portfolio, le daré las siguientes utilidades:\n\nPublicación de notas tanto profesionales como personales.\nMantendré actualizada mi biblioteca digital que no es más que un enlace simbólico a mi biblioteca física. No obstante, está sin acabar y la iré construyendo poco a poco con el paso del tiempo.\nSección de aventuras. Como una alacena donde iré guardando recuerdos y experiencias para que perduren en el tiempo.\n\nY bueno, hasta aquí la nota. Si habeís llegado hasta aquí leyendo, me apiado de vosotros, ya que aguantarme seguro que no ha tenido que ser muy fácil jeje.\nPost data (Detrás de los datos ?): esta sección es un poco más informal y personal, así que, el estilo de escritura, palabras usadas, entre otras cosas, se adaptarán a ello. Ademaś de que en esta sección ESTÁ PROHIBIDO EL USO DE IA."
-  },
-  {
-    "objectID": "biblioteca/index.html",
-    "href": "biblioteca/index.html",
-    "title": "Biblioteca",
-    "section": "",
-    "text": "Ex libris de José Pablo Soriano Torres"
-  },
-  {
-    "objectID": "biblioteca/index.html#biblioteca-bajo-construcción",
-    "href": "biblioteca/index.html#biblioteca-bajo-construcción",
-    "title": "Biblioteca",
-    "section": "🚧 Biblioteca bajo construcción 🚧",
-    "text": "🚧 Biblioteca bajo construcción 🚧"
-  },
-  {
-    "objectID": "biblioteca/index.html#leyendo-ahora",
-    "href": "biblioteca/index.html#leyendo-ahora",
-    "title": "Biblioteca",
-    "section": "📖 Leyendo ahora",
-    "text": "📖 Leyendo ahora\n\n\n\n  \n    \n      \n    \n    \n      Anna Karénina\n      Lev Tolstói\n      \n      \n        Primer libro comprado en la librería Orwell\n      \n      \n        9 oct 2026\n      \n    \n  \n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "biblioteca/index.html#leídos",
-    "href": "biblioteca/index.html#leídos",
-    "title": "Biblioteca",
-    "section": "✅ Leídos",
-    "text": "✅ Leídos\n\n\n\n  \n    \n      \n    \n    \n      Reina Roja\n      Juan Gómez Jurado\n      \n        ★★★★★\n      \n      \n        Engancha la historia y sobretodo el persona principal\n      \n      \n        28 sept 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      Patria\n      Fernando Aramburu\n      \n      \n      \n        28 jul 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      La asistenta\n      Freida McFadden\n      \n        ★★★★★\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      El secreto de la asistenta\n      Freida McFadden\n      \n        ★★★★☆\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      La asistenta te vigila\n      Freida McFadden\n      \n        ★★★☆☆\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      Hábitos atómicos\n      James Clear\n      \n        ★★★☆☆\n      \n      \n      \n        2 jun 2025\n      \n    \n  \n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "aventuras/index.html",
-    "href": "aventuras/index.html",
-    "title": "Aventuras",
-    "section": "",
-    "text": "18 oct 2026\n          \n        \n        Tree climbing con los hermanos\n        Resuelve el acertijo para ver esta aventura.\n      \n      \n        \n      \n    \n  \n\n  \n    \n      \n      \n        \n          4 oct 2026\n          \n        \n        Una cumbre secreta\n        Resuelve el acertijo para ver esta aventura.\n      \n      \n        \n      \n    \n  \n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "José Pablo Soriano Torres",
-    "section": "",
-    "text": "José Pablo Soriano Torres\nInvestigador en la Universidad de Jaén · Máster en Health Data Science (URV)\n\n GitHub  Sobre mí\n\n\n\n 59°15′N 14°56′E\n\n\nActualmente, estoy investigando en la Universidad de Jaén, con el uso de modelos IA en el campo de la salud; aplico deep learning al análisis de imágenes de pacientes ostomizados en el proyecto EPPIA. Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible. Aquí comparto lo que voy aprendiendo por el camino: proyectos, notas, lecturas y alguna que otra aventura.\n\n\n\n\n«[…] ellos exigen del individuo la más absoluta impersonalidad, ¡y en eso cifran la sal de la vida! ¡No ser uno mismo, parecerse lo menos posible a sí mismo!»\nFiódor Dostoievski, Crimen y castigo"
-  },
-  {
-    "objectID": "notas/2026/10-articulo_video_yt/index.html",
-    "href": "notas/2026/10-articulo_video_yt/index.html",
-    "title": "Usando Manim para estudiar",
-    "section": "",
-    "text": "Portada del artículo\n\n\nEn una asignatura del máster nos comentaron que teníamos que leer un artículo. Esta asignatura se llama PROTEOMICS FOR HEALTH RESEARCH . El artículo era parte del primer tema que nos presentaban, una introducción a la proteómica, un concepto que hasta ahora desconocía totalmente.\nComencé a leerlo y me costaba entenderlo. Se tocaban conceptos muy relacionados con el ámbito bioquímico, y claro, yo más perdido que el barco del arroz.\nPensé: ¿y por qué no decirle a la IA o SI que cree un vídeo explicativo tal y cual, pero usando python? Todo por el siguiente tweet que leí de Karpathy:\n\nExplainer videos. The output format I am most bullish on is fully custom / bespoke explainer videos generated on any arbitrary topic. Experiment with things like “Create a 3b1b style video explainer on X. Use my ElevenLabs API key for audio narration”. (you’d need an API key for the latter or you can ask your LLM to find you decent free alternatives that use your local compute). This is actually starting to work!\n— Andrej Karpathy, X\n\nY como era de esperar, tenía razón XD.\nAsí, con la ayuda de Claude, generé un vídeo con Manim usando python. De la misma forma, generé el guión y comencé a grabar. El resultado es el siguiente:\n\nGracias a esto no solo me ha permitido crear un contenido bastante chulo sino que me ha permitido entender el artículo que en un inicio no tenía ni idea."
-  },
-  {
-    "objectID": "notas/2026/10-infinite-monkey-theorem/index.html",
-    "href": "notas/2026/10-infinite-monkey-theorem/index.html",
-    "title": "Teorema del mono infinito",
-    "section": "",
-    "text": "Imagina que tienes en tu casa el siguiente mono, lo vamos a llamar Paquito.\n\nA Paquito le encanta tocar los platillos, esta todo el día liado con ellos. Sin embargo, el dueño del mono piensa: ¿por qué no darle un ordenador y domesticarlo para que escriba los correos, conteste los mensajes no leídos, etc?\nAsí, le compra el nuevo macbook pro y se lo da.\n\nPaquito está flipando, pero hay un GRAN PROBLEMA.\nEs cierto que sabe tocar los platillos, pero habla un idioma que el ser humano no entiende y, por tanto, el dueño no le puede enseñar a utilizar el ordenador.\nNo obstante, el dueño de Paquito (pobre Paquito), gran fanático de Miguel Cervantes y de las matemáticas, piensa lo siguiente:\n¿Qué pasaría si Paquito estuviera pulsando las teclas del macbook de manera infinita, solo parando para comer, hacer sus necesidades y dormir?\nÉl empieza a divigar y a pensar …\nSi el macbook pro tiene 78 teclas, ¿cuál es la probabilidad de que Paquito escribiera la palabra “quijote” pulsando teclas aleatoriamente?\nLa probabilidad de que la primera tecla pulsada sea “q” es \\(\\frac{1}{78}\\), y la probabilidad de que la segunda tecla pulsada sea “u” es también \\(\\frac{1}{78}\\), y así, sucesivamente. Por tanto, la probabilidad de 7 letras formando la palabra “quijote” es:\n\\[\n\\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} \\times \\frac{1}{78} = \\left(\\frac{1}{78}\\right)^7 = \\frac{1}{1.7568 \\times 10^{13}}\n\\]\nPodemos ver, que aún así, el resultado no es cero, por tanto, es posible que pueda ocurrir.\nPor otro lado, la probabilidad de no escribir la palabra “quijote” en 7 intentos es \\(1 - \\left(\\frac{1}{78}\\right)^7\\). Como los intentos son independientes, la probabilidad \\(X_n\\) de no escribir “quijote” en ningún \\(n\\) conjunto de 7 intentos es:\n\\[\nX_n = \\left(1 - \\left(\\frac{1}{78}\\right)^7\\right)^n\n\\]\nConforme \\(n\\) crece, la probabilidad de NO escribir en \\(n\\) bloques de 7 intentos la palabra “quijote”, disminuye. Para \\(n=1\\) millón, \\(X_n = 0,999999943\\), pero para \\(n = 100\\) billones, la probabilidad cae a \\(0,565923969\\).\nPor tanto, el dueño se dio cuenta que conforme el número de intentos que Paquito tenía pulsando teclas en el macbook, aumentaban, era problable que pudiera escribir cada una de las palabras que componen “Don Quijote de la Mancha”.\nY así, el pobre Paquito\nDejó de ser Paquito\nPara convertirse en Cervantes"
-  },
-  {
     "objectID": "notas/index.html",
     "href": "notas/index.html",
     "title": "Notas",
     "section": "",
-    "text": "24 nov 2026\n    \n      Participación en CAEPIA 26\n      \n        Comunicación del trabajo sobre calidad y particionamiento de fotografías clínicas.\n      \n      \n        \n          \n            conferencia\n          \n            IA\n          \n            salud\n          \n            datos\n          \n        \n      \n    \n  \n\n  \n    15 oct 2026\n    \n      Teorema del mono infinito\n      \n        No conocía este 'teorema' y me pareció bastante curioso\n      \n      \n        \n          \n            stuff\n          \n            mono\n          \n        \n      \n    \n  \n\n  \n    7 oct 2026\n    \n      Conocí a Diego González Rivas\n      \n        Charla divulgativa en la UJA con sorpresa al final\n      \n      \n        \n          \n            sorpresas\n          \n            medicina\n          \n            cirugía\n          \n        \n      \n    \n  \n\n  \n    4 oct 2026\n    \n      Usando Manim para estudiar\n      \n        Estudiando un artículo del máster a través de la creación de un vídeo explicativo\n      \n      \n        \n          \n            master\n          \n        \n      \n    \n  \n\n  \n    24 sept 2026\n    \n      Bienvenida\n      \n        Primera nota: por qué he creado esta web.\n      \n      \n        \n          \n            personal\n          \n        \n      \n    \n  \n\n\nNo hay resultados"
+    "text": "28 nov 2026\n    \n      ALCOA++: los diez principios para que un dato sea fiable\n      \n        Qué significa ALCOA++ y por qué importa tanto en ensayos clínicos (y en cualquier proyecto con datos de salud).\n      \n      \n        \n          \n            datos\n          \n            salud\n          \n            regulación\n          \n        \n      \n    \n  \n\n  \n    28 nov 2026\n    \n      Anexo 11: el reglamento de los sistemas informáticos en farma (y su gran revisión)\n      \n        Qué dice el Anexo 11 de las GMP europeas, por qué se está reescribiendo y qué cambia en el borrador de 2025.\n      \n      \n        \n          \n            regulación\n          \n            datos\n          \n            calidad\n          \n        \n      \n    \n  \n\n  \n    28 nov 2026\n    \n      Anexo 22: la primera norma GMP europea sobre inteligencia artificial\n      \n        Qué modelos de IA podrían usarse en la fabricación de medicamentos según el borrador del Anexo 22, y por qué deja fuera a los LLM.\n      \n      \n        \n          \n            IA\n          \n            regulación\n          \n            salud\n          \n        \n      \n    \n  \n\n  \n    28 nov 2026\n    \n      GxP: la familia de las «buenas prácticas»\n      \n        Qué significa la x de GxP y por qué todo en la industria farmacéutica gira alrededor de documentar.\n      \n      \n        \n          \n            regulación\n          \n            salud\n          \n            datos\n          \n        \n      \n    \n  \n\n  \n    28 nov 2026\n    \n      ISO/IEC 42001: un sistema de gestión para la inteligencia artificial\n      \n        La primera norma certificable para gestionar la IA de forma responsable dentro de una organización.\n      \n      \n        \n          \n            IA\n          \n            calidad\n          \n            regulación\n          \n        \n      \n    \n  \n\n  \n    28 nov 2026\n    \n      ISO 9001 e ISO/IEC 27001: calidad y seguridad de la información\n      \n        Dos normas certificables con la misma estructura: una para hacer bien las cosas y otra para proteger la información.\n      \n      \n        \n          \n            calidad\n          \n            seguridad\n          \n            regulación\n          \n        \n      \n    \n  \n\n  \n    28 nov 2026\n    \n      RGPD: proteger los datos personales (sobre todo los de salud)\n      \n        Los principios del Reglamento General de Protección de Datos explicados con un ejemplo de investigación en salud.\n      \n      \n        \n          \n            privacidad\n          \n            datos\n          \n            salud\n          \n            regulación\n          \n        \n      \n    \n  \n\n  \n    24 nov 2026\n    \n      Participación en CAEPIA 26\n      \n        Comunicación del trabajo sobre calidad y particionamiento de fotografías clínicas.\n      \n      \n        \n          \n            conferencia\n          \n            IA\n          \n            salud\n          \n            datos\n          \n        \n      \n    \n  \n\n  \n    15 oct 2026\n    \n      Teorema del mono infinito\n      \n        No conocía este 'teorema' y me pareció bastante curioso\n      \n      \n        \n          \n            stuff\n          \n            mono\n          \n        \n      \n    \n  \n\n  \n    7 oct 2026\n    \n      Conocí a Diego González Rivas\n      \n        Charla divulgativa en la UJA con sorpresa al final\n      \n      \n        \n          \n            sorpresas\n          \n            medicina\n          \n            cirugía\n          \n        \n      \n    \n  \n\n  \n    4 oct 2026\n    \n      Usando Manim para estudiar\n      \n        Estudiando un artículo del máster a través de la creación de un vídeo explicativo\n      \n      \n        \n          \n            master\n          \n        \n      \n    \n  \n\n  \n    24 sept 2026\n    \n      Bienvenida\n      \n        Primera nota: por qué he creado esta web.\n      \n      \n        \n          \n            personal\n          \n        \n      \n    \n  \n\n\nNo hay resultados"
   },
   {
     "objectID": "sobre-mi/proyectos/ahp-solver/index.html",
