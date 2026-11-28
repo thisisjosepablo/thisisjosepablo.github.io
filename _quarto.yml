@@ -80,7 +80,9 @@ format:
     toc: true
     lang: es
     respect-user-color-scheme: true
-    include-after-body: _sistema/includes/email.html
+    include-after-body:
+      - _sistema/includes/email.html
+      - _sistema/includes/navidad.html   # 🎄 NAVIDAD 2026: temporal, quitar tras el 25/12 (borrar esta línea y el archivo)
     filters:
       # vídeos de YouTube en modo de privacidad mejorada (youtube-nocookie.com)
       - at: post-quarto
