@@ -1,0 +1,192 @@
+<!-- =====================================================================
+  🎄 NAVIDAD 2026 · decoración temporal
+  ---------------------------------------------------------------------
+  · Gorro de Papá Noel sobre la cartela JPST del navbar.
+  · Easter egg: con cada clic hay un 0,2 % de probabilidad de que unos
+    renos crucen la parte de abajo de la pantalla con Papá Noel corriendo
+    detrás, como si se le hubieran escapado.
+  · Solo se activa del 1 de noviembre al 25 de diciembre (hora local del
+    visitante): a partir del 26 desaparece sola aunque no se quite.
+  · Vista previa: añade ?renos a cualquier URL para lanzar la escena al cargar.
+
+  CÓMO QUITARLO: borra este archivo y su línea en _quarto.yml
+  (include-after-body, marcada con 🎄). No hay nada más en la web.
+===================================================================== -->
+<style>
+  /* Todo cuelga de la clase .navidad-2026, que el script pone en <html> solo en fechas */
+  .navidad-2026 .navbar-brand { position: relative; overflow: visible; }
+  .navidad-gorro {
+    position: absolute;
+    top: -0.55rem;
+    right: -0.95rem;
+    width: 2.1rem;
+    height: auto;
+    transform: rotate(16deg);
+    transform-origin: 30% 80%;
+    pointer-events: none;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18));
+    transition: transform 0.3s ease;
+  }
+  .navidad-2026 .navbar-brand:hover .navidad-gorro { transform: rotate(8deg) translateY(-1px); }
+
+  /* Escena de los renos */
+  .navidad-estampida {
+    position: fixed;
+    left: 0;
+    bottom: 0.4rem;
+    z-index: 1080;
+    width: clamp(260px, 42vw, 440px);
+    pointer-events: none;
+    animation: navidad-cruzar 7s linear forwards;
+  }
+  .navidad-estampida svg { display: block; width: 100%; height: auto; overflow: visible; }
+  @keyframes navidad-cruzar {
+    from { transform: translateX(-105%); }
+    to   { transform: translateX(100vw); }
+  }
+
+  /* Galope: patas que oscilan y cuerpos que botan */
+  .navidad-estampida .pata {
+    transform-box: fill-box;
+    transform-origin: 50% 0;
+    animation: navidad-pata 0.32s ease-in-out infinite alternate;
+  }
+  .navidad-estampida .pata.b { animation-delay: -0.32s; }
+  .navidad-estampida .bota { animation: navidad-bote 0.32s ease-in-out infinite alternate; }
+  .navidad-estampida .bota.b { animation-delay: -0.16s; }
+  .navidad-estampida .brazo {
+    transform-box: fill-box;
+    transform-origin: 10% 10%;
+    animation: navidad-brazo 0.32s ease-in-out infinite alternate;
+  }
+  .navidad-estampida .brazo.b { animation-delay: -0.32s; }
+  .navidad-estampida .bocadillo { animation: navidad-latido 0.64s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 20% 100%; }
+  @keyframes navidad-pata  { from { transform: rotate(-28deg); } to { transform: rotate(28deg); } }
+  @keyframes navidad-bote  { from { transform: translateY(0); } to { transform: translateY(-4px); } }
+  @keyframes navidad-brazo { from { transform: rotate(-35deg); } to { transform: rotate(25deg); } }
+  @keyframes navidad-latido { from { transform: scale(1); } to { transform: scale(1.06); } }
+
+  @media print { .navidad-gorro, .navidad-estampida { display: none !important; } }
+</style>
+
+<script>
+  (function () {
+    // ---- Fechas: del 1 de noviembre al 25 de diciembre, ambos incluidos ----
+    var hoy = new Date();
+    var mes = hoy.getMonth();                        // 0 = enero … 11 = diciembre
+    var enFechas = mes === 10 || (mes === 11 && hoy.getDate() <= 25);
+    var forzar = /[?&]renos\b/.test(window.location.search);
+    if (!enFechas && !forzar) return;
+
+    document.documentElement.classList.add("navidad-2026");
+
+    // ---- Gorro sobre la cartela JPST ----
+    var GORRO =
+      '<svg class="navidad-gorro" viewBox="0 0 64 54" aria-hidden="true" focusable="false">' +
+        '<path d="M8 40 C10 22 22 7 38 6 C50 5 58 13 59 26 C55 21 50 19 45 21 C47 27 49 33 50 40 Z" fill="#d42a2a"/>' +
+        '<path d="M38 6 C50 5 58 13 59 26 C55 21 50 19 45 21 C44 14 41 9 38 6 Z" fill="#a91d22"/>' +
+        '<rect x="3" y="36" width="52" height="13" rx="6.5" fill="#fbfbf7"/>' +
+        '<path d="M8 44 h42" stroke="#dcdcd4" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 5"/>' +
+        '<circle cx="58" cy="29" r="6" fill="#fbfbf7"/>' +
+      '</svg>';
+    document.querySelectorAll(".navbar-brand").forEach(function (marca) {
+      marca.insertAdjacentHTML("beforeend", GORRO);
+    });
+
+    // ---- Escena: Papá Noel persigue a los renos que se le han escapado ----
+    var reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var PROBABILIDAD = 0.002;                        // 0,2 % por clic
+    var enCurso = false;
+
+    function reno(x, nariz, fase) {
+      // Reno mirando a la derecha; (0,0) arriba a la izquierda de una caja de 90 × 84
+      return '<g transform="translate(' + x + ' 32)"><g class="bota' + fase + '">' +
+        // patas traseras y delanteras, alternadas
+        '<g stroke="#6b4426" stroke-width="4" stroke-linecap="round">' +
+          '<line class="pata" x1="24" y1="42" x2="24" y2="64"/>' +
+          '<line class="pata b" x1="30" y1="42" x2="30" y2="64"/>' +
+          '<line class="pata b" x1="52" y1="42" x2="52" y2="64"/>' +
+          '<line class="pata" x1="58" y1="42" x2="58" y2="64"/>' +
+        '</g>' +
+        '<ellipse cx="14" cy="32" rx="5" ry="4" fill="#f1e6d2"/>' +                     // cola
+        '<ellipse cx="40" cy="38" rx="25" ry="12" fill="#8b5a2f"/>' +                   // cuerpo
+        '<ellipse cx="42" cy="44" rx="16" ry="5" fill="#c9a77a"/>' +                    // tripa
+        '<path d="M54 34 L62 12 L71 15 L65 38 Z" fill="#8b5a2f"/>' +                     // cuello
+        '<path d="M56 30 L66 32" stroke="#c0392b" stroke-width="3.5" stroke-linecap="round"/>' + // collar
+        '<circle cx="62" cy="35" r="2.6" fill="#e2b33c"/>' +                             // cascabel
+        '<g stroke="#5a3a1c" stroke-width="2.4" stroke-linecap="round" fill="none">' +  // cornamenta
+          '<path d="M66 6 L61 -4 L55 -8 M61 -4 L62 -11"/>' +
+          '<path d="M70 6 L73 -4 L79 -8 M73 -4 L71 -11"/>' +
+        '</g>' +
+        '<ellipse cx="64" cy="7" rx="2.6" ry="4.5" transform="rotate(-35 64 7)" fill="#6b4426"/>' + // oreja
+        '<ellipse cx="73" cy="12" rx="10" ry="6.5" transform="rotate(12 73 12)" fill="#9a6838"/>' + // cabeza
+        '<circle cx="73" cy="9.5" r="1.4" fill="#1d1d1b"/>' +                            // ojo
+        '<circle cx="83" cy="15" r="' + (nariz ? '3.4' : '2.4') + '" fill="' + (nariz ? '#e0302a' : '#2b2018') + '"/>' +
+        (nariz ? '<circle cx="83" cy="15" r="5.5" fill="#e0302a" opacity=".25"/>' : '') +
+      '</g></g>';
+    }
+
+    var PAPA_NOEL =
+      '<g transform="translate(0 0)"><g class="bota b">' +
+        // bocadillo
+        '<g class="bocadillo">' +
+          '<path d="M44 0 h52 a8 8 0 0 1 8 8 v12 a8 8 0 0 1 -8 8 h-40 l-9 8 l2 -8 h-5 a8 8 0 0 1 -8 -8 v-12 a8 8 0 0 1 8 -8 z" fill="#fffdf6" stroke="#d42a2a" stroke-width="1.5"/>' +
+          '<text x="70" y="18.5" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#b3201f">¡Volved!</text>' +
+        '</g>' +
+        // piernas y botas
+        '<g stroke-linecap="round">' +
+          '<g class="pata"><line x1="28" y1="78" x2="26" y2="94" stroke="#c62828" stroke-width="7"/><line x1="26" y1="95" x2="33" y2="96" stroke="#1d1d1b" stroke-width="6"/></g>' +
+          '<g class="pata b"><line x1="40" y1="78" x2="42" y2="94" stroke="#a91d22" stroke-width="7"/><line x1="42" y1="95" x2="49" y2="96" stroke="#1d1d1b" stroke-width="6"/></g>' +
+        '</g>' +
+        // brazo de atrás
+        '<g class="brazo b"><line x1="24" y1="58" x2="10" y2="68" stroke="#a91d22" stroke-width="6.5" stroke-linecap="round"/><circle cx="9" cy="69" r="3.6" fill="#1d1d1b"/></g>' +
+        // cuerpo
+        '<ellipse cx="34" cy="64" rx="17" ry="17" fill="#d42a2a"/>' +
+        '<rect x="17" y="66" width="34" height="5.5" rx="2" fill="#1d1d1b"/>' +
+        '<rect x="31" y="65.5" width="7" height="6.5" rx="1" fill="#e2b33c"/>' +
+        '<rect x="34" y="47" width="3.5" height="32" rx="1.7" fill="#fbfbf7"/>' +
+        // cabeza, barba y gorro
+        '<circle cx="38" cy="40" r="9" fill="#f2c6a0"/>' +
+        '<path d="M28 41 C28 52 34 56 40 56 C46 56 50 50 49 41 C45 45 32 45 28 41 Z" fill="#fbfbf7"/>' +
+        '<ellipse cx="42" cy="43" rx="5" ry="2.2" fill="#fbfbf7"/>' +
+        '<circle cx="46" cy="40.5" r="1.8" fill="#e58c7a"/>' +
+        '<circle cx="42" cy="37" r="1.2" fill="#1d1d1b"/>' +
+        '<path d="M28 34 C29 24 38 21 47 26 C42 26 36 28 33 31 C30 27 24 26 20 30 Z" fill="#d42a2a"/>' +
+        '<circle cx="19" cy="31" r="3.4" fill="#fbfbf7"/>' +
+        '<rect x="27" y="31" width="22" height="5" rx="2.5" fill="#fbfbf7"/>' +
+        // brazo de delante, estirado hacia los renos
+        '<g class="brazo"><line x1="44" y1="56" x2="60" y2="48" stroke="#d42a2a" stroke-width="6.5" stroke-linecap="round"/><circle cx="62" cy="47" r="3.6" fill="#1d1d1b"/></g>' +
+      '</g></g>';
+
+    var ESCENA =
+      '<svg viewBox="0 -10 430 112" aria-hidden="true" focusable="false">' +
+        PAPA_NOEL +
+        // riendas sueltas que se arrastran detrás del último reno
+        '<path d="M190 66 C 176 70 168 86 150 92 S 120 96 104 94" stroke="#7a4a22" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+        reno(150, false, "") +
+        reno(240, false, " b") +
+        reno(330, true, "") +
+      '</svg>';
+
+    function lanzar() {
+      if (enCurso || reducirMovimiento) return;
+      enCurso = true;
+      var capa = document.createElement("div");
+      capa.className = "navidad-estampida";
+      capa.setAttribute("aria-hidden", "true");
+      capa.innerHTML = ESCENA;
+      capa.addEventListener("animationend", function (e) {
+        if (e.target !== capa) return;
+        capa.remove();
+        enCurso = false;
+      });
+      document.body.appendChild(capa);
+    }
+
+    document.addEventListener("click", function () {
+      if (Math.random() < PROBABILIDAD) lanzar();
+    }, { passive: true });
+
+    if (forzar) lanzar();
+  })();
+</script>
