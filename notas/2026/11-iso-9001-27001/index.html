@@ -51,9 +51,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-0e4b41fbc5f127e0e4a200772e3ee37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-7a39a19e8dc336cab226ab93fd5e8d39.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-0e4b41fbc5f127e0e4a200772e3ee37d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-506406f22cad9077ff1f3fb6b29de2d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-f8f6686829d5e02c630e3722c85dcac8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-506406f22cad9077ff1f3fb6b29de2d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -520,6 +520,385 @@ ul.task-list li input[type="checkbox"] {
     document.querySelectorAll('a[href$="#email"]').forEach(function (a) {
       a.href = "mailto:" + usuario + "@" + dominio;
     });
+  })();
+</script>
+<!-- =====================================================================
+  🎄 NAVIDAD 2026 · decoración temporal
+  ---------------------------------------------------------------------
+  · Gorro de Papá Noel sobre la cartela JPST del navbar.
+  · Easter egg: con cada clic hay un 0,2 % de probabilidad de que unos
+    renos crucen la parte de abajo de la pantalla con Papá Noel corriendo
+    detrás, como si se le hubieran escapado.
+  · Solo se activa del 1 de noviembre al 25 de diciembre (hora local del
+    visitante): a partir del 26 desaparece sola aunque no se quite.
+  · Premio secreto: con cada clic hay además 1 posibilidad entre N (por
+    defecto 5000) de que Papá Noel, en vez de "¡Volved!", diga un código.
+    El código va cifrado con un boleto ganador al azar: el navegador saca un
+    boleto por clic e intenta abrir la caja. Ni el código ni el boleto están
+    en el repositorio; se cifra con:  python3 _sistema/navidad_premio.py
+    Mientras PREMIO sea null (más abajo), no hay premio y solo salen los renos.
+  · Vista previa: añade ?renos a cualquier URL para lanzar la escena al cargar,
+    o ?renos=premio para ver cómo se ve el premio (con un código de ejemplo).
+
+  CÓMO QUITARLO: borra este archivo, _sistema/navidad_premio.py y la línea
+  de _quarto.yml (include-after-body, marcada con 🎄). No hay nada más.
+===================================================================== -->
+<style>
+  /* Todo cuelga de la clase .navidad-2026, que el script pone en <html> solo en fechas */
+  .navidad-2026 .navbar-brand { position: relative; overflow: visible; }
+  .navidad-gorro {
+    position: absolute;
+    top: -0.55rem;
+    right: -0.95rem;
+    width: 2.1rem;
+    height: auto;
+    transform: rotate(16deg);
+    transform-origin: 30% 80%;
+    pointer-events: none;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.18));
+    transition: transform 0.3s ease;
+  }
+  .navidad-2026 .navbar-brand:hover .navidad-gorro { transform: rotate(8deg) translateY(-1px); }
+
+  /* Escena de los renos */
+  .navidad-estampida {
+    position: fixed;
+    left: 0;
+    bottom: 0.4rem;
+    z-index: 1080;
+    width: clamp(260px, 42vw, 440px);
+    pointer-events: none;
+    animation: navidad-cruzar 7s linear forwards;
+  }
+  .navidad-estampida svg { display: block; width: 100%; height: auto; overflow: visible; }
+  @keyframes navidad-cruzar {
+    from { transform: translateX(-105%); }
+    to   { transform: translateX(100vw); }
+  }
+
+  /* Galope: patas que oscilan y cuerpos que botan */
+  .navidad-estampida .pata {
+    transform-box: fill-box;
+    transform-origin: 50% 0;
+    animation: navidad-pata 0.32s ease-in-out infinite alternate;
+  }
+  .navidad-estampida .pata.b { animation-delay: -0.32s; }
+  .navidad-estampida .bota { animation: navidad-bote 0.32s ease-in-out infinite alternate; }
+  .navidad-estampida .bota.b { animation-delay: -0.16s; }
+  .navidad-estampida .brazo {
+    transform-box: fill-box;
+    transform-origin: 10% 10%;
+    animation: navidad-brazo 0.32s ease-in-out infinite alternate;
+  }
+  .navidad-estampida .brazo.b { animation-delay: -0.32s; }
+  .navidad-estampida .bocadillo { animation: navidad-latido 0.64s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 20% 100%; }
+  @keyframes navidad-pata  { from { transform: rotate(-28deg); } to { transform: rotate(28deg); } }
+  @keyframes navidad-bote  { from { transform: translateY(0); } to { transform: translateY(-4px); } }
+  @keyframes navidad-brazo { from { transform: rotate(-35deg); } to { transform: rotate(25deg); } }
+  @keyframes navidad-latido { from { transform: scale(1); } to { transform: scale(1.06); } }
+
+  /* Aviso que queda en pantalla cuando sale el premio */
+  .navidad-aviso {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1090;
+    width: min(22rem, calc(100vw - 2rem));
+    padding: 1.1rem 1.2rem 1rem;
+    border-radius: 0.9rem;
+    background: var(--sendero-card, #fffefb);
+    color: var(--sendero-text, #1a3017);
+    border: 2px solid #d42a2a;
+    box-shadow: 0 12px 32px -12px rgba(0, 0, 0, 0.45);
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+  .navidad-aviso h2 { font-size: 1.05rem; margin: 0 1.8rem 0.4rem 0; border: 0; padding: 0; }
+  .navidad-aviso p { margin: 0 0 0.6rem; }
+  .navidad-aviso .codigo {
+    display: block;
+    margin: 0.5rem 0 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    background: rgba(212, 42, 42, 0.08);
+    font: 700 1.25rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    letter-spacing: 0.06em;
+    text-align: center;
+    user-select: all;
+    word-break: break-all;
+  }
+  .navidad-aviso .acciones { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+  .navidad-aviso button {
+    min-height: 40px;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.88rem;
+    cursor: pointer;
+  }
+  .navidad-aviso button.principal { background: #d42a2a; border-color: #d42a2a; color: #fff; }
+  .navidad-aviso .cerrar {
+    position: absolute; top: 0.45rem; right: 0.45rem;
+    min-height: 0; width: 2.2rem; height: 2.2rem; padding: 0;
+    border: 0; font-size: 1.3rem; line-height: 1;
+  }
+
+  @media print { .navidad-gorro, .navidad-estampida, .navidad-aviso { display: none !important; } }
+</style>
+
+<script>
+  (function () {
+    // ---- Fechas: del 1 de noviembre al 25 de diciembre, ambos incluidos ----
+    var hoy = new Date();
+    var mes = hoy.getMonth();                        // 0 = enero … 11 = diciembre
+    var enFechas = mes === 10 || (mes === 11 && hoy.getDate() <= 25);
+    var forzar = /[?&]renos\b/.test(window.location.search);
+    if (!enFechas && !forzar) return;
+
+    document.documentElement.classList.add("navidad-2026");
+
+    // ---- Gorro sobre la cartela JPST ----
+    var GORRO =
+      '<svg class="navidad-gorro" viewBox="0 0 64 54" aria-hidden="true" focusable="false">' +
+        '<path d="M8 40 C10 22 22 7 38 6 C50 5 58 13 59 26 C55 21 50 19 45 21 C47 27 49 33 50 40 Z" fill="#d42a2a"/>' +
+        '<path d="M38 6 C50 5 58 13 59 26 C55 21 50 19 45 21 C44 14 41 9 38 6 Z" fill="#a91d22"/>' +
+        '<rect x="3" y="36" width="52" height="13" rx="6.5" fill="#fbfbf7"/>' +
+        '<path d="M8 44 h42" stroke="#dcdcd4" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 5"/>' +
+        '<circle cx="58" cy="29" r="6" fill="#fbfbf7"/>' +
+      '</svg>';
+    document.querySelectorAll(".navbar-brand").forEach(function (marca) {
+      marca.insertAdjacentHTML("beforeend", GORRO);
+    });
+
+    // ---- Escena: Papá Noel persigue a los renos que se le han escapado ----
+    var reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var PROBABILIDAD = 0.002;                        // 0,2 % por clic
+    var enCurso = false;
+
+    function reno(x, nariz, fase) {
+      // Reno mirando a la derecha; (0,0) arriba a la izquierda de una caja de 90 × 84
+      return '<g transform="translate(' + x + ' 32)"><g class="bota' + fase + '">' +
+        // patas traseras y delanteras, alternadas
+        '<g stroke="#6b4426" stroke-width="4" stroke-linecap="round">' +
+          '<line class="pata" x1="24" y1="42" x2="24" y2="64"/>' +
+          '<line class="pata b" x1="30" y1="42" x2="30" y2="64"/>' +
+          '<line class="pata b" x1="52" y1="42" x2="52" y2="64"/>' +
+          '<line class="pata" x1="58" y1="42" x2="58" y2="64"/>' +
+        '</g>' +
+        '<ellipse cx="14" cy="32" rx="5" ry="4" fill="#f1e6d2"/>' +                     // cola
+        '<ellipse cx="40" cy="38" rx="25" ry="12" fill="#8b5a2f"/>' +                   // cuerpo
+        '<ellipse cx="42" cy="44" rx="16" ry="5" fill="#c9a77a"/>' +                    // tripa
+        '<path d="M54 34 L62 12 L71 15 L65 38 Z" fill="#8b5a2f"/>' +                     // cuello
+        '<path d="M56 30 L66 32" stroke="#c0392b" stroke-width="3.5" stroke-linecap="round"/>' + // collar
+        '<circle cx="62" cy="35" r="2.6" fill="#e2b33c"/>' +                             // cascabel
+        '<g stroke="#5a3a1c" stroke-width="2.4" stroke-linecap="round" fill="none">' +  // cornamenta
+          '<path d="M66 6 L61 -4 L55 -8 M61 -4 L62 -11"/>' +
+          '<path d="M70 6 L73 -4 L79 -8 M73 -4 L71 -11"/>' +
+        '</g>' +
+        '<ellipse cx="64" cy="7" rx="2.6" ry="4.5" transform="rotate(-35 64 7)" fill="#6b4426"/>' + // oreja
+        '<ellipse cx="73" cy="12" rx="10" ry="6.5" transform="rotate(12 73 12)" fill="#9a6838"/>' + // cabeza
+        '<circle cx="73" cy="9.5" r="1.4" fill="#1d1d1b"/>' +                            // ojo
+        '<circle cx="83" cy="15" r="' + (nariz ? '3.4' : '2.4') + '" fill="' + (nariz ? '#e0302a' : '#2b2018') + '"/>' +
+        (nariz ? '<circle cx="83" cy="15" r="5.5" fill="#e0302a" opacity=".25"/>' : '') +
+      '</g></g>';
+    }
+
+    function escapar(t) {
+      return String(t).replace(/[&<>"']/g, function (c) { return "&#" + c.charCodeAt(0) + ";"; });
+    }
+
+    // Bocadillo: "¡Volved!" normalmente; con premio, el código en dos líneas
+    function bocadillo(codigo) {
+      var w = codigo ? Math.max(84, codigo.length * 8.2 + 26) : 60;
+      var h = codigo ? 40 : 28;
+      var y = 28 - h, x = 44;
+      var texto = codigo
+        ? '<text x="' + (x + w / 2) + '" y="' + (y + 15) + '" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#b3201f">¡Psst! Toma:</text>' +
+          '<text x="' + (x + w / 2) + '" y="' + (y + 31) + '" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12.5" font-weight="700" fill="#1d1d1b">' + escapar(codigo) + '</text>'
+        : '<text x="' + (x + w / 2) + '" y="18.5" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#b3201f">¡Volved!</text>';
+      return '<g class="bocadillo">' +
+        '<path d="M' + (x + 8) + ' ' + y + ' h' + (w - 16) + ' a8 8 0 0 1 8 8 v' + (h - 16) + ' a8 8 0 0 1 -8 8 h' + -(w - 20) +
+          ' l-9 8 l2 -8 h-1 a8 8 0 0 1 -8 -8 v' + -(h - 16) + ' a8 8 0 0 1 8 -8 z" fill="#fffdf6" stroke="#d42a2a" stroke-width="1.5"/>' +
+        texto + '</g>';
+    }
+
+    function papaNoel(codigo) { return (
+      '<g transform="translate(0 0)"><g class="bota b">' +
+        bocadillo(codigo) +
+        // piernas y botas
+        '<g stroke-linecap="round">' +
+          '<g class="pata"><line x1="28" y1="78" x2="26" y2="94" stroke="#c62828" stroke-width="7"/><line x1="26" y1="95" x2="33" y2="96" stroke="#1d1d1b" stroke-width="6"/></g>' +
+          '<g class="pata b"><line x1="40" y1="78" x2="42" y2="94" stroke="#a91d22" stroke-width="7"/><line x1="42" y1="95" x2="49" y2="96" stroke="#1d1d1b" stroke-width="6"/></g>' +
+        '</g>' +
+        // brazo de atrás
+        '<g class="brazo b"><line x1="24" y1="58" x2="10" y2="68" stroke="#a91d22" stroke-width="6.5" stroke-linecap="round"/><circle cx="9" cy="69" r="3.6" fill="#1d1d1b"/></g>' +
+        // cuerpo
+        '<ellipse cx="34" cy="64" rx="17" ry="17" fill="#d42a2a"/>' +
+        '<rect x="17" y="66" width="34" height="5.5" rx="2" fill="#1d1d1b"/>' +
+        '<rect x="31" y="65.5" width="7" height="6.5" rx="1" fill="#e2b33c"/>' +
+        '<rect x="34" y="47" width="3.5" height="32" rx="1.7" fill="#fbfbf7"/>' +
+        // cabeza, barba y gorro
+        '<circle cx="38" cy="40" r="9" fill="#f2c6a0"/>' +
+        '<path d="M28 41 C28 52 34 56 40 56 C46 56 50 50 49 41 C45 45 32 45 28 41 Z" fill="#fbfbf7"/>' +
+        '<ellipse cx="42" cy="43" rx="5" ry="2.2" fill="#fbfbf7"/>' +
+        '<circle cx="46" cy="40.5" r="1.8" fill="#e58c7a"/>' +
+        '<circle cx="42" cy="37" r="1.2" fill="#1d1d1b"/>' +
+        '<path d="M28 34 C29 24 38 21 47 26 C42 26 36 28 33 31 C30 27 24 26 20 30 Z" fill="#d42a2a"/>' +
+        '<circle cx="19" cy="31" r="3.4" fill="#fbfbf7"/>' +
+        '<rect x="27" y="31" width="22" height="5" rx="2.5" fill="#fbfbf7"/>' +
+        // brazo de delante, estirado hacia los renos
+        '<g class="brazo"><line x1="44" y1="56" x2="60" y2="48" stroke="#d42a2a" stroke-width="6.5" stroke-linecap="round"/><circle cx="62" cy="47" r="3.6" fill="#1d1d1b"/></g>' +
+      '</g></g>');
+    }
+
+    function escena(codigo) { return (
+      '<svg viewBox="0 -22 430 124" aria-hidden="true" focusable="false">' +
+        papaNoel(codigo) +
+        // riendas sueltas que se arrastran detrás del último reno
+        '<path d="M190 66 C 176 70 168 86 150 92 S 120 96 104 94" stroke="#7a4a22" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+        reno(150, false, "") +
+        reno(240, false, " b") +
+        reno(330, true, "") +
+      '</svg>');
+    }
+
+    function lanzar(codigo) {
+      if (enCurso || reducirMovimiento) return;
+      enCurso = true;
+      var capa = document.createElement("div");
+      capa.className = "navidad-estampida";
+      capa.setAttribute("aria-hidden", "true");
+      capa.innerHTML = escena(codigo);
+      capa.addEventListener("animationend", function (e) {
+        if (e.target !== capa) return;
+        capa.remove();
+        enCurso = false;
+      });
+      document.body.appendChild(capa);
+    }
+
+    // ---- Premio secreto --------------------------------------------------
+    // Lo rellena "python3 _sistema/navidad_premio.py". null = sin premio.
+    // premio:inicio
+    var PREMIO = null;
+    // premio:fin
+
+    var GUARDADO = "navidad-2026-premio";
+    var EJEMPLO = "EJEMPLO-2026";
+    var ocupado = false;
+    var b64 = function (t) { return Uint8Array.from(atob(t), function (c) { return c.charCodeAt(0); }); };
+
+    function guardado(valor) {
+      try {
+        if (valor === undefined) return localStorage.getItem(GUARDADO);
+        if (valor === null) localStorage.removeItem(GUARDADO); else localStorage.setItem(GUARDADO, valor);
+      } catch (e) { return null; }
+    }
+
+    function claveHmac(bytes, uso) {
+      return crypto.subtle.importKey("raw", bytes, { name: "HMAC", hash: "SHA-256" }, false, [uso]);
+    }
+
+    // Mismo esquema que recursos/js/acertijo.js: PBKDF2-SHA256 → flujo HMAC-CTR + sello HMAC.
+    // Devuelve el código si el boleto es el ganador; si no, null.
+    async function abrir(boleto) {
+      var base = await crypto.subtle.importKey("raw", new TextEncoder().encode(boleto), "PBKDF2", false, ["deriveBits"]);
+      var bits = new Uint8Array(await crypto.subtle.deriveBits(
+        { name: "PBKDF2", hash: "SHA-256", salt: b64(PREMIO.sal), iterations: PREMIO.iteraciones }, base, 512));
+      var cifra = b64(PREMIO.cifra);
+      var sello = await claveHmac(bits.slice(32), "verify");
+      if (!(await crypto.subtle.verify("HMAC", sello, b64(PREMIO.sello), cifra))) return null;
+      var flujo = await claveHmac(bits.slice(0, 32), "sign");
+      var claro = new Uint8Array(cifra.length);
+      for (var i = 0; i * 32 < cifra.length; i++) {
+        var contador = new Uint8Array(4);
+        new DataView(contador.buffer).setUint32(0, i);
+        var bloque = new Uint8Array(await crypto.subtle.sign("HMAC", flujo, contador));
+        for (var j = 0; j < 32 && i * 32 + j < cifra.length; j++) claro[i * 32 + j] = cifra[i * 32 + j] ^ bloque[j];
+      }
+      return new TextDecoder().decode(claro);
+    }
+
+    // Un boleto al azar por clic; mientras se comprueba uno, los clics no sacan otro
+    async function sacarBoleto() {
+      if (!PREMIO || ocupado || !(window.crypto && crypto.subtle)) return null;
+      ocupado = true;
+      try {
+        var r = new Uint32Array(1);
+        crypto.getRandomValues(r);
+        return await abrir(String(r[0] % PREMIO.boletos));
+      } catch (e) {
+        return null;
+      } finally {
+        ocupado = false;
+      }
+    }
+
+    function enlaceCorreo() {
+      var a = document.querySelector('a[href^="mailto:"]');
+      return a ? a.getAttribute("href") : null;
+    }
+
+    function mostrarAviso(codigo, deEjemplo) {
+      var viejo = document.querySelector(".navidad-aviso");
+      if (viejo) viejo.remove();
+      var correo = enlaceCorreo();
+      var aviso = document.createElement("section");
+      aviso.className = "navidad-aviso";
+      aviso.setAttribute("role", "dialog");
+      aviso.setAttribute("aria-labelledby", "navidad-aviso-titulo");
+      aviso.innerHTML =
+        '<button type="button" class="cerrar" aria-label="Cerrar">×</button>' +
+        '<h2 id="navidad-aviso-titulo">🎁 ¡Has encontrado el secreto de Navidad!</h2>' +
+        (deEjemplo ? '<p><em>Vista previa: este código es de ejemplo.</em></p>' : '') +
+        '<p>A Papá Noel se le ha escapado esto:</p>' +
+        '<code class="codigo">' + escapar(codigo) + '</code>' +
+        '<p>Envíamelo por <a href="https://x.com/thisisjosepablo">X</a>' +
+        (correo ? ' o por <a href="' + escapar(correo) + '">correo</a>' : '') +
+        '. Si eres la primera persona, el premio es tuyo.</p>' +
+        '<div class="acciones">' +
+          '<button type="button" class="principal copiar">Copiar código</button>' +
+          '<button type="button" class="enviado">Ya lo he enviado</button>' +
+        '</div>';
+      aviso.querySelector(".cerrar").addEventListener("click", function () { aviso.remove(); });
+      aviso.querySelector(".enviado").addEventListener("click", function () {
+        if (!deEjemplo) guardado(null);
+        aviso.remove();
+      });
+      aviso.querySelector(".copiar").addEventListener("click", function (e) {
+        var boton = e.currentTarget;
+        (navigator.clipboard ? navigator.clipboard.writeText(codigo) : Promise.reject())
+          .then(function () { boton.textContent = "¡Copiado!"; })
+          .catch(function () { boton.textContent = "Selecciónalo y cópialo"; });
+      });
+      document.body.appendChild(aviso);
+      aviso.querySelector(".copiar").focus({ preventScroll: true });
+    }
+
+    function ganar(codigo, deEjemplo) {
+      if (!deEjemplo) guardado(codigo);   // por si cierra la pestaña sin apuntarlo
+      lanzar(codigo);
+      mostrarAviso(codigo, deEjemplo);
+    }
+
+    // Clic dentro del propio aviso: no cuenta como intento
+    document.addEventListener("click", function (e) {
+      if (e.target.closest && e.target.closest(".navidad-aviso")) return;
+      sacarBoleto().then(function (codigo) {
+        if (codigo) ganar(codigo, false);
+        else if (Math.random() < PROBABILIDAD) lanzar();
+      });
+    }, { passive: true });
+
+    // Quien ya lo encontró lo vuelve a ver al cargar hasta que marque "Ya lo he enviado"
+    var yaGanado = guardado();
+    if (yaGanado && PREMIO) mostrarAviso(yaGanado, false);
+
+    if (/[?&]renos=premio\b/.test(window.location.search)) ganar(EJEMPLO, true);
+    else if (forzar) lanzar();
   })();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
