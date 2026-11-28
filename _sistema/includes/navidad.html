@@ -298,19 +298,26 @@
       return new TextDecoder().decode(claro);
     }
 
-    // Un boleto al azar por clic; mientras se comprueba uno, los clics no sacan otro
-    async function sacarBoleto() {
-      if (!PREMIO || ocupado || !(window.crypto && crypto.subtle)) return null;
+    // Un boleto al azar por clic (se saca al instante; comprobarlo tarda ~0,1 s)
+    function nuevoBoleto() {
+      if (!PREMIO || !(window.crypto && crypto.subtle)) return null;
+      var r = new Uint32Array(1);
+      crypto.getRandomValues(r);
+      return String(r[0] % PREMIO.boletos);
+    }
+
+    // Mientras se comprueba un boleto, los clics siguientes no sacan otro
+    async function comprobar(boleto) {
+      if (boleto === null || ocupado) return null;
       ocupado = true;
-      try {
-        var r = new Uint32Array(1);
-        crypto.getRandomValues(r);
-        return await abrir(String(r[0] % PREMIO.boletos));
-      } catch (e) {
-        return null;
-      } finally {
-        ocupado = false;
-      }
+      try { return await abrir(boleto); } catch (e) { return null; } finally { ocupado = false; }
+    }
+
+    function resolver(boleto, renos) {
+      comprobar(boleto).then(function (codigo) {
+        if (codigo) ganar(codigo, false);
+        else if (renos) lanzar();
+      });
     }
 
     function enlaceCorreo() {
@@ -360,14 +367,35 @@
       mostrarAviso(codigo, deEjemplo);
     }
 
+    // Los clics en enlaces de la propia web cambian de página al instante y la escena se
+    // perdería: en ese caso el sorteo se hace igual y se resuelve al cargar la página siguiente.
+    var PENDIENTE = "navidad-2026-pendiente";
+    function navegaDentro(e) {
+      var a = e.target.closest && e.target.closest("a[href]");
+      if (!a || e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return false;
+      if ((a.target && a.target !== "_self") || a.hasAttribute("download") || a.origin !== location.origin) return false;
+      return a.pathname !== location.pathname || a.search !== location.search;   // un #ancla no cambia de página
+    }
+
     // Clic dentro del propio aviso: no cuenta como intento
     document.addEventListener("click", function (e) {
       if (e.target.closest && e.target.closest(".navidad-aviso")) return;
-      sacarBoleto().then(function (codigo) {
-        if (codigo) ganar(codigo, false);
-        else if (Math.random() < PROBABILIDAD) lanzar();
-      });
+      var boleto = ocupado ? null : nuevoBoleto();
+      var renos = Math.random() < PROBABILIDAD;
+      if (navegaDentro(e)) {
+        if (boleto !== null || renos) {
+          try { sessionStorage.setItem(PENDIENTE, JSON.stringify({ boleto: boleto, renos: renos })); } catch (err) {}
+        }
+        return;
+      }
+      resolver(boleto, renos);
     }, { passive: true });
+
+    try {
+      var pendiente = JSON.parse(sessionStorage.getItem(PENDIENTE) || "null");
+      sessionStorage.removeItem(PENDIENTE);
+      if (pendiente) setTimeout(function () { resolver(pendiente.boleto, pendiente.renos); }, 400);
+    } catch (err) {}
 
     // Quien ya lo encontró lo vuelve a ver al cargar hasta que marque "Ya lo he enviado"
     var yaGanado = guardado();
